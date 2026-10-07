@@ -1,0 +1,838 @@
+%==========================================================================
+% PULSE - Fase A - Costellazione di 4 satelliti eliosincroni sullo stesso piano
+%
+% Correzioni rispetto alla versione precedente:
+%  1) Orbite definite con elementi MEDI (Brouwer-Lyddane, BrouwerMeanShort)
+%     invece che osculanti: tutti i satelliti hanno lo stesso semiasse medio
+%     (6680.2 km, come nel paper di EarthNext), quindi lo stesso periodo,
+%     e restano distanziati di 90 gradi per tutta la simulazione.
+%  2) Ogni satellite e' distanziato cambiando SOLO l'anomalia media (MA):
+%     0, 90, 180, 270 gradi.
+%  3) Ogni ContactLocator (passo di ricerca di default 10 s) ha il proprio Target e il proprio file di uscita
+%     (12 locator: 4 satelliti x accessi 30 deg, accessi 45 deg, contatti).
+%  4) ReportFile di controllo del distanziamento (argomento di latitudine
+%     = AOP + TA di ogni satellite, una riga ogni 10 minuti).
+%
+% Durata: 30 giorni (3 cicli di ripetizione della traccia da 10 giorni).
+% Bersagli: elevazione minima 58.4 deg = 30 deg off-nadir,
+%           elevazione minima 42.2 deg = 45 deg off-nadir (da 302 km).
+% NB: script non eseguito in GMAT da chi lo ha scritto; se una riga da'
+%     errore nella vostra versione, il messaggio di GMAT indica quale.
+%==========================================================================
+
+%----------------------------------------
+% Satelliti (elementi medi Brouwer-Lyddane, forma "short")
+%----------------------------------------
+Create Spacecraft PULSE;
+PULSE.DateFormat = UTCGregorian;
+PULSE.Epoch = '01 Jan 2026 13:00:00.000';
+PULSE.CoordinateSystem = EarthMJ2000Eq;
+PULSE.DisplayStateType = BrouwerMeanShort;
+PULSE.BrouwerShortSMA = 6680.200000002525;
+PULSE.BrouwerShortECC = 0.001099999999820183;
+PULSE.BrouwerShortINC = 96.80000000000094;
+PULSE.BrouwerShortRAAN = 78.69999999999999;
+PULSE.BrouwerShortAOP = 90.00000000000006;
+PULSE.BrouwerShortMA = 0;
+PULSE.DryMass = 30;
+PULSE.Cd = 2.2;
+PULSE.Cr = 1.8;
+PULSE.DragArea = 0.1;
+PULSE.SRPArea = 1;
+PULSE.SPADDragScaleFactor = 1;
+PULSE.SPADSRPScaleFactor = 1;
+PULSE.AtmosDensityScaleFactor = 1;
+PULSE.ExtendedMassPropertiesModel = 'None';
+PULSE.NAIFId = -10001001;
+PULSE.NAIFIdReferenceFrame = -9001001;
+PULSE.OrbitColor = Red;
+PULSE.TargetColor = Teal;
+PULSE.OrbitErrorCovariance = [ 1e+70 0 0 0 0 0 ; 0 1e+70 0 0 0 0 ; 0 0 1e+70 0 0 0 ; 0 0 0 1e+70 0 0 ; 0 0 0 0 1e+70 0 ; 0 0 0 0 0 1e+70 ];
+PULSE.CdSigma = 1e+70;
+PULSE.CrSigma = 1e+70;
+PULSE.Id = 'SatId';
+PULSE.Attitude = CoordinateSystemFixed;
+PULSE.SPADSRPInterpolationMethod = Bilinear;
+PULSE.SPADSRPScaleFactorSigma = 1e+70;
+PULSE.SPADDragInterpolationMethod = Bilinear;
+PULSE.SPADDragScaleFactorSigma = 1e+70;
+PULSE.AtmosDensityScaleFactorSigma = 1e+70;
+PULSE.ModelFile = 'aura.3ds';
+PULSE.ModelOffsetX = 0;
+PULSE.ModelOffsetY = 0;
+PULSE.ModelOffsetZ = 0;
+PULSE.ModelRotationX = 0;
+PULSE.ModelRotationY = 0;
+PULSE.ModelRotationZ = 0;
+PULSE.ModelScale = 1;
+PULSE.AttitudeDisplayStateType = 'Quaternion';
+PULSE.AttitudeRateDisplayStateType = 'AngularVelocity';
+PULSE.AttitudeCoordinateSystem = EarthMJ2000Eq;
+PULSE.EulerAngleSequence = '321';
+
+Create Spacecraft PULSE2;
+PULSE2.DateFormat = UTCGregorian;
+PULSE2.Epoch = '01 Jan 2026 13:00:00.000';
+PULSE2.CoordinateSystem = EarthMJ2000Eq;
+PULSE2.DisplayStateType = BrouwerMeanShort;
+PULSE2.BrouwerShortSMA = 6680.199999998393;
+PULSE2.BrouwerShortECC = 0.001099999999974146;
+PULSE2.BrouwerShortINC = 96.79999999999816;
+PULSE2.BrouwerShortRAAN = 78.7000000000003;
+PULSE2.BrouwerShortAOP = 89.99999999248698;
+PULSE2.BrouwerShortMA = 90.00000000751368;
+PULSE2.DryMass = 30;
+PULSE2.Cd = 2.2;
+PULSE2.Cr = 1.8;
+PULSE2.DragArea = 0.1;
+PULSE2.SRPArea = 1;
+PULSE2.SPADDragScaleFactor = 1;
+PULSE2.SPADSRPScaleFactor = 1;
+PULSE2.AtmosDensityScaleFactor = 1;
+PULSE2.ExtendedMassPropertiesModel = 'None';
+PULSE2.NAIFId = -10002001;
+PULSE2.NAIFIdReferenceFrame = -9002001;
+PULSE2.OrbitColor = Green;
+PULSE2.TargetColor = LightGray;
+PULSE2.OrbitErrorCovariance = [ 1e+70 0 0 0 0 0 ; 0 1e+70 0 0 0 0 ; 0 0 1e+70 0 0 0 ; 0 0 0 1e+70 0 0 ; 0 0 0 0 1e+70 0 ; 0 0 0 0 0 1e+70 ];
+PULSE2.CdSigma = 1e+70;
+PULSE2.CrSigma = 1e+70;
+PULSE2.Id = 'SatId';
+PULSE2.Attitude = CoordinateSystemFixed;
+PULSE2.SPADSRPInterpolationMethod = Bilinear;
+PULSE2.SPADSRPScaleFactorSigma = 1e+70;
+PULSE2.SPADDragInterpolationMethod = Bilinear;
+PULSE2.SPADDragScaleFactorSigma = 1e+70;
+PULSE2.AtmosDensityScaleFactorSigma = 1e+70;
+PULSE2.ModelFile = 'aura.3ds';
+PULSE2.ModelOffsetX = 0;
+PULSE2.ModelOffsetY = 0;
+PULSE2.ModelOffsetZ = 0;
+PULSE2.ModelRotationX = 0;
+PULSE2.ModelRotationY = 0;
+PULSE2.ModelRotationZ = 0;
+PULSE2.ModelScale = 1;
+PULSE2.AttitudeDisplayStateType = 'Quaternion';
+PULSE2.AttitudeRateDisplayStateType = 'AngularVelocity';
+PULSE2.AttitudeCoordinateSystem = EarthMJ2000Eq;
+PULSE2.EulerAngleSequence = '321';
+
+Create Spacecraft PULSE3;
+PULSE3.DateFormat = UTCGregorian;
+PULSE3.Epoch = '01 Jan 2026 13:00:00.000';
+PULSE3.CoordinateSystem = EarthMJ2000Eq;
+PULSE3.DisplayStateType = BrouwerMeanShort;
+PULSE3.BrouwerShortSMA = 6680.199999999988;
+PULSE3.BrouwerShortECC = 0.00110000000000234;
+PULSE3.BrouwerShortINC = 96.79999999999998;
+PULSE3.BrouwerShortRAAN = 78.70000000020913;
+PULSE3.BrouwerShortAOP = 90.00000317507592;
+PULSE3.BrouwerShortMA = 179.9999956075944;
+PULSE3.DryMass = 30;
+PULSE3.Cd = 2.2;
+PULSE3.Cr = 1.8;
+PULSE3.DragArea = 0.1;
+PULSE3.SRPArea = 1;
+PULSE3.SPADDragScaleFactor = 1;
+PULSE3.SPADSRPScaleFactor = 1;
+PULSE3.AtmosDensityScaleFactor = 1;
+PULSE3.ExtendedMassPropertiesModel = 'None';
+PULSE3.NAIFId = -10003001;
+PULSE3.NAIFIdReferenceFrame = -9003001;
+PULSE3.OrbitColor = Yellow;
+PULSE3.TargetColor = DarkGray;
+PULSE3.OrbitErrorCovariance = [ 1e+70 0 0 0 0 0 ; 0 1e+70 0 0 0 0 ; 0 0 1e+70 0 0 0 ; 0 0 0 1e+70 0 0 ; 0 0 0 0 1e+70 0 ; 0 0 0 0 0 1e+70 ];
+PULSE3.CdSigma = 1e+70;
+PULSE3.CrSigma = 1e+70;
+PULSE3.Id = 'SatId';
+PULSE3.Attitude = CoordinateSystemFixed;
+PULSE3.SPADSRPInterpolationMethod = Bilinear;
+PULSE3.SPADSRPScaleFactorSigma = 1e+70;
+PULSE3.SPADDragInterpolationMethod = Bilinear;
+PULSE3.SPADDragScaleFactorSigma = 1e+70;
+PULSE3.AtmosDensityScaleFactorSigma = 1e+70;
+PULSE3.ModelFile = 'aura.3ds';
+PULSE3.ModelOffsetX = 0;
+PULSE3.ModelOffsetY = 0;
+PULSE3.ModelOffsetZ = 0;
+PULSE3.ModelRotationX = 0;
+PULSE3.ModelRotationY = 0;
+PULSE3.ModelRotationZ = 0;
+PULSE3.ModelScale = 1;
+PULSE3.AttitudeDisplayStateType = 'Quaternion';
+PULSE3.AttitudeRateDisplayStateType = 'AngularVelocity';
+PULSE3.AttitudeCoordinateSystem = EarthMJ2000Eq;
+PULSE3.EulerAngleSequence = '321';
+
+Create Spacecraft PULSE4;
+PULSE4.DateFormat = UTCGregorian;
+PULSE4.Epoch = '01 Jan 2026 13:00:00.000';
+PULSE4.CoordinateSystem = EarthMJ2000Eq;
+PULSE4.DisplayStateType = BrouwerMeanShort;
+PULSE4.BrouwerShortSMA = 6680.199999998394;
+PULSE4.BrouwerShortECC = 0.001099999999973551;
+PULSE4.BrouwerShortINC = 96.79999999999818;
+PULSE4.BrouwerShortRAAN = 78.6999999999997;
+PULSE4.BrouwerShortAOP = 90.0000000075068;
+PULSE4.BrouwerShortMA = 269.9999999924925;
+PULSE4.DryMass = 30;
+PULSE4.Cd = 2.2;
+PULSE4.Cr = 1.8;
+PULSE4.DragArea = 0.1;
+PULSE4.SRPArea = 1;
+PULSE4.SPADDragScaleFactor = 1;
+PULSE4.SPADSRPScaleFactor = 1;
+PULSE4.AtmosDensityScaleFactor = 1;
+PULSE4.ExtendedMassPropertiesModel = 'None';
+PULSE4.NAIFId = -10004001;
+PULSE4.NAIFIdReferenceFrame = -9004001;
+PULSE4.OrbitColor = Blue;
+PULSE4.TargetColor = DimGray;
+PULSE4.OrbitErrorCovariance = [ 1e+70 0 0 0 0 0 ; 0 1e+70 0 0 0 0 ; 0 0 1e+70 0 0 0 ; 0 0 0 1e+70 0 0 ; 0 0 0 0 1e+70 0 ; 0 0 0 0 0 1e+70 ];
+PULSE4.CdSigma = 1e+70;
+PULSE4.CrSigma = 1e+70;
+PULSE4.Id = 'SatId';
+PULSE4.Attitude = CoordinateSystemFixed;
+PULSE4.SPADSRPInterpolationMethod = Bilinear;
+PULSE4.SPADSRPScaleFactorSigma = 1e+70;
+PULSE4.SPADDragInterpolationMethod = Bilinear;
+PULSE4.SPADDragScaleFactorSigma = 1e+70;
+PULSE4.AtmosDensityScaleFactorSigma = 1e+70;
+PULSE4.ModelFile = 'aura.3ds';
+PULSE4.ModelOffsetX = 0;
+PULSE4.ModelOffsetY = 0;
+PULSE4.ModelOffsetZ = 0;
+PULSE4.ModelRotationX = 0;
+PULSE4.ModelRotationY = 0;
+PULSE4.ModelRotationZ = 0;
+PULSE4.ModelScale = 1;
+PULSE4.AttitudeDisplayStateType = 'Quaternion';
+PULSE4.AttitudeRateDisplayStateType = 'AngularVelocity';
+PULSE4.AttitudeCoordinateSystem = EarthMJ2000Eq;
+PULSE4.EulerAngleSequence = '321';
+
+%----------------------------------------
+% Bersagli a 30 deg off-nadir (elevazione minima 58.4 deg)
+%----------------------------------------
+Create GroundStation Aosta30;
+Aosta30.OrbitColor = Thistle;
+Aosta30.TargetColor = DarkGray;
+Aosta30.CentralBody = Earth;
+Aosta30.StateType = Spherical;
+Aosta30.HorizonReference = Ellipsoid;
+Aosta30.Location1 = 45.74;
+Aosta30.Location2 = 7.320000000000001;
+Aosta30.Location3 = 0.58;
+Aosta30.Id = 'StationId';
+Aosta30.IonosphereModel = 'None';
+Aosta30.TroposphereModel = 'None';
+Aosta30.DataSource = 'Constant';
+Aosta30.Temperature = 295.1;
+Aosta30.Pressure = 1013.5;
+Aosta30.Humidity = 55;
+Aosta30.MinimumElevationAngle = 58.4;
+
+Create GroundStation Gemona30;
+Gemona30.OrbitColor = Thistle;
+Gemona30.TargetColor = DarkGray;
+Gemona30.CentralBody = Earth;
+Gemona30.StateType = Spherical;
+Gemona30.HorizonReference = Ellipsoid;
+Gemona30.Location1 = 46.28;
+Gemona30.Location2 = 13.14;
+Gemona30.Location3 = 0.27;
+Gemona30.Id = 'StationId';
+Gemona30.IonosphereModel = 'None';
+Gemona30.TroposphereModel = 'None';
+Gemona30.DataSource = 'Constant';
+Gemona30.Temperature = 295.1;
+Gemona30.Pressure = 1013.5;
+Gemona30.Humidity = 55;
+Gemona30.MinimumElevationAngle = 58.4;
+
+Create GroundStation Napoli30;
+Napoli30.OrbitColor = Thistle;
+Napoli30.TargetColor = DarkGray;
+Napoli30.CentralBody = Earth;
+Napoli30.StateType = Spherical;
+Napoli30.HorizonReference = Ellipsoid;
+Napoli30.Location1 = 40.85;
+Napoli30.Location2 = 14.27;
+Napoli30.Location3 = 0.05;
+Napoli30.Id = 'StationId';
+Napoli30.IonosphereModel = 'None';
+Napoli30.TroposphereModel = 'None';
+Napoli30.DataSource = 'Constant';
+Napoli30.Temperature = 295.1;
+Napoli30.Pressure = 1013.5;
+Napoli30.Humidity = 55;
+Napoli30.MinimumElevationAngle = 58.4;
+
+Create GroundStation Norcia30;
+Norcia30.OrbitColor = Thistle;
+Norcia30.TargetColor = DarkGray;
+Norcia30.CentralBody = Earth;
+Norcia30.StateType = Spherical;
+Norcia30.HorizonReference = Ellipsoid;
+Norcia30.Location1 = 42.79;
+Norcia30.Location2 = 13.09;
+Norcia30.Location3 = 0.6;
+Norcia30.Id = 'StationId';
+Norcia30.IonosphereModel = 'None';
+Norcia30.TroposphereModel = 'None';
+Norcia30.DataSource = 'Constant';
+Norcia30.Temperature = 295.1;
+Norcia30.Pressure = 1013.5;
+Norcia30.Humidity = 55;
+Norcia30.MinimumElevationAngle = 58.4;
+
+Create GroundStation Palermo30;
+Palermo30.OrbitColor = Thistle;
+Palermo30.TargetColor = DarkGray;
+Palermo30.CentralBody = Earth;
+Palermo30.StateType = Spherical;
+Palermo30.HorizonReference = Ellipsoid;
+Palermo30.Location1 = 38.12;
+Palermo30.Location2 = 13.36;
+Palermo30.Location3 = 0.05;
+Palermo30.Id = 'StationId';
+Palermo30.IonosphereModel = 'None';
+Palermo30.TroposphereModel = 'None';
+Palermo30.DataSource = 'Constant';
+Palermo30.Temperature = 295.1;
+Palermo30.Pressure = 1013.5;
+Palermo30.Humidity = 55;
+Palermo30.MinimumElevationAngle = 58.4;
+
+%----------------------------------------
+% Bersagli a 45 deg off-nadir (elevazione minima 42.2 deg)
+%----------------------------------------
+Create GroundStation Aosta45;
+Aosta45.OrbitColor = Thistle;
+Aosta45.TargetColor = DarkGray;
+Aosta45.CentralBody = Earth;
+Aosta45.StateType = Spherical;
+Aosta45.HorizonReference = Ellipsoid;
+Aosta45.Location1 = 45.74;
+Aosta45.Location2 = 7.320000000000001;
+Aosta45.Location3 = 0.58;
+Aosta45.Id = 'StationId';
+Aosta45.IonosphereModel = 'None';
+Aosta45.TroposphereModel = 'None';
+Aosta45.DataSource = 'Constant';
+Aosta45.Temperature = 295.1;
+Aosta45.Pressure = 1013.5;
+Aosta45.Humidity = 55;
+Aosta45.MinimumElevationAngle = 42.2;
+
+Create GroundStation Gemona45;
+Gemona45.OrbitColor = Thistle;
+Gemona45.TargetColor = DarkGray;
+Gemona45.CentralBody = Earth;
+Gemona45.StateType = Spherical;
+Gemona45.HorizonReference = Ellipsoid;
+Gemona45.Location1 = 46.28;
+Gemona45.Location2 = 13.14;
+Gemona45.Location3 = 0.27;
+Gemona45.Id = 'StationId';
+Gemona45.IonosphereModel = 'None';
+Gemona45.TroposphereModel = 'None';
+Gemona45.DataSource = 'Constant';
+Gemona45.Temperature = 295.1;
+Gemona45.Pressure = 1013.5;
+Gemona45.Humidity = 55;
+Gemona45.MinimumElevationAngle = 42.2;
+
+Create GroundStation Napoli45;
+Napoli45.OrbitColor = Thistle;
+Napoli45.TargetColor = DarkGray;
+Napoli45.CentralBody = Earth;
+Napoli45.StateType = Spherical;
+Napoli45.HorizonReference = Ellipsoid;
+Napoli45.Location1 = 40.85;
+Napoli45.Location2 = 14.27;
+Napoli45.Location3 = 0.05;
+Napoli45.Id = 'StationId';
+Napoli45.IonosphereModel = 'None';
+Napoli45.TroposphereModel = 'None';
+Napoli45.DataSource = 'Constant';
+Napoli45.Temperature = 295.1;
+Napoli45.Pressure = 1013.5;
+Napoli45.Humidity = 55;
+Napoli45.MinimumElevationAngle = 42.2;
+
+Create GroundStation Norcia45;
+Norcia45.OrbitColor = Thistle;
+Norcia45.TargetColor = DarkGray;
+Norcia45.CentralBody = Earth;
+Norcia45.StateType = Spherical;
+Norcia45.HorizonReference = Ellipsoid;
+Norcia45.Location1 = 42.79;
+Norcia45.Location2 = 13.09;
+Norcia45.Location3 = 0.6;
+Norcia45.Id = 'StationId';
+Norcia45.IonosphereModel = 'None';
+Norcia45.TroposphereModel = 'None';
+Norcia45.DataSource = 'Constant';
+Norcia45.Temperature = 295.1;
+Norcia45.Pressure = 1013.5;
+Norcia45.Humidity = 55;
+Norcia45.MinimumElevationAngle = 42.2;
+
+Create GroundStation Palermo45;
+Palermo45.OrbitColor = Thistle;
+Palermo45.TargetColor = DarkGray;
+Palermo45.CentralBody = Earth;
+Palermo45.StateType = Spherical;
+Palermo45.HorizonReference = Ellipsoid;
+Palermo45.Location1 = 38.12;
+Palermo45.Location2 = 13.36;
+Palermo45.Location3 = 0.05;
+Palermo45.Id = 'StationId';
+Palermo45.IonosphereModel = 'None';
+Palermo45.TroposphereModel = 'None';
+Palermo45.DataSource = 'Constant';
+Palermo45.Temperature = 295.1;
+Palermo45.Pressure = 1013.5;
+Palermo45.Humidity = 55;
+Palermo45.MinimumElevationAngle = 42.2;
+
+%----------------------------------------
+% Stazioni di terra (elevazione minima 10 deg, come EarthNext)
+%----------------------------------------
+Create GroundStation Fucino;
+Fucino.OrbitColor = Thistle;
+Fucino.TargetColor = DarkGray;
+Fucino.CentralBody = Earth;
+Fucino.StateType = Spherical;
+Fucino.HorizonReference = Ellipsoid;
+Fucino.Location1 = 41.98;
+Fucino.Location2 = 13.6;
+Fucino.Location3 = 0.68;
+Fucino.Id = 'StationId';
+Fucino.IonosphereModel = 'None';
+Fucino.TroposphereModel = 'None';
+Fucino.DataSource = 'Constant';
+Fucino.Temperature = 295.1;
+Fucino.Pressure = 1013.5;
+Fucino.Humidity = 55;
+Fucino.MinimumElevationAngle = 10;
+
+Create GroundStation Matera;
+Matera.OrbitColor = Thistle;
+Matera.TargetColor = DarkGray;
+Matera.CentralBody = Earth;
+Matera.StateType = Spherical;
+Matera.HorizonReference = Ellipsoid;
+Matera.Location1 = 40.65;
+Matera.Location2 = 16.7;
+Matera.Location3 = 0.54;
+Matera.Id = 'StationId';
+Matera.IonosphereModel = 'None';
+Matera.TroposphereModel = 'None';
+Matera.DataSource = 'Constant';
+Matera.Temperature = 295.1;
+Matera.Pressure = 1013.5;
+Matera.Humidity = 55;
+Matera.MinimumElevationAngle = 10;
+
+Create GroundStation Svalbard;
+Svalbard.OrbitColor = Thistle;
+Svalbard.TargetColor = DarkGray;
+Svalbard.CentralBody = Earth;
+Svalbard.StateType = Spherical;
+Svalbard.HorizonReference = Ellipsoid;
+Svalbard.Location1 = 78.23;
+Svalbard.Location2 = 15.4;
+Svalbard.Location3 = 0.5;
+Svalbard.Id = 'StationId';
+Svalbard.IonosphereModel = 'None';
+Svalbard.TroposphereModel = 'None';
+Svalbard.DataSource = 'Constant';
+Svalbard.Temperature = 295.1;
+Svalbard.Pressure = 1013.5;
+Svalbard.Humidity = 55;
+Svalbard.MinimumElevationAngle = 10;
+
+Create GroundStation Fairbanks;
+Fairbanks.OrbitColor = Thistle;
+Fairbanks.TargetColor = DarkGray;
+Fairbanks.CentralBody = Earth;
+Fairbanks.StateType = Spherical;
+Fairbanks.HorizonReference = Ellipsoid;
+Fairbanks.Location1 = 64.86;
+Fairbanks.Location2 = 212.15;
+Fairbanks.Location3 = 0.2;
+Fairbanks.Id = 'StationId';
+Fairbanks.IonosphereModel = 'None';
+Fairbanks.TroposphereModel = 'None';
+Fairbanks.DataSource = 'Constant';
+Fairbanks.Temperature = 295.1;
+Fairbanks.Pressure = 1013.5;
+Fairbanks.Humidity = 55;
+Fairbanks.MinimumElevationAngle = 10;
+
+
+%----------------------------------------
+% Modello di forze e propagatore
+% Drag spento: in missione la propulsione mantiene quota e distanziamento.
+%----------------------------------------
+Create ForceModel FM;
+FM.CentralBody = Earth;
+FM.PrimaryBodies = {Earth};
+FM.PointMasses = {Sun, Luna};
+FM.Drag = None;
+FM.SRP = Off;
+FM.RelativisticCorrection = Off;
+FM.ErrorControl = RSSStep;
+FM.GravityField.Earth.Degree = 4;
+FM.GravityField.Earth.Order = 4;
+FM.GravityField.Earth.StmLimit = 100;
+FM.GravityField.Earth.PotentialFile = 'JGM3.cof';
+FM.GravityField.Earth.TideModel = 'None';
+
+%----------------------------------------
+%---------- Propagators
+%----------------------------------------
+
+Create Propagator PropPULSE;
+PropPULSE.FM = FM;
+PropPULSE.Type = RungeKutta89;
+PropPULSE.InitialStepSize = 60;
+PropPULSE.Accuracy = 9.999999999999999e-12;
+PropPULSE.MinStep = 0.001;
+PropPULSE.MaxStep = 60;
+PropPULSE.MaxStepAttempts = 50;
+PropPULSE.StopIfAccuracyIsViolated = true;
+
+%----------------------------------------
+% Accessi a 30 deg (un locator per satellite)
+%----------------------------------------
+Create ContactLocator Accessi30_1;
+Accessi30_1.Target = PULSE;
+Accessi30_1.Filename = 'PULSE_accessi_30deg.txt';
+Accessi30_1.OccultingBodies = {Earth};
+Accessi30_1.InputEpochFormat = 'TAIModJulian';
+Accessi30_1.InitialEpoch = '21545';
+Accessi30_1.StepSize = 10;
+Accessi30_1.FinalEpoch = '21545.138';
+Accessi30_1.UseLightTimeDelay = false;
+Accessi30_1.UseStellarAberration = false;
+Accessi30_1.WriteReport = true;
+Accessi30_1.RunMode = Automatic;
+Accessi30_1.UseEntireInterval = true;
+Accessi30_1.Observers = {Aosta30, Gemona30, Napoli30, Norcia30, Palermo30};
+Accessi30_1.LightTimeDirection = Transmit;
+Accessi30_1.LeftJustified = false;
+Accessi30_1.ReportPrecision = 6;
+Accessi30_1.ReportFormat = 'Legacy';
+Accessi30_1.IntervalStepSize = 0;
+Accessi30_1.ReportTimeFormat = 'UTCGregorian';
+
+Create ContactLocator Accessi30_2;
+Accessi30_2.Target = PULSE2;
+Accessi30_2.Filename = 'PULSE2_accessi_30deg.txt';
+Accessi30_2.OccultingBodies = {Earth};
+Accessi30_2.InputEpochFormat = 'TAIModJulian';
+Accessi30_2.InitialEpoch = '21545';
+Accessi30_2.StepSize = 10;
+Accessi30_2.FinalEpoch = '21545.138';
+Accessi30_2.UseLightTimeDelay = false;
+Accessi30_2.UseStellarAberration = false;
+Accessi30_2.WriteReport = true;
+Accessi30_2.RunMode = Automatic;
+Accessi30_2.UseEntireInterval = true;
+Accessi30_2.Observers = {Aosta30, Gemona30, Napoli30, Norcia30, Palermo30};
+Accessi30_2.LightTimeDirection = Transmit;
+Accessi30_2.LeftJustified = false;
+Accessi30_2.ReportPrecision = 6;
+Accessi30_2.ReportFormat = 'Legacy';
+Accessi30_2.IntervalStepSize = 0;
+Accessi30_2.ReportTimeFormat = 'UTCGregorian';
+
+Create ContactLocator Accessi30_3;
+Accessi30_3.Target = PULSE3;
+Accessi30_3.Filename = 'PULSE3_accessi_30deg.txt';
+Accessi30_3.OccultingBodies = {Earth};
+Accessi30_3.InputEpochFormat = 'TAIModJulian';
+Accessi30_3.InitialEpoch = '21545';
+Accessi30_3.StepSize = 10;
+Accessi30_3.FinalEpoch = '21545.138';
+Accessi30_3.UseLightTimeDelay = false;
+Accessi30_3.UseStellarAberration = false;
+Accessi30_3.WriteReport = true;
+Accessi30_3.RunMode = Automatic;
+Accessi30_3.UseEntireInterval = true;
+Accessi30_3.Observers = {Aosta30, Gemona30, Napoli30, Norcia30, Palermo30};
+Accessi30_3.LightTimeDirection = Transmit;
+Accessi30_3.LeftJustified = false;
+Accessi30_3.ReportPrecision = 6;
+Accessi30_3.ReportFormat = 'Legacy';
+Accessi30_3.IntervalStepSize = 0;
+Accessi30_3.ReportTimeFormat = 'UTCGregorian';
+
+Create ContactLocator Accessi30_4;
+Accessi30_4.Target = PULSE4;
+Accessi30_4.Filename = 'PULSE4_accessi_30deg.txt';
+Accessi30_4.OccultingBodies = {Earth};
+Accessi30_4.InputEpochFormat = 'TAIModJulian';
+Accessi30_4.InitialEpoch = '21545';
+Accessi30_4.StepSize = 10;
+Accessi30_4.FinalEpoch = '21545.138';
+Accessi30_4.UseLightTimeDelay = false;
+Accessi30_4.UseStellarAberration = false;
+Accessi30_4.WriteReport = true;
+Accessi30_4.RunMode = Automatic;
+Accessi30_4.UseEntireInterval = true;
+Accessi30_4.Observers = {Aosta30, Gemona30, Napoli30, Norcia30, Palermo30};
+Accessi30_4.LightTimeDirection = Transmit;
+Accessi30_4.LeftJustified = false;
+Accessi30_4.ReportPrecision = 6;
+Accessi30_4.ReportFormat = 'Legacy';
+Accessi30_4.IntervalStepSize = 0;
+Accessi30_4.ReportTimeFormat = 'UTCGregorian';
+
+%----------------------------------------
+% Accessi a 45 deg (un locator per satellite)
+%----------------------------------------
+Create ContactLocator Accessi45_1;
+Accessi45_1.Target = PULSE;
+Accessi45_1.Filename = 'PULSE_accessi_45deg.txt';
+Accessi45_1.OccultingBodies = {Earth};
+Accessi45_1.InputEpochFormat = 'TAIModJulian';
+Accessi45_1.InitialEpoch = '21545';
+Accessi45_1.StepSize = 10;
+Accessi45_1.FinalEpoch = '21545.138';
+Accessi45_1.UseLightTimeDelay = false;
+Accessi45_1.UseStellarAberration = false;
+Accessi45_1.WriteReport = true;
+Accessi45_1.RunMode = Automatic;
+Accessi45_1.UseEntireInterval = true;
+Accessi45_1.Observers = {Aosta45, Gemona45, Napoli45, Norcia45, Palermo45};
+Accessi45_1.LightTimeDirection = Transmit;
+Accessi45_1.LeftJustified = false;
+Accessi45_1.ReportPrecision = 6;
+Accessi45_1.ReportFormat = 'Legacy';
+Accessi45_1.IntervalStepSize = 0;
+Accessi45_1.ReportTimeFormat = 'UTCGregorian';
+
+Create ContactLocator Accessi45_2;
+Accessi45_2.Target = PULSE2;
+Accessi45_2.Filename = 'PULSE2_accessi_45deg.txt';
+Accessi45_2.OccultingBodies = {Earth};
+Accessi45_2.InputEpochFormat = 'TAIModJulian';
+Accessi45_2.InitialEpoch = '21545';
+Accessi45_2.StepSize = 10;
+Accessi45_2.FinalEpoch = '21545.138';
+Accessi45_2.UseLightTimeDelay = false;
+Accessi45_2.UseStellarAberration = false;
+Accessi45_2.WriteReport = true;
+Accessi45_2.RunMode = Automatic;
+Accessi45_2.UseEntireInterval = true;
+Accessi45_2.Observers = {Aosta45, Gemona45, Napoli45, Norcia45, Palermo45};
+Accessi45_2.LightTimeDirection = Transmit;
+Accessi45_2.LeftJustified = false;
+Accessi45_2.ReportPrecision = 6;
+Accessi45_2.ReportFormat = 'Legacy';
+Accessi45_2.IntervalStepSize = 0;
+Accessi45_2.ReportTimeFormat = 'UTCGregorian';
+
+Create ContactLocator Accessi45_3;
+Accessi45_3.Target = PULSE3;
+Accessi45_3.Filename = 'PULSE3_accessi_45deg.txt';
+Accessi45_3.OccultingBodies = {Earth};
+Accessi45_3.InputEpochFormat = 'TAIModJulian';
+Accessi45_3.InitialEpoch = '21545';
+Accessi45_3.StepSize = 10;
+Accessi45_3.FinalEpoch = '21545.138';
+Accessi45_3.UseLightTimeDelay = false;
+Accessi45_3.UseStellarAberration = false;
+Accessi45_3.WriteReport = true;
+Accessi45_3.RunMode = Automatic;
+Accessi45_3.UseEntireInterval = true;
+Accessi45_3.Observers = {Aosta45, Gemona45, Napoli45, Norcia45, Palermo45};
+Accessi45_3.LightTimeDirection = Transmit;
+Accessi45_3.LeftJustified = false;
+Accessi45_3.ReportPrecision = 6;
+Accessi45_3.ReportFormat = 'Legacy';
+Accessi45_3.IntervalStepSize = 0;
+Accessi45_3.ReportTimeFormat = 'UTCGregorian';
+
+Create ContactLocator Accessi45_4;
+Accessi45_4.Target = PULSE4;
+Accessi45_4.Filename = 'PULSE4_accessi_45deg.txt';
+Accessi45_4.OccultingBodies = {Earth};
+Accessi45_4.InputEpochFormat = 'TAIModJulian';
+Accessi45_4.InitialEpoch = '21545';
+Accessi45_4.StepSize = 10;
+Accessi45_4.FinalEpoch = '21545.138';
+Accessi45_4.UseLightTimeDelay = false;
+Accessi45_4.UseStellarAberration = false;
+Accessi45_4.WriteReport = true;
+Accessi45_4.RunMode = Automatic;
+Accessi45_4.UseEntireInterval = true;
+Accessi45_4.Observers = {Aosta45, Gemona45, Napoli45, Norcia45, Palermo45};
+Accessi45_4.LightTimeDirection = Transmit;
+Accessi45_4.LeftJustified = false;
+Accessi45_4.ReportPrecision = 6;
+Accessi45_4.ReportFormat = 'Legacy';
+Accessi45_4.IntervalStepSize = 0;
+Accessi45_4.ReportTimeFormat = 'UTCGregorian';
+
+%----------------------------------------
+% Contatti con le stazioni di terra (un locator per satellite)
+%----------------------------------------
+Create ContactLocator Contatti_1;
+Contatti_1.Target = PULSE;
+Contatti_1.Filename = 'PULSE_contatti_stazioni.txt';
+Contatti_1.OccultingBodies = {Earth};
+Contatti_1.InputEpochFormat = 'TAIModJulian';
+Contatti_1.InitialEpoch = '21545';
+Contatti_1.StepSize = 10;
+Contatti_1.FinalEpoch = '21545.138';
+Contatti_1.UseLightTimeDelay = false;
+Contatti_1.UseStellarAberration = false;
+Contatti_1.WriteReport = true;
+Contatti_1.RunMode = Automatic;
+Contatti_1.UseEntireInterval = true;
+Contatti_1.Observers = {Fairbanks, Fucino, Svalbard};
+Contatti_1.LightTimeDirection = Transmit;
+Contatti_1.LeftJustified = false;
+Contatti_1.ReportPrecision = 6;
+Contatti_1.ReportFormat = 'Legacy';
+Contatti_1.IntervalStepSize = 0;
+Contatti_1.ReportTimeFormat = 'UTCGregorian';
+
+Create ContactLocator Contatti_2;
+Contatti_2.Target = PULSE2;
+Contatti_2.Filename = 'PULSE2_contatti_stazioni.txt';
+Contatti_2.OccultingBodies = {Earth};
+Contatti_2.InputEpochFormat = 'TAIModJulian';
+Contatti_2.InitialEpoch = '21545';
+Contatti_2.StepSize = 10;
+Contatti_2.FinalEpoch = '21545.138';
+Contatti_2.UseLightTimeDelay = false;
+Contatti_2.UseStellarAberration = false;
+Contatti_2.WriteReport = true;
+Contatti_2.RunMode = Automatic;
+Contatti_2.UseEntireInterval = true;
+Contatti_2.Observers = {Fairbanks, Fucino, Svalbard};
+Contatti_2.LightTimeDirection = Transmit;
+Contatti_2.LeftJustified = false;
+Contatti_2.ReportPrecision = 6;
+Contatti_2.ReportFormat = 'Legacy';
+Contatti_2.IntervalStepSize = 0;
+Contatti_2.ReportTimeFormat = 'UTCGregorian';
+
+Create ContactLocator Contatti_3;
+Contatti_3.Target = PULSE3;
+Contatti_3.Filename = 'PULSE3_contatti_stazioni.txt';
+Contatti_3.OccultingBodies = {Earth};
+Contatti_3.InputEpochFormat = 'TAIModJulian';
+Contatti_3.InitialEpoch = '21545';
+Contatti_3.StepSize = 10;
+Contatti_3.FinalEpoch = '21545.138';
+Contatti_3.UseLightTimeDelay = false;
+Contatti_3.UseStellarAberration = false;
+Contatti_3.WriteReport = true;
+Contatti_3.RunMode = Automatic;
+Contatti_3.UseEntireInterval = true;
+Contatti_3.Observers = {Fairbanks, Fucino, Svalbard};
+Contatti_3.LightTimeDirection = Transmit;
+Contatti_3.LeftJustified = false;
+Contatti_3.ReportPrecision = 6;
+Contatti_3.ReportFormat = 'Legacy';
+Contatti_3.IntervalStepSize = 0;
+Contatti_3.ReportTimeFormat = 'UTCGregorian';
+
+Create ContactLocator Contatti_4;
+Contatti_4.Target = PULSE4;
+Contatti_4.Filename = 'PULSE4_contatti_stazioni.txt';
+Contatti_4.OccultingBodies = {Earth};
+Contatti_4.InputEpochFormat = 'TAIModJulian';
+Contatti_4.InitialEpoch = '21545';
+Contatti_4.StepSize = 10;
+Contatti_4.FinalEpoch = '21545.138';
+Contatti_4.UseLightTimeDelay = false;
+Contatti_4.UseStellarAberration = false;
+Contatti_4.WriteReport = true;
+Contatti_4.RunMode = Automatic;
+Contatti_4.UseEntireInterval = true;
+Contatti_4.Observers = {Fairbanks, Fucino, Svalbard};
+Contatti_4.LightTimeDirection = Transmit;
+Contatti_4.LeftJustified = false;
+Contatti_4.ReportPrecision = 6;
+Contatti_4.ReportFormat = 'Legacy';
+Contatti_4.IntervalStepSize = 0;
+Contatti_4.ReportTimeFormat = 'UTCGregorian';
+
+%----------------------------------------
+%---------- Subscribers
+%----------------------------------------
+
+Create ReportFile Distanziamento;
+Distanziamento.SolverIterations = Current;
+Distanziamento.UpperLeft = [ 0 0 ];
+Distanziamento.Size = [ 0 0 ];
+Distanziamento.RelativeZOrder = 0;
+Distanziamento.Maximized = false;
+Distanziamento.Filename = 'PULSE_distanziamento.txt';
+Distanziamento.Precision = 16;
+Distanziamento.WriteHeaders = true;
+Distanziamento.LeftJustify = On;
+Distanziamento.ZeroFill = Off;
+Distanziamento.FixedWidth = true;
+Distanziamento.Delimiter = ' ';
+Distanziamento.ColumnWidth = 23;
+Distanziamento.WriteReport = true;
+Distanziamento.AppendToExistingFile = false;
+
+%----------------------------------------
+% Grafico della traccia a terra (vista 3D non inclusa per velocita')
+%----------------------------------------
+Create GroundTrackPlot Traccia;
+Traccia.SolverIterations = Current;
+Traccia.UpperLeft = [ 0 0 ];
+Traccia.Size = [ 0 0 ];
+Traccia.RelativeZOrder = 0;
+Traccia.Maximized = false;
+Traccia.Add = {PULSE, PULSE2, PULSE3, PULSE4};
+Traccia.DataCollectFrequency = 1;
+Traccia.UpdatePlotFrequency = 50;
+Traccia.NumPointsToRedraw = 0;
+Traccia.ShowPlot = false;
+Traccia.MaxPlotPoints = 20000;
+Traccia.CentralBody = Earth;
+Traccia.TextureMap = 'ModifiedBlueMarble.jpg';
+
+%----------------------------------------
+%---------- Arrays, Variables, Strings
+%----------------------------------------
+
+%----------------------------------------
+% Controllo del distanziamento: argomento di latitudine = AOP + TA
+% (le differenze tra satelliti consecutivi devono restare ~90 deg)
+%----------------------------------------
+Create Variable u1 u2 u3 u4 k;
+
+
+%----------------------------------------
+%---------- Mission Sequence
+%----------------------------------------
+
+
+%==========================================================================
+BeginMissionSequence;
+
+% 30 giorni = 4320 passi da 10 minuti; ogni 10 minuti si scrive una riga
+% di controllo del distanziamento
+k = 0;
+While k < 4320
+   k = k + 1;
+   Propagate PropPULSE(PULSE, PULSE2, PULSE3, PULSE4) {PULSE.ElapsedSecs = 600};
+   u1 = PULSE.EarthMJ2000Eq.AOP + PULSE.Earth.TA;
+   u2 = PULSE2.EarthMJ2000Eq.AOP + PULSE2.Earth.TA;
+   u3 = PULSE3.EarthMJ2000Eq.AOP + PULSE3.Earth.TA;
+   u4 = PULSE4.EarthMJ2000Eq.AOP + PULSE4.Earth.TA;
+   Report Distanziamento PULSE.UTCGregorian u1 u2 u3 u4;
+EndWhile;

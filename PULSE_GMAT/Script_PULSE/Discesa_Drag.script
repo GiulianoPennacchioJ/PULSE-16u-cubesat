@@ -1,0 +1,215 @@
+%General Mission Analysis Tool(GMAT) Script
+%Created: 2026-10-04 13:31:25
+
+
+%----------------------------------------
+%---------- Spacecraft
+%----------------------------------------
+
+Create Spacecraft PULSE_L;
+PULSE_L.DateFormat = UTCGregorian;
+PULSE_L.Epoch = '01 Jan 2026 13:00:00.000';
+PULSE_L.CoordinateSystem = EarthMJ2000Eq;
+PULSE_L.DisplayStateType = BrouwerMeanShort;
+PULSE_L.BrouwerShortSMA = 6738.137000002334;
+PULSE_L.BrouwerShortECC = 0.00109999999983509;
+PULSE_L.BrouwerShortINC = 96.80000000000082;
+PULSE_L.BrouwerShortRAAN = 78.7;
+PULSE_L.BrouwerShortAOP = 89.99999999999925;
+PULSE_L.BrouwerShortMA = 3.410605131648481e-13;
+PULSE_L.DryMass = 30;
+PULSE_L.Cd = 2.2;
+PULSE_L.Cr = 1.8;
+PULSE_L.DragArea = 0.1;
+PULSE_L.SRPArea = 1;
+PULSE_L.SPADDragScaleFactor = 1;
+PULSE_L.SPADSRPScaleFactor = 1;
+PULSE_L.AtmosDensityScaleFactor = 1;
+PULSE_L.ExtendedMassPropertiesModel = 'None';
+PULSE_L.NAIFId = -10000001;
+PULSE_L.NAIFIdReferenceFrame = -9000001;
+PULSE_L.OrbitColor = Red;
+PULSE_L.TargetColor = Teal;
+PULSE_L.OrbitErrorCovariance = [ 1e+70 0 0 0 0 0 ; 0 1e+70 0 0 0 0 ; 0 0 1e+70 0 0 0 ; 0 0 0 1e+70 0 0 ; 0 0 0 0 1e+70 0 ; 0 0 0 0 0 1e+70 ];
+PULSE_L.CdSigma = 1e+70;
+PULSE_L.CrSigma = 1e+70;
+PULSE_L.Id = 'SatId';
+PULSE_L.Attitude = CoordinateSystemFixed;
+PULSE_L.SPADSRPInterpolationMethod = Bilinear;
+PULSE_L.SPADSRPScaleFactorSigma = 1e+70;
+PULSE_L.SPADDragInterpolationMethod = Bilinear;
+PULSE_L.SPADDragScaleFactorSigma = 1e+70;
+PULSE_L.AtmosDensityScaleFactorSigma = 1e+70;
+PULSE_L.ModelFile = 'aura.3ds';
+PULSE_L.ModelOffsetX = 0;
+PULSE_L.ModelOffsetY = 0;
+PULSE_L.ModelOffsetZ = 0;
+PULSE_L.ModelRotationX = 0;
+PULSE_L.ModelRotationY = 0;
+PULSE_L.ModelRotationZ = 0;
+PULSE_L.ModelScale = 1;
+PULSE_L.AttitudeDisplayStateType = 'Quaternion';
+PULSE_L.AttitudeRateDisplayStateType = 'AngularVelocity';
+PULSE_L.AttitudeCoordinateSystem = EarthMJ2000Eq;
+PULSE_L.EulerAngleSequence = '321';
+
+
+
+%----------------------------------------
+%---------- ForceModels
+%----------------------------------------
+
+Create ForceModel DefaultProp_ForceModel;
+DefaultProp_ForceModel.CentralBody = Earth;
+DefaultProp_ForceModel.PrimaryBodies = {Earth};
+DefaultProp_ForceModel.PointMasses = {Luna, Sun};
+DefaultProp_ForceModel.SRP = Off;
+DefaultProp_ForceModel.RelativisticCorrection = Off;
+DefaultProp_ForceModel.ErrorControl = RSSStep;
+DefaultProp_ForceModel.GravityField.Earth.Degree = 4;
+DefaultProp_ForceModel.GravityField.Earth.Order = 4;
+DefaultProp_ForceModel.GravityField.Earth.StmLimit = 100;
+DefaultProp_ForceModel.GravityField.Earth.PotentialFile = 'JGM3.cof';
+DefaultProp_ForceModel.GravityField.Earth.TideModel = 'None';
+DefaultProp_ForceModel.Drag.AtmosphereModel = MSISE90;
+DefaultProp_ForceModel.Drag.HistoricWeatherSource = 'ConstantFluxAndGeoMag';
+DefaultProp_ForceModel.Drag.PredictedWeatherSource = 'ConstantFluxAndGeoMag';
+DefaultProp_ForceModel.Drag.CSSISpaceWeatherFile = 'SpaceWeather-All-v1.2.txt';
+DefaultProp_ForceModel.Drag.SchattenFile = 'SchattenPredict.txt';
+DefaultProp_ForceModel.Drag.F107 = 106;
+DefaultProp_ForceModel.Drag.F107A = 106;
+DefaultProp_ForceModel.Drag.MagneticIndex = 3;
+DefaultProp_ForceModel.Drag.SchattenErrorModel = 'Nominal';
+DefaultProp_ForceModel.Drag.SchattenTimingModel = 'NominalCycle';
+DefaultProp_ForceModel.Drag.DragModel = 'Spherical';
+
+%----------------------------------------
+%---------- Propagators
+%----------------------------------------
+
+Create Propagator DefaultProp;
+DefaultProp.FM = DefaultProp_ForceModel;
+DefaultProp.Type = RungeKutta89;
+DefaultProp.InitialStepSize = 60;
+DefaultProp.Accuracy = 9.999999999999999e-12;
+DefaultProp.MinStep = 0.001;
+DefaultProp.MaxStep = 2700;
+DefaultProp.MaxStepAttempts = 50;
+DefaultProp.StopIfAccuracyIsViolated = true;
+
+%----------------------------------------
+%---------- Burns
+%----------------------------------------
+
+Create ImpulsiveBurn DV1;
+DV1.CoordinateSystem = Local;
+DV1.Origin = Earth;
+DV1.Axes = VNB;
+DV1.Element1 = 0;
+DV1.Element2 = 0;
+DV1.Element3 = 0;
+DV1.DecrementMass = false;
+DV1.Isp = 300;
+DV1.GravitationalAccel = 9.81;
+
+Create ImpulsiveBurn DV2;
+DV2.CoordinateSystem = Local;
+DV2.Origin = Earth;
+DV2.Axes = VNB;
+DV2.Element1 = 0;
+DV2.Element2 = 0;
+DV2.Element3 = 0;
+DV2.DecrementMass = false;
+DV2.Isp = 300;
+DV2.GravitationalAccel = 9.81;
+
+%----------------------------------------
+%---------- Solvers
+%----------------------------------------
+
+Create DifferentialCorrector DC1;
+DC1.ShowProgress = true;
+DC1.ReportStyle = Normal;
+DC1.ReportFile = 'DifferentialCorrectorDC1.data';
+DC1.MaximumIterations = 25;
+DC1.DerivativeMethod = ForwardDifference;
+DC1.Algorithm = NewtonRaphson;
+
+%----------------------------------------
+%---------- Subscribers
+%----------------------------------------
+
+Create OrbitView DefaultOrbitView;
+DefaultOrbitView.SolverIterations = Current;
+DefaultOrbitView.UpperLeft = [ 0 0 ];
+DefaultOrbitView.Size = [ 0.8740157480314961 0.4475347661188369 ];
+DefaultOrbitView.RelativeZOrder = 201;
+DefaultOrbitView.Maximized = false;
+DefaultOrbitView.Add = {PULSE_L, Earth};
+DefaultOrbitView.CoordinateSystem = EarthMJ2000Eq;
+DefaultOrbitView.DrawObject = [ true true ];
+DefaultOrbitView.DataCollectFrequency = 1;
+DefaultOrbitView.UpdatePlotFrequency = 50;
+DefaultOrbitView.NumPointsToRedraw = 0;
+DefaultOrbitView.ShowPlot = true;
+DefaultOrbitView.MaxPlotPoints = 20000;
+DefaultOrbitView.ShowLabels = true;
+DefaultOrbitView.ViewPointReference = Earth;
+DefaultOrbitView.ViewPointVector = [ 30000 0 0 ];
+DefaultOrbitView.ViewDirection = Earth;
+DefaultOrbitView.ViewScaleFactor = 1;
+DefaultOrbitView.ViewUpCoordinateSystem = EarthMJ2000Eq;
+DefaultOrbitView.ViewUpAxis = Z;
+DefaultOrbitView.EclipticPlane = Off;
+DefaultOrbitView.XYPlane = On;
+DefaultOrbitView.WireFrame = Off;
+DefaultOrbitView.Axes = On;
+DefaultOrbitView.Grid = Off;
+DefaultOrbitView.SunLine = Off;
+DefaultOrbitView.UseInitialView = On;
+DefaultOrbitView.StarCount = 7000;
+DefaultOrbitView.EnableStars = On;
+DefaultOrbitView.EnableConstellations = On;
+
+Create GroundTrackPlot DefaultGroundTrackPlot;
+DefaultGroundTrackPlot.SolverIterations = Current;
+DefaultGroundTrackPlot.UpperLeft = [ 0 0.4437420986093553 ];
+DefaultGroundTrackPlot.Size = [ 0.8740157480314961 0.4905183312262958 ];
+DefaultGroundTrackPlot.RelativeZOrder = 203;
+DefaultGroundTrackPlot.Maximized = false;
+DefaultGroundTrackPlot.Add = {PULSE_L};
+DefaultGroundTrackPlot.DataCollectFrequency = 1;
+DefaultGroundTrackPlot.UpdatePlotFrequency = 50;
+DefaultGroundTrackPlot.NumPointsToRedraw = 0;
+DefaultGroundTrackPlot.ShowPlot = true;
+DefaultGroundTrackPlot.MaxPlotPoints = 20000;
+DefaultGroundTrackPlot.CentralBody = Earth;
+DefaultGroundTrackPlot.TextureMap = 'ModifiedBlueMarble.jpg';
+
+Create ReportFile RF;
+RF.SolverIterations = Current;
+RF.UpperLeft = [ 0 0 ];
+RF.Size = [ 0 0 ];
+RF.RelativeZOrder = 0;
+RF.Maximized = false;
+RF.Filename = 'Decadimento_F106.txt';
+RF.Precision = 16;
+RF.WriteHeaders = true;
+RF.LeftJustify = On;
+RF.ZeroFill = Off;
+RF.FixedWidth = true;
+RF.Delimiter = ' ';
+RF.ColumnWidth = 23;
+RF.WriteReport = true;
+RF.AppendToExistingFile = false;
+
+
+%----------------------------------------
+%---------- Mission Sequence
+%----------------------------------------
+
+BeginMissionSequence;
+While PULSE_L.EarthMJ2000Eq.BrouwerShortSMA > 6680.2 & PULSE_L.UTCModJulian < 31772
+   Propagate DefaultProp(PULSE_L) {PULSE_L.ElapsedDays = 1};
+   Report RF PULSE_L.UTCGregorian PULSE_L.UTCModJulian PULSE_L.EarthMJ2000Eq.BrouwerShortSMA PULSE_L.Earth.Altitude;
+EndWhile;
