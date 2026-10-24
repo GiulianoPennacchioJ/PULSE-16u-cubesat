@@ -1,0 +1,26 @@
+Periodo orbitale 5434 s, velocità 7725 m/s
+Densità da GMAT (F10.7 = 129): media 1.48e-11, massima 2.23e-11 kg/m³
+Densità MSIS F10.7 = 129, Ap = 15: media 1.83e-11, massima 2.47e-11 kg/m³
+Densità MSIS F10.7 = 181, Ap = 50: media 3.28e-11, massima 4.60e-11 kg/m³
+Densità MSIS F10.7 = 250, Ap = 50: media 5.05e-11, massima 7.52e-11 kg/m³
+
+Coppia aerodinamica = 1/2 rho v² Cd A × braccio
+  media F129: forza 1.12e-04 N; coppia 5 mm → 5.6e-07, 10 mm → 1.1e-06, 20 mm → 2.2e-06, 45 mm → 5.0e-06, 90 mm → 1.0e-05
+  massima F181 Ap50: forza 3.47e-04 N; coppia 5 mm → 1.7e-06, 10 mm → 3.5e-06, 20 mm → 6.9e-06, 45 mm → 1.6e-05, 90 mm → 3.1e-05
+  estrema F250 Ap50: forza 5.66e-04 N; coppia 5 mm → 2.8e-06, 10 mm → 5.7e-06, 20 mm → 1.1e-05, 45 mm → 2.5e-05, 90 mm → 5.1e-05
+
+Coppia da spinta = F × braccio
+  0.55 mN: 5 mm → 2.8e-06 N m, 10 mm → 5.5e-06 N m, 20 mm → 1.1e-05 N m, 45 mm → 2.5e-05 N m, 90 mm → 5.0e-05 N m
+  1.10 mN: 5 mm → 5.5e-06 N m, 10 mm → 1.1e-05 N m, 20 mm → 2.2e-05 N m, 45 mm → 5.0e-05 N m, 90 mm → 9.9e-05 N m
+
+Gradiente di gravità a 45°: 1.2e-06 N m
+Campo magnetico a 302 km: 26 µT (equatore) – 52 µT (polo)
+Dipolo residuo 0.1 A m²: coppia max 5.2e-06 N m
+Dipolo residuo 0.01 A m²: coppia max 5.2e-07 N m
+Pressione solare (0,5 m², riflessione totale, braccio 0,1 m): 4.5e-07 N m
+
+Momento accumulato
+  aerodinamica 6.9e-06 N m costante: 0.037 N m s per orbita
+  aerodinamica 3.1e-05 N m costante: 0.168 N m s per orbita
+  spinta 1.1e-05 N m per 4.2 h di fila: 0.17 N m s
+  spinta 9.9e-05 N m per 4.2 h di fila: 1.50 N m s
