@@ -1,0 +1,13 @@
+1) Errore del giroscopio sull'angolo relativo, sigma = ARW·√T
+  GY1 · Safran STIM300 (ARW 0.15°/√h): bande 0,79 s 38.78 µrad = 11.71 m [NO]; TDI 0,15 s 3.43 pixel [NO]; notte 0,3 s 23.90 µrad [NO]
+  GY2 · Silicon Sensing CRH03 (ARW 0.006°/√h): bande 0,79 s 1.55 µrad = 0.47 m [ok]; TDI 0,15 s 0.14 pixel [ok]; notte 0,3 s 0.96 µrad [ok]
+  GY3 · KVH 1750 (ARW 0.012°/√h): bande 0,79 s 3.10 µrad = 0.94 m [NO]; TDI 0,15 s 0.27 pixel [ok]; notte 0,3 s 1.91 µrad [ok]
+  ARW massimo per DR-18: 0.0108°/√h
+
+2) Moto vero in ripresa diurna (simulazione 1-asse, 99° percentile, caso peggiore)
+  MEMS          banda 1.0 rad/s: 0,79 s →  106.2 µrad (32.07 m), deriva equivalente 0.00770°/s [DR-05 NO]; 0,15 s → 22.16 µrad (4.50 pixel PAN)
+  MEMS          banda 0.3 rad/s: 0,79 s →   80.1 µrad (24.19 m), deriva equivalente 0.00581°/s [DR-05 NO]; 0,15 s → 15.70 µrad (3.19 pixel PAN)
+  MEMS          banda 0.1 rad/s: 0,79 s →   57.5 µrad (17.38 m), deriva equivalente 0.00417°/s [DR-05 NO]; 0,15 s → 10.94 µrad (2.22 pixel PAN)
+  Alta qualità  banda 1.0 rad/s: 0,79 s →    7.7 µrad ( 2.33 m), deriva equivalente 0.00056°/s [DR-05 ok]; 0,15 s →  1.60 µrad (0.32 pixel PAN)
+  Alta qualità  banda 0.3 rad/s: 0,79 s →    6.0 µrad ( 1.81 m), deriva equivalente 0.00043°/s [DR-05 ok]; 0,15 s →  1.17 µrad (0.24 pixel PAN)
+  Alta qualità  banda 0.1 rad/s: 0,79 s →   21.8 µrad ( 6.59 m), deriva equivalente 0.00158°/s [DR-05 NO]; 0,15 s →  4.26 µrad (0.86 pixel PAN)

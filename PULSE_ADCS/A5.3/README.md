@@ -1,9 +1,10 @@
 # PULSE · Fase A · A5.3 — Dimensionamento ADCS (analisi di primo ordine)
 
-Codici e risultati del sotto-passo A5.3 (b, c, d, e). Autore: Giuliano Pennacchio, 24/10/2026.
+Codici e risultati del sotto-passo A5.3 (b–f). Autore: Giuliano Pennacchio, 24/10/2026.
 Decisioni di riferimento nel registro: D-039 (metodo 1-asse), D-043 (orientamento L1 e inerzie),
 D-044 (profilo FMC F2, F1 come stress), D-045 (slew 45° in ≤ 60 s),
-D-046 (controllo K3), D-047 (baricentro), D-048 (ruote W3), D-049 (magnetorquer M3).
+D-046 (controllo K3), D-047 (baricentro), D-048 (ruote W3), D-049 (magnetorquer M3),
+D-050 (giroscopio GY2), D-051 (2 star tracker).
 
 ## Installazione
 
@@ -22,6 +23,7 @@ pip install -r requirements.txt     # numba è facoltativo ma rende la simulazio
 | `sensibilita.py` | A5.3 c) | Inerzia nota al controllore, banda intermedia, quota minima | `risultati/sensibilita.txt` |
 | `disturbi.py` | A5.3 d) | Densità (GMAT e MSIS), coppie di disturbo, momento accumulato. Legge `../../PULSE_GMAT/Output_PULSE/Mantenimento_F129.txt` | `risultati/disturbi.txt` |
 | `desaturazione.py` | A5.3 e) | Scarico magnetico delle ruote in un giorno (4,2 h di spinta) con dipoli 1,2 / 2,0 / 2,5 A·m² | `risultati/desaturazione.txt` |
+| `ripresa_diurna.py` | A5.3 f) | Classi di giroscopio (GY1 contro GY2): errore sull'angolo relativo (ARW·√T) e moto vero in ripresa diurna con controllo chiuso sul giroscopio | `risultati/ripresa_diurna.txt` |
 
 ```bash
 python inerzie.py > risultati/inerzie.txt
@@ -31,6 +33,7 @@ python sim1asse.py
 python sensibilita.py
 python disturbi.py > risultati/disturbi.txt
 python desaturazione.py > risultati/desaturazione.txt
+python ripresa_diurna.py
 ```
 
 I semi del generatore casuale sono fissi: rilanciando si ottengono gli stessi numeri.
@@ -73,3 +76,5 @@ vedi `rotazione.py`); bersaglio solo sotto la traccia.
 - Coppia F2 ≤ 1,2 mN·m, momento ≤ 0,030 N·m·s.
 - **Disturbi (d).** Densità dimensionante 4,6·10⁻¹¹ kg/m³ (MSIS, F10.7 181, Ap 50). La spinta disallineata domina: 1,1·10⁻⁵ N·m con baricentro a 10 mm, 9,9·10⁻⁵ N·m al limite del deployer (90 mm). Disturbi fino a 10⁻⁴ N·m non cambiano il mosso delle riprese.
 - **Scarico (e).** Con baricentro a 10 mm il momento massimo nel giorno è 0,045 N·m·s con 2,0 o 2,5 A·m²; con baricentro a 20 mm 0,154 (2,0 A·m²) e 0,116 (2,5 A·m²). La coppia sull'asse di imbardata è la più difficile da scaricare.
+- **Giroscopio (f).** Per correggere a bordo bande, TDI e shift-and-add serve ARW ≤ 0,011°/√h (DR-18). Con un MEMS tattico (GY1, 0,15°/√h) l'errore sulle bande è 11,7 m e, in anello chiuso, il satellite si muove davvero di 0,004–0,008°/s (DR-05 non rispettato). Con la classe alta qualità (0,01°/√h, prudente per GY2) la deriva vera è 0,0004–0,0006°/s con banda 0,3–1 rad/s; scendere a 0,1 rad/s peggiora (0,0016°/s).
+- **Attenzione:** il "MEMS" di `sim1asse.py` va bene per DR-10 (mosso dentro uno scatto da 20 ms), non per la stabilità su tempi lunghi.
