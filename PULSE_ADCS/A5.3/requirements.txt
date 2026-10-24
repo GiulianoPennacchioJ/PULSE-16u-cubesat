@@ -2,3 +2,4 @@ numpy>=1.24
 scipy>=1.10
 matplotlib>=3.7
 numba>=0.58   # facoltativo: senza, sim1asse.py gira ma molto più lento
+pymsis>=0.10  # solo per disturbi.py

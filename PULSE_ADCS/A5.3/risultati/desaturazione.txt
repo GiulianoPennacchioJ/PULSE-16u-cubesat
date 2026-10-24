@@ -1,0 +1,8 @@
+Spazio per i disturbi: W3 nominale 0.133 N m s, con una ruota guasta 0.052 N m s
+
+G2 (D-047): spinta 1,1e-5 + aria 6,9e-6 N m
+  coppia su beccheggio (Y): momento massimo nel giorno  1.2 A m² → 0.004 | 2.0 A m² → 0.004 | 2.5 A m² → 0.004 N m s
+  coppia su imbardata (Z): momento massimo nel giorno  1.2 A m² → 0.061 | 2.0 A m² → 0.045 | 2.5 A m² → 0.045 N m s
+Baricentro a 20 mm (stress R-26): spinta 2,2e-5 + aria 1,4e-5 N m
+  coppia su beccheggio (Y): momento massimo nel giorno  1.2 A m² → 0.008 | 2.0 A m² → 0.008 | 2.5 A m² → 0.008 N m s
+  coppia su imbardata (Z): momento massimo nel giorno  1.2 A m² → 0.267 | 2.0 A m² → 0.154 | 2.5 A m² → 0.116 N m s
