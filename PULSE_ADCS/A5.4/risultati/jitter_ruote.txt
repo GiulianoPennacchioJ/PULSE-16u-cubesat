@@ -1,0 +1,25 @@
+Limite DR-02: 0.74 µrad di ampiezza; inerzia 0.64 kg·m²
+
+Ampiezza per ruota e per 4 ruote (RSS | somma lineare), µrad:
+  ben bilanciata (CubeWheel Large)              Us 0.06 g·mm, Ud 5.0 g·mm²  ->  d=5 cm: 0.013 / 0.03 | 0.05;  d=10 cm: 0.017 / 0.03 | 0.07;  d=15 cm: 0.022 / 0.04 | 0.09
+  classe W3 con Us prudente (CW1200 + Us 0,5)   Us 0.5 g·mm, Ud 6.5 g·mm²  ->  d=5 cm: 0.049 / 0.10 | 0.20;  d=10 cm: 0.088 / 0.18 | 0.35;  d=15 cm: 0.127 / 0.25 | 0.51
+  obiettivo NASA GSFC CubeSat                   Us 1.5 g·mm, Ud 20.0 g·mm²  ->  d=5 cm: 0.148 / 0.30 | 0.59;  d=10 cm: 0.266 / 0.53 | 1.06;  d=15 cm: 0.383 / 0.77 | 1.53
+  ruota grande (VRW-C-05)                       Us 3.0 g·mm, Ud 100.0 g·mm²  ->  d=5 cm: 0.391 / 0.78 | 1.56;  d=10 cm: 0.625 / 1.25 | 2.50;  d=15 cm: 0.859 / 1.72 | 3.44
+  prototipo non bilanciato (GSFC, albero)       Us 11.0 g·mm, Ud 52.0 g·mm²  ->  d=5 cm: 0.941 / 1.88 | 3.76;  d=10 cm: 1.800 / 3.60 | 7.20;  d=15 cm: 2.659 / 5.32 | 10.64
+
+Fattore di risonanza Q ammesso prima di superare DR-02 (4 ruote RSS, d = 10 cm):
+  ben bilanciata (CubeWheel Large)              Q ≤ 21.5
+  classe W3 con Us prudente (CW1200 + Us 0,5)   Q ≤ 4.2
+  obiettivo NASA GSFC CubeSat                   Q ≤ 1.4
+  ruota grande (VRW-C-05)                       Q ≤ 0.6
+  prototipo non bilanciato (GSFC, albero)       Q ≤ 0.2
+
+Sbilanciamento statico massimo per ruota per rispettare DR-02 con Q = 1 e Ud = 10 g·mm²:
+  d = 5 cm, somma RSS: Us ≤ 4.53 g·mm
+  d = 5 cm, somma lineare: Us ≤ 2.17 g·mm
+  d = 10 cm, somma RSS: Us ≤ 2.27 g·mm
+  d = 10 cm, somma lineare: Us ≤ 1.08 g·mm
+  d = 15 cm, somma RSS: Us ≤ 1.51 g·mm
+  d = 15 cm, somma lineare: Us ≤ 0.72 g·mm
+
+A 143 Hz (8600 giri/min): in una riga da 0,2 ms il moto è al massimo 0.180 × ampiezza; in uno scatto da 20 ms fino a 2 × ampiezza picco-picco

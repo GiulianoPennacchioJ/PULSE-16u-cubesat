@@ -1,0 +1,38 @@
+Banda 1 rad/s, controllo 10 Hz, giroscopio GY2, caso peggiore su 5 ripetizioni
+
+=== NOTTE: nadir -> aggancio LOS al bordo 30°
+  I vera 0.64, controllore stimata +10%                       manovra 30.0° in 74.0 s; coppia max 0.92 mN·m, momento max 0.015 N·m·s -> APE < 0,1° dopo 0.00 s; primi 0,36 s di scatti buoni dopo 0.00 s
+  I vera 0.64, controllore stimata −10%                       manovra 30.0° in 64.5 s; coppia max 1.12 mN·m, momento max 0.015 N·m·s -> APE < 0,1° dopo 0.00 s; primi 0,36 s di scatti buoni dopo 0.00 s
+  I vera 0.64, controllore nominale 0,69 (pre-commissioning)  manovra 30.0° in 73.0 s; coppia max 0.93 mN·m, momento max 0.015 N·m·s -> APE < 0,1° dopo 0.00 s; primi 0,36 s di scatti buoni dopo 0.00 s
+  I vera 1.14, controllore stimata +10%                       manovra 30.0° in 111.5 s; coppia max 0.94 mN·m, momento max 0.028 N·m·s -> APE < 0,1° dopo 0.00 s; primi 0,36 s di scatti buoni dopo 0.00 s
+  I vera 1.14, controllore stimata −10%                       manovra 30.0° in 96.5 s; coppia max 1.14 mN·m, momento max 0.028 N·m·s -> APE < 0,1° dopo 0.00 s; primi 0,36 s di scatti buoni dopo 0.00 s
+  I vera 1.14, controllore nominale 0,69 (pre-commissioning)  manovra 30.0° in 73.0 s; coppia max 1.66 mN·m, momento max 0.028 N·m·s -> APE < 0,1° dopo 0.00 s; primi 0,36 s di scatti buoni dopo 0.00 s
+
+=== NOTTE: nadir -> aggancio LOS al bordo 45°
+  I vera 0.64, controllore stimata +10%                       manovra 45.0° in 72.5 s; coppia max 0.92 mN·m, momento max 0.015 N·m·s -> APE < 0,1° dopo 0.00 s; primi 0,36 s di scatti buoni dopo 0.00 s
+  I vera 0.64, controllore stimata −10%                       manovra 45.0° in 64.5 s; coppia max 1.11 mN·m, momento max 0.017 N·m·s -> APE < 0,1° dopo 0.00 s; primi 0,36 s di scatti buoni dopo 0.00 s
+  I vera 0.64, controllore nominale 0,69 (pre-commissioning)  manovra 45.0° in 71.5 s; coppia max 0.94 mN·m, momento max 0.016 N·m·s -> APE < 0,1° dopo 0.00 s; primi 0,36 s di scatti buoni dopo 0.00 s
+  I vera 1.14, controllore stimata +10%                       manovra 45.0° in 103.5 s; coppia max 0.94 mN·m, momento max 0.028 N·m·s -> APE < 0,1° dopo 0.00 s; primi 0,36 s di scatti buoni dopo 0.00 s
+  I vera 1.14, controllore stimata −10%                       manovra 45.0° in 91.5 s; coppia max 1.13 mN·m, momento max 0.028 N·m·s -> APE < 0,1° dopo 0.00 s; primi 0,36 s di scatti buoni dopo 0.00 s
+  I vera 1.14, controllore nominale 0,69 (pre-commissioning)  manovra 45.0° in 71.5 s; coppia max 1.67 mN·m, momento max 0.028 N·m·s -> APE < 0,1° dopo 0.00 s; primi 0,36 s di scatti buoni dopo 0.00 s
+
+=== GIORNO: slew 45° in 60 s (bang-bang) -> assetto fisso
+  I vera 0.64, controllore stimata +10%                       manovra 45° in 60 s, coppia pianificata 0.61 mN·m; coppia max 0.79 mN·m, momento max 0.017 N·m·s -> APE < 0,1° dopo 0.00 s; deriva < 0,001°/s dopo 2.63 s
+  I vera 0.64, controllore stimata −10%                       manovra 45° in 60 s, coppia pianificata 0.50 mN·m; coppia max 0.60 mN·m, momento max 0.017 N·m·s -> APE < 0,1° dopo 0.00 s; deriva < 0,001°/s dopo 1.06 s
+  I vera 0.64, controllore nominale 0,69 (pre-commissioning)  manovra 45° in 60 s, coppia pianificata 0.60 mN·m; coppia max 0.77 mN·m, momento max 0.017 N·m·s -> APE < 0,1° dopo 0.00 s; deriva < 0,001°/s dopo 2.57 s
+  I vera 1.14, controllore stimata +10%                       manovra 45° in 60 s, coppia pianificata 1.09 mN·m; coppia max 1.40 mN·m, momento max 0.031 N·m·s -> APE < 0,1° dopo 0.00 s; deriva < 0,001°/s dopo 2.63 s
+  I vera 1.14, controllore stimata −10%                       manovra 45° in 60 s, coppia pianificata 0.90 mN·m; coppia max 1.06 mN·m, momento max 0.031 N·m·s -> APE < 0,1° dopo 0.00 s; deriva < 0,001°/s dopo 1.06 s
+  I vera 1.14, controllore nominale 0,69 (pre-commissioning)  manovra 45° in 60 s, coppia pianificata 0.60 mN·m; coppia max 1.24 mN·m, momento max 0.031 N·m·s -> APE < 0,1° dopo 0.00 s; deriva < 0,001°/s dopo 7.05 s
+
+Ripuntamento notturno tra due bersagli sotto la traccia (stesso satellite):
+  finestra 30° (47.7 s), inerzia stimata 1,14 +10%: manovra 152.0 s -> bersagli distanti almeno 1473 km lungo traccia
+  finestra 30° (47.7 s), inerzia stimata 0,64 +10%: manovra 119.5 s -> bersagli distanti almeno 1233 km lungo traccia
+  finestra 45° (84.0 s), inerzia stimata 1,14 +10%: manovra 158.0 s -> bersagli distanti almeno 1785 km lungo traccia
+  finestra 45° (84.0 s), inerzia stimata 0,64 +10%: manovra 122.0 s -> bersagli distanti almeno 1519 km lungo traccia
+Giorno, due bersagli sullo stesso lato a 45°: ripresa ~2,2 s (scena 10 km + 0,79 s bande) + slew 60 s + assestamento 3 s -> stesso assetto: nessuno slew; lato opposto (90°): slew bang-bang 85 s
+Limite inferiore (bang-bang ideale): raffica 1 e raffica 2 entrambe al bordo d'entrata della finestra,
+stessa velocità relativa v -> la velocità passa da v a -v e torna a v: durata 4·v/a_max
+  bordo 30° (LOS 1.09°/s), inerzia stimata 1.25: 90 s -> distanza minima 664 km
+  bordo 30° (LOS 1.09°/s), inerzia stimata 0.70: 50 s -> distanza minima 374 km
+  bordo 45° (LOS 0.715°/s), inerzia stimata 1.25: 57 s -> distanza minima 422 km
+  bordo 45° (LOS 0.715°/s), inerzia stimata 0.70: 32 s -> distanza minima 238 km

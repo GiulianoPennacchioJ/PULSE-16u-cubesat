@@ -1,0 +1,26 @@
+1) Spinta: perdita di ΔV per errore di puntamento della spinta
+  θ =  1°: perdita 0.015% -> 0.03 m/s su 224 m/s in vita (margine D-022: 45 m/s); componente fuori piano 3.9 m/s, media su orbite intere
+  θ =  2°: perdita 0.061% -> 0.14 m/s su 224 m/s in vita (margine D-022: 45 m/s); componente fuori piano 7.8 m/s, media su orbite intere
+  θ =  5°: perdita 0.381% -> 0.85 m/s su 224 m/s in vita (margine D-022: 45 m/s); componente fuori piano 19.5 m/s, media su orbite intere
+  θ = 10°: perdita 1.519% -> 3.40 m/s su 224 m/s in vita (margine D-022: 45 m/s); componente fuori piano 38.9 m/s, media su orbite intere
+  θ = 20°: perdita 6.031% -> 13.51 m/s su 224 m/s in vita (margine D-022: 45 m/s); componente fuori piano 76.6 m/s, media su orbite intere
+
+2) Contatti: angolo dal nadir della stazione in funzione dell'elevazione
+  elevazione 10° ->  70.1° dal nadir
+  elevazione 15° ->  67.3° dal nadir
+  elevazione 20° ->  63.8° dal nadir
+  elevazione 30° ->  55.8° dal nadir
+  elevazione 45° ->  42.5° dal nadir
+  elevazione 90° ->   0.0° dal nadir
+  durata massima teorica sopra 10° (passaggio allo zenit, Terra ferma): 299 s
+  Quota del tempo di contatto (sopra 10°) che resta con antenna fissa a nadir e fascio utile ±X°:
+   Fairbanks  (138 contatti, 9.2 h): ±50° (elev ≥ 36.6°):   14%; ±60° (elev ≥ 24.9°):   29%; ±65° (elev ≥ 18.3°):   47%; ±70° (elev ≥ 10.2°):   97%
+   Fucino     (72 contatti, 4.9 h): ±50° (elev ≥ 36.6°):   14%; ±60° (elev ≥ 24.9°):   30%; ±65° (elev ≥ 18.3°):   48%; ±70° (elev ≥ 10.2°):   98%
+   Svalbard   (289 contatti, 21.4 h): ±50° (elev ≥ 36.6°):   17%; ±60° (elev ≥ 24.9°):   37%; ±65° (elev ≥ 18.3°):   56%; ±70° (elev ≥ 10.2°):   98%
+
+3) Safe mode: potenza dei pannelli rispetto al puntamento perfetto al Sole
+  errore  5° -> 99.6%
+  errore 10° -> 98.5%
+  errore 15° -> 96.6%
+  errore 20° -> 94.0%
+  errore 30° -> 86.6%

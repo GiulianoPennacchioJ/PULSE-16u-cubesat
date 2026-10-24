@@ -1,0 +1,113 @@
+IFOV sCMOS 1x1 15.71 µrad; semi-diagonale campo 22.76 mrad; soglia 1x1 5.24 µrad, 2x2 10.48 µrad
+Spostamento massimo dei punti al bordo (µrad) con riallineamento a sola traslazione;
+tra parentesi: parte di zoom | parte di rotazione | residuo dopo similitudine
+
+=== bersaglio a 0° di traverso al passaggio
+ scatto 20 ms: soglia 5.2 µrad; sola traslazione ok entro ±12.1 s dal passaggio
+  t=   0 s:    0.19 (  0.00 |   0.00 |  0.19)
+  t=   2 s:    1.10 (  0.86 |   0.00 |  0.36)
+  t=   5 s:    2.43 (  2.13 |   0.00 |  0.76)
+  t=  10 s:    4.48 (  4.08 |   0.00 |  1.42)
+  t=  20 s:    7.47 (  6.96 |   0.00 |  2.42) >soglia
+  t=  40 s:    9.35 (  8.80 |   0.00 |  3.12) >soglia
+   con riallineamento di similitudine (traslazione+rotazione+scala): residuo max 2.668 µrad su ±24 s
+ città 10x20 ms (1x1): soglia 5.2 µrad; sola traslazione ok entro ±0.7 s dal passaggio
+  t=   0 s:    1.92 (  0.00 |   0.00 |  1.92)
+  t=   2 s:   10.97 (  8.64 |   0.00 |  3.57) >soglia
+  t=   5 s:   24.31 ( 21.31 |   0.00 |  7.60) >soglia
+  t=  10 s:   44.72 ( 40.75 |   0.00 | 14.17) >soglia
+  t=  20 s:   74.61 ( 69.45 |   0.00 | 24.10) >soglia
+  t=  40 s:   93.26 ( 87.84 |   0.00 | 31.13) >soglia
+   con riallineamento di similitudine (traslazione+rotazione+scala): residuo max 26.603 µrad su ±24 s
+ paesi 15x20 ms (2x2): soglia 10.5 µrad; sola traslazione ok entro ±1.1 s dal passaggio
+  t=   0 s:    2.88 (  0.00 |   0.00 |  2.88)
+  t=   2 s:   16.45 ( 12.95 |   0.00 |  5.35) >soglia
+  t=   5 s:   36.46 ( 31.96 |   0.00 | 11.39) >soglia
+  t=  10 s:   67.04 ( 61.10 |   0.00 | 21.23) >soglia
+  t=  20 s:  111.81 (104.08 |   0.00 | 36.09) >soglia
+  t=  40 s:  139.72 (131.61 |   0.00 | 46.61) >soglia
+   con riallineamento di similitudine (traslazione+rotazione+scala): residuo max 39.836 µrad su ±24 s
+
+=== bersaglio a 30° di traverso al passaggio
+ scatto 20 ms: soglia 5.2 µrad; sola traslazione ok entro ±2.4 s dal passaggio
+  t=   0 s:    4.47 (  0.00 |   3.07 |  3.24)
+  t=   2 s:    5.09 (  0.64 |   3.07 |  3.25)
+  t=   5 s:    6.01 (  1.59 |   3.06 |  3.28) >soglia
+  t=  10 s:    7.44 (  3.07 |   3.01 |  3.36) >soglia
+  t=  20 s:    9.63 (  5.45 |   2.84 |  3.55) >soglia
+  t=  40 s:   11.15 (  7.52 |   2.39 |  3.66) >soglia
+   con riallineamento di similitudine (traslazione+rotazione+scala): residuo max 3.605 µrad su ±24 s
+ città 10x20 ms (1x1): soglia 5.2 µrad; sola traslazione ok entro ±0.0 s dal passaggio
+  t=   0 s:   44.71 (  0.00 |  30.73 | 32.41) >soglia
+  t=   2 s:   50.87 (  6.41 |  30.70 | 32.48) >soglia
+  t=   5 s:   60.04 ( 15.88 |  30.55 | 32.74) >soglia
+  t=  10 s:   74.31 ( 30.72 |  30.05 | 33.51) >soglia
+  t=  20 s:   96.09 ( 54.40 |  28.34 | 35.40) >soglia
+  t=  40 s:  111.25 ( 75.04 |  23.81 | 36.44) >soglia
+   con riallineamento di similitudine (traslazione+rotazione+scala): residuo max 35.960 µrad su ±24 s
+ paesi 15x20 ms (2x2): soglia 10.5 µrad; sola traslazione ok entro ±0.0 s dal passaggio
+  t=   0 s:   67.07 (  0.00 |  46.10 | 48.62) >soglia
+  t=   2 s:   76.30 (  9.62 |  46.04 | 48.72) >soglia
+  t=   5 s:   90.03 ( 23.81 |  45.81 | 49.10) >soglia
+  t=  10 s:  111.40 ( 46.06 |  45.05 | 50.24) >soglia
+  t=  20 s:  143.99 ( 81.55 |  42.46 | 53.03) >soglia
+  t=  40 s:  166.67 (112.46 |  35.66 | 54.57) >soglia
+   con riallineamento di similitudine (traslazione+rotazione+scala): residuo max 53.868 µrad su ±24 s
+
+=== bersaglio a 45° di traverso al passaggio
+ scatto 20 ms: soglia 5.2 µrad; sola traslazione ok entro ±0.0 s dal passaggio
+  t=   0 s:    6.37 (  0.00 |   4.43 |  4.57) >soglia
+  t=   2 s:    6.77 (  0.42 |   4.42 |  4.57) >soglia
+  t=   5 s:    7.35 (  1.04 |   4.41 |  4.57) >soglia
+  t=  10 s:    8.28 (  2.04 |   4.37 |  4.58) >soglia
+  t=  20 s:    9.78 (  3.76 |   4.21 |  4.56) >soglia
+  t=  40 s:   11.17 (  5.78 |   3.73 |  4.40) >soglia
+   con riallineamento di similitudine (traslazione+rotazione+scala): residuo max 4.579 µrad su ±40 s
+ città 10x20 ms (1x1): soglia 5.2 µrad; sola traslazione ok entro ±0.0 s dal passaggio
+  t=   0 s:   63.67 (  0.00 |  44.25 | 45.66) >soglia
+  t=   2 s:   67.63 (  4.19 |  44.22 | 45.69) >soglia
+  t=   5 s:   73.49 ( 10.40 |  44.09 | 45.73) >soglia
+  t=  10 s:   82.70 ( 20.36 |  43.64 | 45.75) >soglia
+  t=  20 s:   97.68 ( 37.58 |  42.03 | 45.58) >soglia
+  t=  40 s:  111.45 ( 57.69 |  37.25 | 43.92) >soglia
+   con riallineamento di similitudine (traslazione+rotazione+scala): residuo max 45.752 µrad su ±40 s
+ paesi 15x20 ms (2x2): soglia 10.5 µrad; sola traslazione ok entro ±0.0 s dal passaggio
+  t=   0 s:   95.51 (  0.00 |  66.38 | 68.49) >soglia
+  t=   2 s:  101.43 (  6.28 |  66.33 | 68.53) >soglia
+  t=   5 s:  110.21 ( 15.60 |  66.12 | 68.58) >soglia
+  t=  10 s:  123.99 ( 30.54 |  65.43 | 68.60) >soglia
+  t=  20 s:  146.41 ( 56.35 |  62.99 | 68.32) >soglia
+  t=  40 s:  167.00 ( 86.47 |  55.81 | 65.79) >soglia
+   con riallineamento di similitudine (traslazione+rotazione+scala): residuo max 68.601 µrad su ±40 s
+
+Stabilità attorno all'asse ottico (deriva casuale d'imbardata) che sposta l'angolo del campo di 1/3 pixel:
+  scatto 20 ms: deriva ≤ 0.659°/s
+  città 10x20 ms (1x1): deriva ≤ 0.066°/s
+  paesi 15x20 ms (2x2): deriva ≤ 0.088°/s
+
+Velocità di rotazione della scena attorno all'asse ottico al passaggio (da compensare con l'imbardata):
+  0° di traverso: 0.000°/s
+  30° di traverso: 0.387°/s
+  45° di traverso: 0.557°/s
+
+Parallasse del rilievo (punto 1 km sopra il piano del bersaglio), al passaggio:
+  0°, città 10x20 ms (1x1): 17.0 µrad per km di dislivello -> dislivello ammesso senza DEM 308 m
+  0°, paesi 15x20 ms (2x2): 25.5 µrad per km di dislivello -> dislivello ammesso senza DEM 411 m
+  30°, città 10x20 ms (1x1): 12.5 µrad per km di dislivello -> dislivello ammesso senza DEM 418 m
+  30°, paesi 15x20 ms (2x2): 18.8 µrad per km di dislivello -> dislivello ammesso senza DEM 557 m
+  45°, città 10x20 ms (1x1): 8.1 µrad per km di dislivello -> dislivello ammesso senza DEM 649 m
+  45°, paesi 15x20 ms (2x2): 12.1 µrad per km di dislivello -> dislivello ammesso senza DEM 865 m
+
+Ripresa diurna ad assetto fisso: residuo geometrico di registrazione al bordo della strisciata, dopo la traslazione
+  0°: TDI 0,15 s 0.01 µrad = 0.001 pixel PAN; bande 0,79 s 0.14 µrad = 0.014 pixel colore
+  30°: TDI 0,15 s 0.01 µrad = 0.001 pixel PAN; bande 0,79 s 0.19 µrad = 0.020 pixel colore
+  45°: TDI 0,15 s 0.01 µrad = 0.002 pixel PAN; bande 0,79 s 0.31 µrad = 0.031 pixel colore
+
+Parallasse del rilievo nella ripresa diurna (1 km di dislivello rispetto al piano di riferimento):
+  0°, TDI 4 passaggi, 0,15 s: 12.7 µrad/km = 2.6 pixel PAN per km; dislivello ammesso con sola traslazione 116 m (soglia 0,3 pixel PAN picco-picco (D-053))
+  0°, bande RGB-NIR, 0,79 s: 67.1 µrad/km = 13.6 pixel PAN per km; dislivello ammesso con sola traslazione 49 m (soglia 1/3 pixel colore)
+  30°, TDI 4 passaggi, 0,15 s: 9.4 µrad/km = 1.9 pixel PAN per km; dislivello ammesso con sola traslazione 157 m (soglia 0,3 pixel PAN picco-picco (D-053))
+  30°, bande RGB-NIR, 0,79 s: 49.5 µrad/km = 10.0 pixel PAN per km; dislivello ammesso con sola traslazione 66 m (soglia 1/3 pixel colore)
+  45°, TDI 4 passaggi, 0,15 s: 6.1 µrad/km = 1.2 pixel PAN per km; dislivello ammesso con sola traslazione 244 m (soglia 0,3 pixel PAN picco-picco (D-053))
+  45°, bande RGB-NIR, 0,79 s: 31.9 µrad/km = 6.5 pixel PAN per km; dislivello ammesso con sola traslazione 103 m (soglia 1/3 pixel colore)
+  Con DEM a bordo (errore verticale tipico ≤ 4 m, Copernicus GLO-30): residuo bande 0.27 µrad, TDI 0.051 µrad a nadir
