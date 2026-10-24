@@ -1,0 +1,16 @@
+L1 asse lungo a nadir (Z) area frontale (faccia normale a X) m2 = 0.1027
+  m=30  pieno [Ix rollio, Iy beccheggio, Iz imbardata] = [0.643 0.643 0.256]  guscio = [0.951 0.951 0.461]
+  m=32  pieno [Ix rollio, Iy beccheggio, Iz imbardata] = [0.686 0.686 0.273]  guscio = [1.015 1.015 0.492]
+  m=36  pieno [Ix rollio, Iy beccheggio, Iz imbardata] = [0.772 0.772 0.307]  guscio = [1.142 1.142 0.553]
+L2 asse lungo di traverso (Y) area frontale (faccia normale a X) m2 = 0.1027
+  m=30  pieno [Ix rollio, Iy beccheggio, Iz imbardata] = [0.643 0.256 0.643]  guscio = [0.951 0.461 0.951]
+  m=32  pieno [Ix rollio, Iy beccheggio, Iz imbardata] = [0.686 0.273 0.686]  guscio = [1.015 0.492 1.015]
+  m=36  pieno [Ix rollio, Iy beccheggio, Iz imbardata] = [0.772 0.307 0.772]  guscio = [1.142 0.553 1.142]
+L3 asse lungo lungo traccia (X) area frontale (faccia normale a X) m2 = 0.0512
+  m=30  pieno [Ix rollio, Iy beccheggio, Iz imbardata] = [0.256 0.643 0.643]  guscio = [0.461 0.951 0.951]
+  m=32  pieno [Ix rollio, Iy beccheggio, Iz imbardata] = [0.273 0.686 0.686]  guscio = [0.492 1.015 1.015]
+  m=36  pieno [Ix rollio, Iy beccheggio, Iz imbardata] = [0.307 0.772 0.772]  guscio = [0.553 1.142 1.142]
+pannelli 1 kg: dI su ciascuno dei due assi normali alla direzione delle ali ~ 0.0555
+L1 asse lungo a nadir (Z) dI max 0.413 coppia giroscopica wf*n*dI 1.17e-05
+L2 asse lungo di traverso (Y) dI max 0.413 coppia giroscopica wf*n*dI 1.17e-05
+L3 asse lungo lungo traccia (X) dI max 0.413 coppia giroscopica wf*n*dI 1.17e-05

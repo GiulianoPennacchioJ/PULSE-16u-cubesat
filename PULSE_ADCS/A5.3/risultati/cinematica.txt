@@ -1,0 +1,18 @@
+off-nadir min 0°: velocità LOS al centro 1.465°/s, max 1.465°/s
+  finestra entro 30°: 47.7 s; LOS al bordo 1.090°/s; accel. max in finestra 2.32e-02°/s²
+  finestra entro 45°: 84.0 s; LOS al bordo 0.715°/s; accel. max in finestra 2.32e-02°/s²
+off-nadir min 30°: velocità LOS al centro 1.259°/s, max 1.259°/s
+  finestra entro 30°: 0.0 s; LOS al bordo 1.259°/s; accel. max in finestra 2.19e-13°/s²
+  finestra entro 45°: 69.1 s; LOS al bordo 0.822°/s; accel. max in finestra 1.71e-02°/s²
+off-nadir min 45°: velocità LOS al centro 1.011°/s, max 1.011°/s
+n orbitale °/s 0.06625327067250575
+h FMC min/max [0.01562698 0.02783556]
+slew 30° in 120s: coppia 9.31e-05–1.66e-04 N·m, picco 0.50°/s, h 0.006–0.010 N·m·s
+slew 30° in 60s: coppia 3.72e-04–6.63e-04 N·m, picco 1.00°/s, h 0.011–0.020 N·m·s
+slew 30° in 30s: coppia 1.49e-03–2.65e-03 N·m, picco 2.00°/s, h 0.022–0.040 N·m·s
+slew 45° in 120s: coppia 1.40e-04–2.49e-04 N·m, picco 0.75°/s, h 0.008–0.015 N·m·s
+slew 45° in 60s: coppia 5.59e-04–9.95e-04 N·m, picco 1.50°/s, h 0.017–0.030 N·m·s
+slew 45° in 30s: coppia 2.23e-03–3.98e-03 N·m, picco 3.00°/s, h 0.034–0.060 N·m·s
+rampa FMC con 1e-03 N·m: durata 15.6–27.8 s, angolo spazzato 10.9–19.5°
+rampa FMC con 3e-03 N·m: durata 5.2–9.3 s, angolo spazzato 3.6–6.5°
+rampa FMC con 7e-03 N·m: durata 2.2–4.0 s, angolo spazzato 1.6–2.8°

@@ -1,0 +1,6 @@
+F2 inerzia vera 1,14, controllore 1,14, banda 0,3, MEMS -> coppia_max_Nm=0.0006661, momento_max_Nms=0.02895, mosso_p99_urad=2.334, mosso_max_urad=2.426, scatti_fuori_soglia=0, ape_max_deg=0.06349, ruota_satura_in_momento=False
+F2 inerzia vera 1,14, controllore 0,69, banda 0,5, MEMS -> coppia_max_Nm=0.0006781, momento_max_Nms=0.02904, mosso_p99_urad=4.074, mosso_max_urad=4.433, scatti_fuori_soglia=0, ape_max_deg=0.1212, ruota_satura_in_momento=False
+F2 inerzia vera 0,64, banda 1,0, MEMS, quota 294,7 km -> coppia_max_Nm=0.0007077, momento_max_Nms=0.01661, mosso_p99_urad=2.951, mosso_max_urad=3.693, scatti_fuori_soglia=0, ape_max_deg=0.06676, ruota_satura_in_momento=False
+F2 inerzia vera 1,14, banda 1,0, MEMS, quota 294,7 km -> coppia_max_Nm=0.0009067, momento_max_Nms=0.02976, mosso_p99_urad=2.216, mosso_max_urad=2.481, scatti_fuori_soglia=0, ape_max_deg=0.07867, ruota_satura_in_momento=False
+F1 3e-3, inerzia vera 1,14, controllore 1,14, banda 1,0, MEMS -> coppia_max_Nm=0.005721, momento_max_Nms=0.02884, tempo_assestamento_s=0, ape_max_deg=0.07357, ruota_satura_in_momento=False
+F1 7e-3, inerzia vera 1,14, controllore 1,14, banda 1,0, MEMS -> coppia_max_Nm=0.007, momento_max_Nms=0.03878, tempo_assestamento_s=nan, ape_max_deg=1.176, ruota_satura_in_momento=False

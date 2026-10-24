@@ -1,0 +1,7 @@
+lat 36° ascendente (notte): v suolo Terra ferma 7.375, con rotazione 7.440 km/s (+0.9%), deriva laterale 2.87°, spostamento laterale in 0,79 s 294 m
+lat 36° discendente (giorno): v suolo Terra ferma 7.375, con rotazione 7.440 km/s (+0.9%), deriva laterale 2.87°, spostamento laterale in 0,79 s 294 m
+lat 42° ascendente (notte): v suolo Terra ferma 7.375, con rotazione 7.438 km/s (+0.9%), deriva laterale 2.63°, spostamento laterale in 0,79 s 270 m
+lat 42° discendente (giorno): v suolo Terra ferma 7.375, con rotazione 7.438 km/s (+0.9%), deriva laterale 2.63°, spostamento laterale in 0,79 s 270 m
+lat 47° ascendente (notte): v suolo Terra ferma 7.375, con rotazione 7.437 km/s (+0.8%), deriva laterale 2.41°, spostamento laterale in 0,79 s 247 m
+lat 47° discendente (giorno): v suolo Terra ferma 7.375, con rotazione 7.437 km/s (+0.8%), deriva laterale 2.41°, spostamento laterale in 0,79 s 247 m
+quota min/max per e 294.71478000000025 309.41122000000087
