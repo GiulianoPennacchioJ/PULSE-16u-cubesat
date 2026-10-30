@@ -13,6 +13,7 @@ Calcoli del passo A5.6 (bilancio di potenza ed EPS di piattaforma, responsabile 
 | `pannelli_config.py` | A5.6.5 | Fattore di illuminazione delle configurazioni di pannelli, area necessaria, drag, Sole sui radiatori |
 | `dimensionamento_pannelli.py` | A5.6.6 | Pannelli con la cella Azur 3G30-Advanced, spinta sostenibile per numero di pannelli |
 | `dimensionamento_batteria.py` | A5.6.6 | Batteria 4S nP: profondità di scarica e autonomia |
+| `simulazione_soc.py` | A5.6.7 | Stato di carica minuto per minuto su 3 giorni: routine, emergenza, stringa guasta, Sole alto, safe |
 | `gmat_blocchi_A5_6_2.txt` | A5.6.2 | Blocchi GMAT di verifica (eclipse locator e inclinazione media giornaliera) |
 
 Uso: `python luce_eclisse.py 2026`, poi `python figura_luce.py`. Risultati in `risultati/`.

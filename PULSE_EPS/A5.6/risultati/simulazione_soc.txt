@@ -1,0 +1,18 @@
+PULSE A5.6.7 - Simulazione dello stato di carica (3 giorni, giorno peggiore per le ali)
+Giorno peggiore: giorno 150 dal 1/1/2026, rollio fisso 32 deg, k = 0.573
+Batteria disponibile a fine vita: 89.8 Wh (3 stringhe), 59.9 Wh (2 stringhe)
+
+Caso                                        SoC min      DoD max   SoC a fine      esubero     spinta
+                                                  %   % (orbita)   giorno 3 %    Wh/giorno   h/giorno
+Routine, Sole medio (4,2 h di spinta)          79.6         20.4         89.1          136       4.20
+Emergenza (2+2 riprese)                        79.6         20.4         89.1          119       4.20
+Routine con una stringa guasta                 69.3         30.7         83.6          136       4.20
+Spinta massima sostenibile (4,9 h)             79.6         20.4         89.1           90       4.90
+Sole alto (7,8 h di spinta)                  -265.4         20.5       -265.4            3       7.80
+Sole alto con regola 90/80% (D-112)            73.2         20.5         84.5           41       5.61
+Routine con regola 90/80% (D-112)              79.6         20.4         89.1          136       4.20
+Safe                                           84.0         16.0         89.2         1073       0.00
+
+DoD max = il calo piu' profondo dal massimo dell'orbita precedente, nell'ultimo giorno (capacita' a fine vita).
+Sole alto: la batteria scende sotto il 50% dopo 9.2 h; deficit medio 109 Wh/giorno
+Esubero = energia delle ali che la batteria piena non puo' prendere (margine giornaliero).
