@@ -1,0 +1,21 @@
+PULSE A5.6.3 - Orbite tipo (luce 0-54.6 min, eclisse 54.6-90.6 min)
+Base sempre accesa: 12.65 W nominali (13.31 W con margine voce)
+
+Orbita                                          Pmax nom Pmax marg   E orbita  E eclisse    P media
+                                                       W         W  Wh (marg)  Wh (marg)   W (marg)
+O1 Attesa                                           14.7      18.9       28.5       11.3       18.9
+O2 Ripresa diurna                                   42.7      55.1       32.4       11.3       21.4
+O3 Ripresa notturna                                 33.2      43.3       33.4       16.2       22.1
+O4a Spinta solo in luce                             67.7      85.8       89.4       11.3       59.2
+O4b Spinta su tutta l'orbita                        67.7      85.8      129.5       51.5       85.8
+O4c Spinta su tutta l'orbita + contatto al buio      86.2     110.2      132.0       53.9       87.4
+O5 Safe                                             16.7      21.4       32.3       12.8       21.4
+
+Giorni tipo: energia giornaliera con margini voce + 20% di sistema
+Giorno                                  attesa   riprese    spinta  contatti      RX S  TOTALE Wh   media W
+Routine (1+1, spinta 4,2 h)                452       5.6       281      28.9       6.9        775      32.3
+Emergenza (2+2, spinta 4,2 h)              452      11.2       281      28.9       6.9        781      32.5
+Sole alto (1+1, spinta 7,8 h)              452       5.6       522      28.9       6.9       1016      42.3
+Caso peggiore (2+2, spinta 7,8 h)          452      11.2       522      28.9       6.9       1022      42.6
+
+Per confronto, energia nominale (senza margini) della routine: 605 Wh/giorno

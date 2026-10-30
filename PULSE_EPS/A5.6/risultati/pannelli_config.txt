@@ -1,0 +1,35 @@
+PULSE A5.6.5 - Configurazione dei pannelli (assetto L1 a nadir, 2 anni, ora del nodo da GMAT)
+Angolo beta: 18.6-31.9 deg
+
+Fattore k = coseno medio sul tempo di luce (1 = pannello sempre perpendicolare al Sole)
+  zenit                          min 0.440  media 0.475
+  ram                            min 0.297  media 0.316
+  scia                           min 0.298  media 0.316
+  normale lato Sole              min 0.319  media 0.420
+  normale lato opposto           min 0.000  media 0.000
+  zenit + rollio ottimo fisso    min 0.575  media 0.617
+  zenit + rollio che insegue il Sole (asse X) min 0.585  media 0.610
+  ala orientabile (asse Y)       min 0.849  media 0.906
+  rollio fisso ottimo: 31-52 deg verso il lato del Sole
+  ala orientabile: area frontale media in luce = 70% dell'area dell'ala (drag)
+
+Potenza da pannello necessaria in luce: Psa = (E_ecl/Xe + E_luce/Xd) / T_luce (SMAD), Xe=0.65 Xd=0.85
+  Routine    48.7 Wh/orbita -> Psa = 67.6 W -> area a incidenza normale 0.250 m2 (a 270 W/m2)
+  Sole alto  63.9 Wh/orbita -> Psa = 87.2 W -> area a incidenza normale 0.323 m2 (a 270 W/m2)
+
+Area di pannello necessaria per configurazione (caso peggiore di k nei 2 anni)
+  zenit                          Routine    k=0.440  area 0.57 m2  = 5.5 pannelli da 226x454 mm
+  zenit                          Sole alto  k=0.440  area 0.73 m2  = 7.2 pannelli da 226x454 mm
+  zenit + rollio ottimo fisso    Routine    k=0.575  area 0.44 m2  = 4.2 pannelli da 226x454 mm
+  zenit + rollio ottimo fisso    Sole alto  k=0.575  area 0.56 m2  = 5.5 pannelli da 226x454 mm
+  zenit + rollio che insegue il Sole (asse X) Routine    k=0.585  area 0.43 m2  = 4.2 pannelli da 226x454 mm
+  zenit + rollio che insegue il Sole (asse X) Sole alto  k=0.585  area 0.55 m2  = 5.4 pannelli da 226x454 mm
+  ala orientabile (asse Y)       Routine    k=0.849  area 0.29 m2  = 2.9 pannelli da 226x454 mm
+  ala orientabile (asse Y)       Sole alto  k=0.849  area 0.38 m2  = 3.7 pannelli da 226x454 mm
+  (faccia a zenit del corpo: 226x226 mm = 0.051 m2, in parte occupata da star tracker e antenna)
+
+Sole sulla faccia dei radiatori (normale all'orbita, lato opposto al Sole, D-095):
+  assetto nominale: mai (beta sempre > 0)
+  con rollio di 45 deg verso il lato opposto al Sole: Sole visibile in 48-65% del tempo di luce;
+     angolo minimo tra Sole e normale del radiatore 64-77 deg; durata = tempo passato in rollio (ripresa diurna, ~8 min/passaggio)
+  in safe (pannelli a zenit verso il Sole entro 15 deg): Sole a >= 75 deg dalla normale del radiatore
