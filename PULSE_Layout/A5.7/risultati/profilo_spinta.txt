@@ -1,0 +1,18 @@
+PULSE A5.7 - Profilo di spinta per orbita (modello A5.6.7, giorno peggiore per le ali)
+Periodo 90.6 min, luce per orbita 54.7 min, passo 20 s
+
+Sole medio, 4,2 h: 4.20 h/giorno effettive; orbite con spinta 16/16 (ultimo giorno)
+  minuti per orbita: 17 17 3 17 17 17 17 16 16 17 17 17 17 17 17 17
+  accensioni in 3 giorni: 48; tratti continui min 2.7 / mediana 16.7 / max 16.7 min
+
+Limite dei 6 pannelli, 4,9 h: 4.90 h/giorno effettive; orbite con spinta 16/16 (ultimo giorno)
+  minuti per orbita: 19 19 4 19 19 19 19 19 19 19 19 19 19 19 19 19
+  accensioni in 3 giorni: 48; tratti continui min 4.0 / mediana 19.3 / max 19.3 min
+
+Sole alto, 7,8 h chieste, regola 90/80% (D-112): 5.61 h/giorno effettive; orbite con spinta 16/16 (ultimo giorno)
+  minuti per orbita: 22 22 11 20 21 21 19 20 22 22 22 22 22 22 22 22
+  accensioni in 3 giorni: 69; tratti continui min 0.3 / mediana 21.0 / max 29.3 min
+
+Sole alto, 7,8 h senza regola (la batteria si svuota: caso non reale): 7.80 h/giorno effettive; orbite con spinta 16/16 (ultimo giorno)
+  minuti per orbita: 30 30 11 31 31 30 31 30 31 30 30 30 30 30 31 30
+  accensioni in 3 giorni: 93; tratti continui min 1.0 / mediana 11.3 / max 29.7 min
