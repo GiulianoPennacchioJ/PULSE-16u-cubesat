@@ -1,0 +1,59 @@
+=== 1) Banda S, discesa ===
+
+[S discesa] elevazione 10°, distanza 1166 km, angolo dal nadir 70.1°
+  Potenza trasmessa (31 dBm)                      1.0 dBW
+  Perdite cavo/diplexer (TBC)                    -1.0 dB
+  Guadagno patch a 70° (modello cos^n)           -0.8 dBic
+  Perdita di spazio libero                     -160.8 dB
+  Atmosfera (TBC)                                -0.5 dB
+  Polarizzazione (TBC)                           -0.5 dB
+  G/T stazione (KSAT 3,7 m)                      12.6 dB/K
+  Costante di Boltzmann                         228.6 dB
+  C/N0                                           78.6 dB-Hz
+  elev 10°: C/N0  78.6 dB-Hz -> velocità max con 3 dB di margine 13.04 Mbit/s; passo del TXS2 utilizzabile 4.305 Mbit/s (margine 7.8 dB)
+  elev 30°: C/N0  88.2 dB-Hz -> velocità max con 3 dB di margine 120.90 Mbit/s; passo del TXS2 utilizzabile 4.305 Mbit/s (margine 17.5 dB)
+  elev 90°: C/N0  97.6 dB-Hz -> velocità max con 3 dB di margine 1053.84 Mbit/s; passo del TXS2 utilizzabile 4.305 Mbit/s (margine 26.9 dB)
+  con 33 dBm a 10°: max 20.66 Mbit/s, passo 4.305
+
+  Elevazione minima per ogni velocità del TXS2 (3 dB di margine):
+     0.135 Mbit/s utili: da 10.0°
+     0.269 Mbit/s utili: da 10.0°
+     0.538 Mbit/s utili: da 10.0°
+     1.076 Mbit/s utili: da 10.0°
+     2.153 Mbit/s utili: da 10.0°
+     4.305 Mbit/s utili: da 10.0°
+
+=== 2) Capacità di scarico in banda S per satellite (GMAT gen 2026, 16.7 contatti/giorno, 71.1 min/giorno, 30 s di aggancio per contatto) ===
+  velocità fissa dimensionata a 10° (4.305 Mbit/s):    2033 MB/giorno
+  velocità variabile per elevazione (passi del TXS2):     2033 MB/giorno
+
+=== 3) Banda S, salita (ricevitore a bordo) ===
+  EIRP stazione (KSAT)                           44.8 dBW
+  Perdita di spazio libero                     -160.1 dB
+  Atmosfera + polarizzazione (TBC)               -1.0 dB
+  G/T bordo (patch -0.8 dBic, Tsys 600 K TBC)    -29.6 dB/K
+  C/N0                                           82.7 dB-Hz
+  a 10°, BPSK senza codifica (Eb/N0 9,6 dB a 1e-5): max 6438 kbit/s con 3 dB di margine
+    64 kbit/s: margine 23.0 dB
+    128 kbit/s: margine 20.0 dB
+    256 kbit/s: margine 17.0 dB
+
+=== 4) UHF (400,15-401 MHz, operazioni spaziali; 435-438 MHz è banda amatoriale) ===
+  Potenza (27 dBm, ISIS)                         -3.0 dBW
+  Cavo (TBC)                                     -1.0 dB
+  Dipolo a 70° dal nadir (TBC)                   -3.0 dBi
+  Perdita di spazio libero                     -145.8 dB
+  Atmosfera (TBC)                                -0.5 dB
+  Polarizzazione lineare/circolare               -3.0 dB
+  G/T stazione (yagi 14 dBic, Tsys 1000 K, stima)    -16.0 dB/K
+  C/N0                                           56.3 dB-Hz
+  9600 bit/s, BPSK senza codifica: margine 4.8 dB (serve ≥ 3)
+  4800 bit/s, BPSK senza codifica: margine 7.8 dB (serve ≥ 3)
+  1200 bit/s, BPSK senza codifica: margine 13.9 dB (serve ≥ 3)
+  capacità a 9600 bit/s: 4.1 MB/giorno (80% del tempo, TBC)
+
+=== 5) Energia delle radio TT&C (D-084, ingresso per A5.6) ===
+  XLink-S con TX e RX (< 15 W) x 71.1 min/giorno = 17.8 Wh/giorno
+  XLink-S solo RX (< 4 W) x 1.3 h/giorno = 5.2 Wh/giorno
+  ricevitore VHF sempre acceso (0,48 W) = 11.5 Wh/giorno
+  totale ~34 Wh/giorno (confronto: ricevitore S acceso sempre = 96 Wh/giorno solo di ricezione)

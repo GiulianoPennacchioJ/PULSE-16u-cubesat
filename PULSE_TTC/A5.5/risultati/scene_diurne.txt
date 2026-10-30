@@ -1,0 +1,6 @@
+Passaggi diurni sull'Italia per satellite (30 giorni, raggio 310 km): 0.90 al giorno
+  tratto utile lungo traccia: mediana 1106 km, max 1549 km
+  scene per passaggio (bersagli a >= 450 km): distribuzione [ 3  6  6 12] per 1,2,3,...
+  scene massime al giorno per satellite: media 2.7
+  per giorno: min 0, mediana 3, max 4
+  giorni con almeno 4 scene possibili: 40%

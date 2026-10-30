@@ -1,0 +1,21 @@
+periodo 01 Jan – 31 Jan 2026: 30.0 giorni
+
+Per satellite (media al giorno):
+  Svalbard :  9.7 contatti/giorno,  43.0 min/giorno, durata mediana 282 s (min 14, max 309)
+  Fairbanks:  4.6 contatti/giorno,  18.4 min/giorno, durata mediana 264 s (min 14, max 307)
+  Fucino   :  2.5 contatti/giorno,   9.8 min/giorno, durata mediana 264 s (min 6, max 303)
+  TOTALE   : 16.7 contatti/giorno,  71.1 min/giorno
+  solo contatti ≥ 2 min: 15.8/giorno, 69.9 min/giorno
+  giorno peggiore (per satellite): 69.5 min
+
+Costellazione (4 satelliti) per stazione, min/giorno e sovrapposizioni:
+  Svalbard : 171.8 min/giorno, sovrapposizioni 0.00 min/giorno
+  Fairbanks:  73.5 min/giorno, sovrapposizioni 0.00 min/giorno
+  Fucino   :  39.0 min/giorno, sovrapposizioni 0.00 min/giorno
+
+Capacità di scarico per satellite al giorno (tempo totale × velocità, efficienza 80% TBC):
+  UHF 9,6 kbit/s :      4.1 MB/giorno
+  S 1 Mbit/s     :    426.6 MB/giorno
+  S 2 Mbit/s     :    853.1 MB/giorno
+  X 50 Mbit/s    :  21328.6 MB/giorno
+  X 150 Mbit/s   :  63985.7 MB/giorno

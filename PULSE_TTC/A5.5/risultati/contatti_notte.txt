@@ -1,0 +1,17 @@
+stazioni nei file: ['Fairbanks', 'Fucino', 'Svalbard']
+
+A) accessi notturni 30° (4 sat): 120; con Fucino ancora visibile dopo la ripresa: 120 (100%)
+   tempo di contatto Fucino rimasto dopo la fine ripresa: min 48 s, mediana 116 s, max 195 s
+   attesa fino al primo contatto Svalbard/Fairbanks: mediana 0.1 h, max 0.1 h
+
+B) accessi notturni a 30° con seconda ripresa possibile (altro satellite, ≤45°, entro 40 min): 19/120 = 16%
+   intervallo tra le due riprese: min 21.6 max 23.2 min
+   casi con Fucino visibile a entrambi: 19; tempo disponibile tra dato a terra e seconda ripresa: min 21.4, mediana 21.9, max 22.8 min
+   partendo da accessi a 45°: 59/209 = 28%
+
+C) dettaglio attesa dopo ripresa notturna 30° (minuti) fino a inizio contatto, per stazione:
+  Fucino   : min 0.0  mediana 0.0  max 0.0
+  Svalbard : min 5.4  mediana 6.3  max 7.9
+  Fairbanks: min 14.0  mediana 14.9  max 16.3
+  durata del contatto Svalbard successivo: min 213 s mediana 248 s max 263 s
+  buco max PULSE (Svalbard+Fairbanks): 8.8 h, inizia 2026-01-15 21:45:07.953000 UTC

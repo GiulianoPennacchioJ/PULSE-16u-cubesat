@@ -1,0 +1,4 @@
+30° notte: 57 passaggi; Fucino in vista dopo l'ultima ripresa nel 100% dei casi; residuo min 48 s, mediana 65 s, max 131 s; con 60 s per l'AI e 10 s di aggancio restano in mediana 0 MB (minimo 0 MB)
+30° giorno: 62 passaggi; Fucino in vista dopo l'ultima ripresa nel 100% dei casi; residuo min 69 s, mediana 136 s, max 198 s; con 60 s per l'AI e 10 s di aggancio restano in mediana 36 MB (minimo 0 MB)
+45° notte: 76 passaggi; Fucino in vista dopo l'ultima ripresa nel 100% dei casi; residuo min 27 s, mediana 45 s, max 67 s; con 60 s per l'AI e 10 s di aggancio restano in mediana 0 MB (minimo 0 MB)
+45° giorno: 84 passaggi; Fucino in vista dopo l'ultima ripresa nel 100% dei casi; residuo min 50 s, mediana 106 s, max 146 s; con 60 s per l'AI e 10 s di aggancio restano in mediana 20 MB (minimo 0 MB)

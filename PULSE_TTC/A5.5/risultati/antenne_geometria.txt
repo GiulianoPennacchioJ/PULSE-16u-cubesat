@@ -1,0 +1,15 @@
+velocità orbitale 7.725 km/s; limbo terrestre a 72.7° dal nadir
+
+1) Distanza e perdita in più rispetto allo zenit
+  elev 10°: nadir  70.1°, distanza   1166 km, perdita in più  11.7 dB
+  elev 20°: nadir  63.8°, distanza    769 km, perdita in più   8.1 dB
+  elev 30°: nadir  55.8°, distanza    568 km, perdita in più   5.5 dB
+  elev 45°: nadir  42.5°, distanza    418 km, perdita in più   2.8 dB
+  elev 60°: nadir  28.5°, distanza    346 km, perdita in più   1.2 dB
+  elev 90°: nadir   0.0°, distanza    302 km, perdita in più   0.0 dB
+
+2) Velocità angolare della linea di vista verso la stazione (passaggio allo zenit, Terra ferma)
+  rispetto al nadir (rotazione in più rispetto alla terna orbitale): max 1.40°/s
+  inerziale (cosa vedono le ruote): max 1.47°/s
+  momento con I = 1.14 kg·m²: 0.029 N·m·s (FMC D-044: 0,029)
+  accelerazione max 0.023°/s², coppia 4.63e-04 N·m

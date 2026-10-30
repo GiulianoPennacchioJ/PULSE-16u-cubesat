@@ -1,0 +1,12 @@
+Passaggi sull'Italia (accessi a 45° ad almeno uno dei 5 bersagli, raggruppati entro 15 min):
+  1.33 passaggi/giorno per satellite (giorno + notte); durata mediana 119 s
+
+Tempo libero per la spinta se si vieta di spingere da N minuti prima del passaggio a 5 min dopo:
+  N =  0 min:  23.8 h/giorno liberi (servono 4,2 h con Sole medio, 7,8 h con Sole alto)
+  N = 15 min:  23.5 h/giorno liberi (servono 4,2 h con Sole medio, 7,8 h con Sole alto)
+  N = 30 min:  23.1 h/giorno liberi (servono 4,2 h con Sole medio, 7,8 h con Sole alto)
+  N = 45 min:  22.8 h/giorno liberi (servono 4,2 h con Sole medio, 7,8 h con Sole alto)
+  N = 60 min:  22.4 h/giorno liberi (servono 4,2 h con Sole medio, 7,8 h con Sole alto)
+  N = 90 min:  21.7 h/giorno liberi (servono 4,2 h con Sole medio, 7,8 h con Sole alto)
+
+Intervallo tra due passaggi sull'Italia: min 10.2 h, mediana 12.4 h, max 34.4 h

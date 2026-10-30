@@ -1,0 +1,8 @@
+notte: 209 accessi a 45°; Fucino in vista DURANTE la ripresa: 209 (100%)
+   prossimo contatto Svalbard  dopo la ripresa: min   5.0  mediana    6.1 min
+   prossimo contatto Fairbanks dopo la ripresa: min  13.7  mediana   14.7 min
+   prossimo contatto Fucino    dopo la ripresa: min 745.3  mediana  746.4 min
+giorno: 209 accessi a 45°; Fucino in vista DURANTE la ripresa: 209 (100%)
+   prossimo contatto Svalbard  dopo la ripresa: min  77.0  mediana   78.4 min
+   prossimo contatto Fairbanks dopo la ripresa: min 625.3  mediana  626.6 min
+   prossimo contatto Fucino    dopo la ripresa: min 609.1  mediana  611.1 min
