@@ -1,0 +1,43 @@
+PULSE A5.6.2 - Luce ed eclisse (orbita D-012, inizio 1/1/2026, 2.0 anni, di/dt = -0.030 deg/anno)
+Periodo orbitale: 90.56 min; orbite al giorno: 15.90
+Precessione J2 a i = 96,68 deg: 0.9858 deg/giorno (Sole medio 0,9856)
+
+Deriva dell'ora del nodo discendente (LTDN), inclinazione 96.8 -> 96.74 deg:
+  dopo 0.0 anni: LTDN 10:30 (i = 96.80 deg)
+  dopo 0.5 anni: LTDN 10:42 (i = 96.79 deg)
+  dopo 1.0 anni: LTDN 10:53 (i = 96.77 deg)
+  dopo 1.5 anni: LTDN 11:02 (i = 96.76 deg)
+  dopo 2.0 anni: LTDN 11:09 (i = 96.74 deg)
+  scostamento massimo da 10:30: +39 min (giorno 730)
+
+Angolo beta: da 10.6 a 26.2 deg (|beta| medio 16.2)
+Ombra per orbita (umbra + penombra): min 35.7  max 36.6  media 36.3 min
+  di cui penombra: 0.27-0.33 min (trascurabile per la potenza)
+Luce per orbita: min 54.0  max 54.9 min; frazione di luce 59.6-60.6 %
+Orbite senza eclisse: 0 giorni su 731
+Ore di luce al giorno: 14.3-14.5 h; ore di buio 9.5-9.7 h
+
+Per mese (primo anno / secondo anno): beta medio, ombra media per orbita
+  gen   25.3 deg  35.8 min  |  20.1 deg  36.2 min
+  feb   25.9 deg  35.7 min  |  20.5 deg  36.1 min
+  mar   23.1 deg  35.9 min  |  17.8 deg  36.3 min
+  apr   18.8 deg  36.2 min  |  13.7 deg  36.5 min
+  mag   15.8 deg  36.4 min  |  11.1 deg  36.6 min
+  giu   15.4 deg  36.4 min  |  11.0 deg  36.6 min
+  lug   16.6 deg  36.3 min  |  12.2 deg  36.5 min
+  ago   17.4 deg  36.3 min  |  12.9 deg  36.5 min
+  set   16.5 deg  36.3 min  |  12.1 deg  36.5 min
+  ott   15.1 deg  36.4 min  |  10.8 deg  36.6 min
+  nov   15.1 deg  36.4 min  |  11.1 deg  36.5 min
+  dic   17.4 deg  36.3 min  |  13.6 deg  36.5 min
+
+Passaggi sull'Italia rispetto all'eclisse (u = argomento di latitudine, 0 = nodo ascendente):
+  ingresso nell'ombra u = 261-311 deg, uscita u = 46-95 deg
+  giorno (ramo discendente):
+    lat 36.6 N: u = 143.1 deg, 12.1-24.5 min dopo l'uscita dall'ombra, 29.7-42.2 min prima del prossimo ingresso
+    lat 42.0 N: u = 137.6 deg, 10.7-23.1 min dopo l'uscita dall'ombra, 31.1-43.6 min prima del prossimo ingresso
+    lat 47.1 N: u = 132.5 deg,  9.4-21.8 min dopo l'uscita dall'ombra, 32.4-44.9 min prima del prossimo ingresso
+  notte (ramo ascendente):
+    lat 36.6 N: u =  36.9 deg, 21.6-34.1 min dopo l'ingresso nell'ombra,  2.2-14.6 min prima dell'uscita
+    lat 42.0 N: u =  42.4 deg, 23.0-35.5 min dopo l'ingresso nell'ombra,  0.9-13.3 min prima dell'uscita
+    lat 47.1 N: u =  47.5 deg, 24.3-36.8 min dopo l'ingresso nell'ombra, -0.4-12.0 min prima dell'uscita

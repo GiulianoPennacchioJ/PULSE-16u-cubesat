@@ -1,0 +1,62 @@
+Create Spacecraft PULSE_L;
+PULSE_L.DateFormat = UTCGregorian;
+PULSE_L.Epoch = '01 Jan 2026 13:00:00.000';
+PULSE_L.CoordinateSystem = EarthMJ2000Eq;
+PULSE_L.DisplayStateType = BrouwerMeanShort;
+PULSE_L.BrouwerShortSMA = 6680.2;
+PULSE_L.BrouwerShortECC = 0.0011;
+PULSE_L.BrouwerShortINC = 96.8;
+PULSE_L.BrouwerShortRAAN = 78.7;
+PULSE_L.BrouwerShortAOP = 90;
+PULSE_L.BrouwerShortMA = 0;
+PULSE_L.DryMass = 30;
+
+Create ForceModel LuceProp_ForceModel;
+LuceProp_ForceModel.CentralBody = Earth;
+LuceProp_ForceModel.PrimaryBodies = {Earth};
+LuceProp_ForceModel.PointMasses = {Luna, Sun};
+LuceProp_ForceModel.SRP = Off;
+LuceProp_ForceModel.RelativisticCorrection = Off;
+LuceProp_ForceModel.ErrorControl = RSSStep;
+LuceProp_ForceModel.GravityField.Earth.Degree = 4;
+LuceProp_ForceModel.GravityField.Earth.Order = 4;
+LuceProp_ForceModel.GravityField.Earth.PotentialFile = 'JGM3.cof';
+
+Create Propagator LuceProp;
+LuceProp.FM = LuceProp_ForceModel;
+LuceProp.Type = RungeKutta89;
+LuceProp.InitialStepSize = 60;
+LuceProp.Accuracy = 1e-11;
+LuceProp.MinStep = 0.001;
+LuceProp.MaxStep = 300;
+LuceProp.MaxStepAttempts = 50;
+LuceProp.StopIfAccuracyIsViolated = true;
+
+Create ReportFile ReportInclinazione;
+ReportInclinazione.Filename = 'PULSE_inclinazione_2anni.txt';
+ReportInclinazione.Precision = 12;
+ReportInclinazione.WriteHeaders = true;
+ReportInclinazione.FixedWidth = true;
+ReportInclinazione.ColumnWidth = 25;
+ReportInclinazione.WriteReport = true;
+
+Create EclipseLocator EclissiPULSE;
+EclissiPULSE.Spacecraft = PULSE_L;
+EclissiPULSE.Filename = 'PULSE_eclissi_2anni.txt';
+EclissiPULSE.OccultingBodies = {Earth, Luna};
+EclissiPULSE.EclipseTypes = {'Umbra', 'Penumbra', 'Antumbra'};
+EclissiPULSE.RunMode = Automatic;
+EclissiPULSE.UseLightTimeDelay = true;
+EclissiPULSE.UseStellarAberration = true;
+EclissiPULSE.WriteReport = true;
+EclissiPULSE.UseEntireInterval = true;
+EclissiPULSE.StepSize = 10;
+
+Create Variable Giorno;
+
+BeginMissionSequence;
+Report ReportInclinazione PULSE_L.UTCGregorian PULSE_L.EarthMJ2000Eq.BrouwerShortINC PULSE_L.EarthMJ2000Eq.BrouwerShortRAAN PULSE_L.BrouwerShortSMA;
+For Giorno = 1:1:730;
+   Propagate LuceProp(PULSE_L) {PULSE_L.ElapsedDays = 1};
+   Report ReportInclinazione PULSE_L.UTCGregorian PULSE_L.EarthMJ2000Eq.BrouwerShortINC PULSE_L.EarthMJ2000Eq.BrouwerShortRAAN PULSE_L.BrouwerShortSMA;
+EndFor;

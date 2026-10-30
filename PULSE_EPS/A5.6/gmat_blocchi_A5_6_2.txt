@@ -1,0 +1,61 @@
+% PULSE A5.6.2 - Verifica GMAT di luce, eclisse e deriva dell'inclinazione
+% Partire da Mantenimento_302.script, salvarlo come Luce_Eclisse_2anni.script,
+% cancellare la vecchia Mission Sequence e incollare i blocchi qui sotto.
+% Si usa il satellite PULSE_L gia' definito (epoca 01 Jan 2026 13:00:00.000 UTC,
+% BrouwerShort SMA 6680,2 km, INC 96,8 deg, RAAN 78,7 deg).
+
+%---------- Blocco 1: modello di forze senza resistenza dell'aria (quota costante, conta solo la gravita')
+Create ForceModel LuceProp_ForceModel;
+LuceProp_ForceModel.CentralBody = Earth;
+LuceProp_ForceModel.PrimaryBodies = {Earth};
+LuceProp_ForceModel.PointMasses = {Luna, Sun};
+LuceProp_ForceModel.SRP = Off;
+LuceProp_ForceModel.RelativisticCorrection = Off;
+LuceProp_ForceModel.ErrorControl = RSSStep;
+LuceProp_ForceModel.GravityField.Earth.Degree = 4;
+LuceProp_ForceModel.GravityField.Earth.Order = 4;
+LuceProp_ForceModel.GravityField.Earth.PotentialFile = 'JGM3.cof';
+
+Create Propagator LuceProp;
+LuceProp.FM = LuceProp_ForceModel;
+LuceProp.Type = RungeKutta89;
+LuceProp.InitialStepSize = 60;
+LuceProp.Accuracy = 1e-11;
+LuceProp.MinStep = 0.001;
+LuceProp.MaxStep = 300;
+LuceProp.MaxStepAttempts = 50;
+LuceProp.StopIfAccuracyIsViolated = true;
+
+%---------- Blocco 2: report giornaliero degli elementi medi ed eclipse locator
+Create ReportFile ReportInclinazione;
+ReportInclinazione.Filename = 'PULSE_inclinazione_2anni.txt';
+ReportInclinazione.Precision = 12;
+ReportInclinazione.WriteHeaders = true;
+ReportInclinazione.LeftJustify = On;
+ReportInclinazione.ZeroFill = Off;
+ReportInclinazione.FixedWidth = true;
+ReportInclinazione.Delimiter = ' ';
+ReportInclinazione.ColumnWidth = 25;
+ReportInclinazione.WriteReport = true;
+
+Create EclipseLocator EclissiPULSE;
+EclissiPULSE.Spacecraft = PULSE_L;
+EclissiPULSE.Filename = 'PULSE_eclissi_2anni.txt';
+EclissiPULSE.OccultingBodies = {Earth, Luna};
+EclissiPULSE.EclipseTypes = {'Umbra', 'Penumbra', 'Antumbra'};
+EclissiPULSE.RunMode = Automatic;
+EclissiPULSE.UseLightTimeDelay = true;
+EclissiPULSE.UseStellarAberration = true;
+EclissiPULSE.WriteReport = true;
+EclissiPULSE.UseEntireInterval = true;
+EclissiPULSE.StepSize = 10;
+
+Create Variable Giorno;
+
+%---------- Blocco 3: Mission Sequence (2 anni, una riga al giorno)
+BeginMissionSequence;
+Report ReportInclinazione PULSE_L.UTCGregorian PULSE_L.EarthMJ2000Eq.BrouwerShortINC PULSE_L.EarthMJ2000Eq.BrouwerShortRAAN PULSE_L.BrouwerShortSMA;
+For Giorno = 1:1:730;
+   Propagate LuceProp(PULSE_L) {PULSE_L.ElapsedDays = 1};
+   Report ReportInclinazione PULSE_L.UTCGregorian PULSE_L.EarthMJ2000Eq.BrouwerShortINC PULSE_L.EarthMJ2000Eq.BrouwerShortRAAN PULSE_L.BrouwerShortSMA;
+EndFor;

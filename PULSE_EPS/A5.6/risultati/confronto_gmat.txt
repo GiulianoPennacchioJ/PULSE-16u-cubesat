@@ -1,0 +1,42 @@
+PULSE A5.6.2 - Verifica GMAT (Sole + Luna, JGM3 4x4, senza resistenza dell'aria)
+Inclinazione media (Brouwer): inizio 96.8000, fine 96.7367 deg; min 96.4510, max 96.8015
+Deriva lineare dell'inclinazione: -0.0523 deg/anno  (MDR -0,33; calcolo Python -0,030)
+SMA media: 6680.04-6680.26 km
+Ora del nodo discendente (LTDN, Sole medio):
+  dopo 0.0 anni: 10:30
+  dopo 0.5 anni: 10:24
+  dopo 1.0 anni: 10:17
+  dopo 1.5 anni: 10:07
+  dopo 2.0 anni: 09:56
+  scostamento da 10:30 a fine missione: -34 min (nota: l'LTDN iniziale da RAAN 78,7 deg e' 10:30)
+
+Eclissi della Terra: 11590 (esclusi i due estremi tagliati); eventi con la Luna: 9
+Ombra per orbita (umbra + penombra): min 34.67  max 35.99  media 35.48 min
+Differenza GMAT - Python (caso -0,030 deg/anno): media -50 s, min -102 s, max -16 s
+Differenza GMAT - Python (caso MDR -0,33 deg/anno): media -6 s, min -44 s, max +101 s
+
+Per mese: ombra media e massima per orbita (min)
+  2026-01  media 35.43  max 35.60
+  2026-02  media 35.31  max 35.36
+  2026-03  media 35.46  max 35.63
+  2026-04  media 35.73  max 35.89
+  2026-05  media 35.91  max 35.99
+  2026-06  media 35.92  max 35.99
+  2026-07  media 35.80  max 35.92
+  2026-08  media 35.66  max 35.76
+  2026-09  media 35.63  max 35.69
+  2026-10  media 35.68  max 35.73
+  2026-11  media 35.66  max 35.73
+  2026-12  media 35.48  max 35.64
+  2027-01  media 35.15  max 35.34
+  2027-02  media 34.97  max 35.02
+  2027-03  media 35.13  max 35.32
+  2027-04  media 35.46  max 35.64
+  2027-05  media 35.69  max 35.77
+  2027-06  media 35.70  max 35.77
+  2027-07  media 35.53  max 35.68
+  2027-08  media 35.33  max 35.45
+  2027-09  media 35.26  max 35.31
+  2027-10  media 35.31  max 35.36
+  2027-11  media 35.30  max 35.36
+  2027-12  media 35.06  max 35.25
