@@ -1,0 +1,21 @@
+voce budget,massa nominale (g),Z dalla faccia a nadir (mm),Y dal centro faccia (mm),X (mm),pezzo
+M-11,206,294,-43,0,"primario (124 mm, 20 mm, alleggerito 60%, foro 49 mm)"
+M-11,56,115,-43,0,"secondario (56 mm, 9 mm, pieno)"
+M-11,62,324,-43,0,"3 lenti in silice (49 mm, 5 mm)"
+M-11,184,254,-43,0,"attacchi flessibili degli specchi (Ti/Invar, 70% degli specchi)"
+M-11,80,324,-43,0,cella delle lenti
+M-11,472,232,-43,0,"tubo in carbonio 140 x 140 mm, 2 mm, dal secondario al piano focale"
+M-11,125,324,-43,0,2 paratie in carbonio alleggerite
+M-11,60,115,-43,0,"ragno del secondario + paraluci interni (secondario e foro, R-50)"
+M-11,100,368,-43,0,piastra del piano focale (Invar/Ti) per i due sensori
+M-11,250,232,-43,0,"viti, inserti, regolazioni"
+M-14,120,50,-43,0,"paraluce esterno in carbonio 10 cm, 1 mm, con alette"
+M-14,180,5,-43,0,coperchio (piastra alleggerita) + cerniera + motorino + finecorsa
+M-12,250,383,-43,0,sensore diurno + elettronica di prossimita' + custodia
+M-13,220,383,-43,0,sensore notturno + elettronica di prossimita' + custodia
+M-15,180,380,60,0,scheda FPGA + memoria
+M-15,120,380,60,0,schedina AI
+M-15,150,380,60,0,scatola/schermo della scheda (Al)
+M-16,20,380,60,0,"memoria di massa (sulla scheda FPGA, D-086)"
+M-23,90,232,-43,0,"termico payload: MLI ~0,2 m2, riscaldatori e sensori di temperatura"
+M-23,90,393,-103,0,termico payload: radiatore e treccia termica del sensore notturno
