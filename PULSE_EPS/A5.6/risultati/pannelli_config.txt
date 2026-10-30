@@ -14,18 +14,18 @@ Fattore k = coseno medio sul tempo di luce (1 = pannello sempre perpendicolare a
   ala orientabile: area frontale media in luce = 70% dell'area dell'ala (drag)
 
 Potenza da pannello necessaria in luce: Psa = (E_ecl/Xe + E_luce/Xd) / T_luce (SMAD), Xe=0.65 Xd=0.85
-  Routine    48.7 Wh/orbita -> Psa = 67.6 W -> area a incidenza normale 0.250 m2 (a 270 W/m2)
-  Sole alto  63.9 Wh/orbita -> Psa = 87.2 W -> area a incidenza normale 0.323 m2 (a 270 W/m2)
+  Routine    50.9 Wh/orbita -> Psa = 70.7 W -> area a incidenza normale 0.262 m2 (a 270 W/m2)
+  Sole alto  66.0 Wh/orbita -> Psa = 90.3 W -> area a incidenza normale 0.334 m2 (a 270 W/m2)
 
 Area di pannello necessaria per configurazione (caso peggiore di k nei 2 anni)
-  zenit                          Routine    k=0.440  area 0.57 m2  = 5.5 pannelli da 226x454 mm
-  zenit                          Sole alto  k=0.440  area 0.73 m2  = 7.2 pannelli da 226x454 mm
-  zenit + rollio ottimo fisso    Routine    k=0.575  area 0.44 m2  = 4.2 pannelli da 226x454 mm
-  zenit + rollio ottimo fisso    Sole alto  k=0.575  area 0.56 m2  = 5.5 pannelli da 226x454 mm
-  zenit + rollio che insegue il Sole (asse X) Routine    k=0.585  area 0.43 m2  = 4.2 pannelli da 226x454 mm
-  zenit + rollio che insegue il Sole (asse X) Sole alto  k=0.585  area 0.55 m2  = 5.4 pannelli da 226x454 mm
-  ala orientabile (asse Y)       Routine    k=0.849  area 0.29 m2  = 2.9 pannelli da 226x454 mm
-  ala orientabile (asse Y)       Sole alto  k=0.849  area 0.38 m2  = 3.7 pannelli da 226x454 mm
+  zenit                          Routine    k=0.440  area 0.60 m2  = 5.8 pannelli da 226x454 mm
+  zenit                          Sole alto  k=0.440  area 0.76 m2  = 7.4 pannelli da 226x454 mm
+  zenit + rollio ottimo fisso    Routine    k=0.575  area 0.46 m2  = 4.4 pannelli da 226x454 mm
+  zenit + rollio ottimo fisso    Sole alto  k=0.575  area 0.58 m2  = 5.7 pannelli da 226x454 mm
+  zenit + rollio che insegue il Sole (asse X) Routine    k=0.585  area 0.45 m2  = 4.4 pannelli da 226x454 mm
+  zenit + rollio che insegue il Sole (asse X) Sole alto  k=0.585  area 0.57 m2  = 5.6 pannelli da 226x454 mm
+  ala orientabile (asse Y)       Routine    k=0.849  area 0.31 m2  = 3.0 pannelli da 226x454 mm
+  ala orientabile (asse Y)       Sole alto  k=0.849  area 0.39 m2  = 3.8 pannelli da 226x454 mm
   (faccia a zenit del corpo: 226x226 mm = 0.051 m2, in parte occupata da star tracker e antenna)
 
 Sole sulla faccia dei radiatori (normale all'orbita, lato opposto al Sole, D-095):

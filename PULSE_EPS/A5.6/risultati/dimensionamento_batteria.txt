@@ -1,0 +1,11 @@
+PULSE A5.6.6 - Batteria
+Energia da dare al buio: 16.9 Wh ai carichi -> 18.8 Wh dalla batteria (rendimento 0.90)
+Stringa 4S: 37.4 Wh; capacita' a fine vita 80%
+  4S2P:  74.9 Wh,  8 celle -> profondita' di scarica a fine vita 31%; con una stringa guasta 63%
+  4S3P: 112.3 Wh, 12 celle -> profondita' di scarica a fine vita 21%; con una stringa guasta 31%
+  4S4P: 149.8 Wh, 16 celle -> profondita' di scarica a fine vita 16%; con una stringa guasta 21%
+
+Autonomia in detumbling dopo il rilascio (16,7 W con margini, ali chiuse, batteria piena all'80%):
+  4S2P: 3.2 h
+  4S3P: 4.8 h
+  4S4P: 6.5 h

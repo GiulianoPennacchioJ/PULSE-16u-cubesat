@@ -21,8 +21,8 @@ W_M2 = 270.0       # W/m2 di pannello a incidenza normale, fine vita, a temperat
 XE, XD = 0.65, 0.85   # rendimenti batteria->carico in eclisse e pannello->carico in luce (SMAD, MPPT)
 LUCE_H, ECL_H = 54.56 / 60, 36.0 / 60     # D-102
 # energia per orbita con margini (orbite_tipo.py): attesa al buio 11,3 Wh; carico in luce dai giorni tipo
-E_ECL = 11.3
-GIORNI = {"Routine": 775.0, "Sole alto": 1016.0}   # Wh/giorno con margini (A5.6.3)
+E_ECL = 12.2
+GIORNI = {"Routine": 809.0, "Sole alto": 1050.0}   # Wh/giorno con margini (A5.6.3)
 ORB = 1440 / 90.56
 
 G = np.loadtxt(os.path.join(os.path.dirname(__file__), "risultati/gmat_ltdn_inclinazione.csv"), delimiter=",")

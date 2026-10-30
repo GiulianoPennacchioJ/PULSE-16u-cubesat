@@ -18,8 +18,8 @@ A = {
     "base":        (12.655, None),   # dettaglio sotto
     "magnetorquer": (3.0, 0.10), "motore": (50.0, 0.05), "radioS": (15.0, 0.10), "rxS": (4.0, 0.10),
     "sens_giorno": (5.0, 0.10), "sens_notte": (2.0, 0.10), "fpga": (5.0, 0.10), "ai": (2.0, 0.10),
-    "scheda_attesa": (3.5, 0.10), "risc_media": (2.0, 0.20), "risc_extra": (2.0, 0.20),  # 4 W a coperchio aperto = media + extra
-    "risc_safe": (1.0, 0.20), "ruote_picco": (16.0, 0.05),
+    "scheda_attesa": (3.5, 0.10), "risc_media": (3.0, 0.20), "risc_extra": (1.0, 0.20),  # 3 W in operazioni (D-100 + D-107); 4 W a coperchio aperto = media + extra
+    "risc_safe": (2.0, 0.20), "ruote_picco": (16.0, 0.05),
 }
 BASE = {  # W, margine
     "ruote": (4.0, 0.05), "star_tracker": (1.0, 0.05), "giroscopio": (5.0, 0.05), "magnetometro": (0.75, 0.05),
@@ -116,7 +116,7 @@ for k, (ng, nn, ore) in giorni.items():
     p("%-36s %9.0f %9.1f %9.0f %9.1f %9.1f %10.0f %9.1f" % (k, e_att * f, e_rip * f, e_sp * f, e_ct * f, e_rx * f, tot, tot / 24))
 p("")
 p("Per confronto, energia nominale (senza margini) della routine: %.0f Wh/giorno" % (
-    (BASE_NOM + 2) * 24 + (5 * 8 + 5 * 10 + 2 * 2 + 2 * 8) / 60 + (2 * 8 + 5 * 10 + 2 * 2 + 2 * 8) / 60 + 53 * 4.2 + 18.5 * 71 / 60 + 4 * 1.3))
+    (BASE_NOM + 3) * 24 + (5 * 8 + 5 * 10 + 2 * 2 + 1 * 8) / 60 + (2 * 8 + 5 * 10 + 2 * 2 + 1 * 8) / 60 + 53 * 4.2 + 18.5 * 71 / 60 + 4 * 1.3))
 txt = "\n".join(out); print(txt)
 import os; os.makedirs("risultati", exist_ok=True)
 open("risultati/orbite_tipo.txt", "w").write(txt + "\n")

@@ -1,0 +1,15 @@
+PULSE A5.6.6 - Pannelli con cella Azur 3G30-Advanced
+Cella: 5E14 e/cm2 -> 2.85 W; a 70 C fattore 0.885; altre perdite 0.951 -> 2.40 W per cella
+Pannello 226x454 mm con 9 celle: 21.6 W a incidenza normale (210 W/m2 di pannello)
+Con k = 0.575: 12.4 W medi in luce per pannello
+
+Sole medio (routine)   Psa 70.7 W -> pannelli necessari 5.70
+Sole alto              Psa 90.3 W -> pannelli necessari 7.28
+
+Ore di spinta al giorno sostenibili, per numero di pannelli (bilancio energetico per orbita, con margini):
+  5 pannelli: Psa 62.0 W -> spinta sostenibile 2.6 h/giorno (servono 4,2 Sole medio, 7,8 Sole alto)
+  6 pannelli: Psa 74.5 W -> spinta sostenibile 4.9 h/giorno (servono 4,2 Sole medio, 7,8 Sole alto)
+  7 pannelli: Psa 86.9 W -> spinta sostenibile 7.2 h/giorno (servono 4,2 Sole medio, 7,8 Sole alto)
+  8 pannelli: Psa 99.3 W -> spinta sostenibile 9.4 h/giorno (servono 4,2 Sole medio, 7,8 Sole alto)
+
+Massa delle celle (CIC 13,1 g): 118 g per pannello; substrato, cerniere e cavi da A5.7 (TBD)

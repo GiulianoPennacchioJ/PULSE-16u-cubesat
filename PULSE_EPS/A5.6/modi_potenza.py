@@ -17,9 +17,9 @@ APP = {
     "Sensore notturno":     2.0,    # P-13
     "Scheda (ripresa)":     7.0,    # P-15 FPGA 5 + AI 2
     "Scheda (attesa)":      3.5,    # P-15 durante lo scarico (D-092, D-097)
-    "Riscaldatori payload (picco)": 4.0,  # P-23, coperchio aperto (D-100)
-    "Riscaldatori payload (media)": 2.0,  # P-23, operazioni (D-100)
-    "Riscaldatori payload (safe)":  1.0,  # P-23, sopravvivenza (D-100)
+    "Riscaldatori payload (picco)": 4.0,  # P-23, coperchio aperto (D-100, D-107)
+    "Riscaldatori payload (media)": 3.0,  # P-23, operazioni (D-100 + 1 W di sopravvivenza D-107)
+    "Riscaldatori payload (safe)":  2.0,  # P-23, safe (D-100 + D-107)
     "OBC (TBC)":            0.4,    # classe ISIS iOBC, 400 mW medi
     "EPS a vuoto (TBC)":    0.6,    # classe GomSpace P60 (ACU + PDU), 600 mW in attesa
     "Termico piattaforma (TBD)": 0.0,  # riscaldatori batteria: da A5.6.6
