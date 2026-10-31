@@ -1,0 +1,14 @@
+PULSE A5.7.4 - Bozza di layout L1b (stima di primo ordine, TBC)
+Linea di spinta (ugello) a Y +19.6 mm, Z -4.9 mm: e' il baricentro a meta' vita
+  iodio pieno : massa 21.24 kg, baricentro X   -6.6 Y  +19.6 Z   -9.7 mm; distanza dalla linea di spinta  4.8 mm (D-047 <= 10); DR-14 ok
+  meta' vita  : massa 20.22 kg, baricentro X   -2.5 Y  +19.6 Z   -4.9 mm; distanza dalla linea di spinta  0.0 mm (D-047 <= 10); DR-14 ok
+  iodio vuoto : massa 19.20 kg, baricentro X   +2.1 Y  +19.6 Z   +0.4 mm; distanza dalla linea di spinta  5.3 mm (D-047 <= 10); DR-14 ok
+
+Verifiche di ingombro (scatole interne; pareti e attacchi esclusi):
+  REGULUS: blocco motore (ugello su -X): sporge 37 mm di lato, 0 mm in Z (limite di lato 39.5 mm)
+  REGULUS: serbatoio dello iodio: sporge 37 mm di lato, 0 mm in Z (limite di lato 39.5 mm)
+  nessuna sovrapposizione tra le scatole
+
+Distanze utili:
+  magnetometro - blocco motore REGULUS (magneti del motore, D-117): 283 mm
+  serbatoio - linea di spinta: 100 mm (DR-67 chiede <= ~70 mm: vedi spostamento del baricentro sopra)

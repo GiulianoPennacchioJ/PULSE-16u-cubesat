@@ -1,0 +1,29 @@
+voce,componente,gruppo,massa (kg),X (mm),Y (mm),Z (mm),dX (mm),dY (mm),dZ (mm),esterno
+M-11,"Colonna del telescopio (ingombro, massa nei pezzi)",Payload,0.0,43.2,-43.2,-22.0,140,140,410,no
+M-15,"Scheda payload (D-091, ruotata: 60 mm lungo Y)",Payload,0.0,43.2,60,103,100,60,100,no
+M-08,REGULUS: blocco motore (ugello su -X),Propulsione,1.98,-88.7,19.6,-4.9,123,95,94,no
+M-08,REGULUS: serbatoio dello iodio,Propulsione,3.0,-88.7,19.6,-104.9,123,95,94,no
+M-19,Batteria 4S3P (sotto la pila delle schede),EPS,0.75,43,70,-79,93,86,62,no
+M-20,"PCDU (P60), nella pila delle schede",EPS,0.282,-41.5,-65.2,93.1,29,92,89,no
+M-03,IMU (inviluppo KVH 1750),GNC,0.7,25,70,3,89,74,89,no
+M-02,"Star tracker 1 (paraluce corto, verso +Z)",GNC,0.235,-70,70,193,56,62,68,no
+M-02,"Star tracker 2 (paraluce corto, verso +Z)",GNC,0.235,75,58,193,62,56,68,no
+M-01,Gruppo 4 ruote in piramide (ingombro TBC),GNC,1.32,43,70,-170,130,80,110,no
+M-04,Magnetorquer X,GNC,0.2,37.6,-105,192,152,13,13,no
+M-04,Magnetorquer Y,GNC,0.2,-10,-43,215,13,140,13,no
+M-04,Magnetorquer Z,GNC,0.2,-100,100,0,13,13,152,no
+M-05,Magnetometro (lontano dalla REGULUS),GNC,0.085,80,-50,212,43,99,17,no
+M-07,Ricevitore GNSS,Avionica e TT&C,0.024,-70,85,100,71,46,11,no
+M-07,Antenna GNSS (+Z),Avionica e TT&C,0.051,-70,100,232.0,40,40,10,si
+M-17,Computer di bordo,Avionica e TT&C,0.1,-104.8,-66.2,93.1,12.4,90,96,no
+M-09,Radio S XLink-S,Avionica e TT&C,0.2,-85.3,-66.2,93.1,25.3,90,65,no
+M-09,Radio VHF/UHF,Avionica e TT&C,0.075,-64.5,-66.2,93.1,15,90,96,no
+M-10,Patch S a nadir (striscia a L),Avionica e TT&C,0.05,-70,70,-232.0,60,60,10,si
+M-10,Patch S a zenit (accanto al telescopio),Avionica e TT&C,0.05,-70,-40,232.0,80,80,9,si
+M-10,Antenna VHF/UHF dispiegabile (AntS),Avionica e TT&C,0.089,43,-43,231.0,98,98,7,si
+M-06,"Sensori solari (6 facce, centro medio)",GNC,0.21,0,0,0,1,1,1,si
+M-21,Telaio 16U,Struttura,2.5,0,0,0,1,1,1,no
+M-22,Meccanismi delle ali (verso +Z),Struttura,0.36,40,40,200,1,1,1,si
+M-18,3 ali chiuse sulla faccia +Y,EPS,1.65,0,121.2,0,226,12,454,si
+M-18,3 ali chiuse sulla faccia +X,EPS,1.65,121.2,0,0,12,226,454,si
+M-25,"Cablaggi (5%, al centro)",Struttura,1.01,0,0,0,1,1,1,no
