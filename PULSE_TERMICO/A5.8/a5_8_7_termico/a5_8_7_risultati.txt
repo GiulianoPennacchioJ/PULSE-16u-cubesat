@@ -1,0 +1,83 @@
+PULSE A5.8.7 - Verifica del termico con il layout L1b (D-125) e le ali W1 (D-126)
+Radiatore 600 cm2 sulla -Y (fascia a tutta larghezza alta 265 mm), motore 15 W (TBC)
+
+1) Fattore di vista radiatore -> retro dell'ala -Y aperta (piano della faccia +Z, cerniera in alto):
+   radiatore in alto (contro le cerniere): F = 0.22
+   radiatore al centro: F = 0.14
+   radiatore in basso (dietro la pila): F = 0.10
+   nel modello si usa il caso prudente F = 0.22
+
+2) Interno a due nodi (pila contro la -Y; resto collegato al radiatore solo dal telaio); pila <-> resto 1.0 W/K (TBC)
+   a) controllo: con F = 0 e tutto il calore collegato forte, il modello torna ai valori di A5.8.4
+   pila 4 W/K, resto 3 W/K, ala F=0.00
+      caldo (gennaio, 22 min di spinta)  pila  15.4.. 25.6 C | resto  17.7.. 22.3 C | batteria  18.8.. 21.1 C | riscaldatori  0.0 W medi (   0 Wh/g)
+      routine d'estate (17 min)          pila  11.8.. 21.6 C | resto  14.5.. 18.2 C | batteria  15.3.. 17.2 C | riscaldatori  1.2 W medi (  30 Wh/g)
+      giorno senza spinta                pila  11.2.. 18.7 C | resto  14.3.. 16.0 C | batteria  15.0.. 15.5 C | riscaldatori  6.2 W medi ( 151 Wh/g)
+      safe (ali al Sole)                 pila  12.5.. 14.4 C | resto  14.7.. 16.3 C | batteria  15.2.. 15.8 C | riscaldatori  0.7 W medi (  18 Wh/g)
+   pila 4 W/K, resto 3 W/K, ala F=0.22
+      caldo (gennaio, 22 min di spinta)  pila  14.1.. 25.2 C | resto  16.8.. 21.7 C | batteria  17.9.. 20.5 C | riscaldatori  0.0 W medi (   0 Wh/g)
+      routine d'estate (17 min)          pila  11.2.. 21.9 C | resto  14.4.. 18.3 C | batteria  15.2.. 17.3 C | riscaldatori  2.0 W medi (  49 Wh/g)
+      giorno senza spinta                pila  10.6.. 19.1 C | resto  14.2.. 16.2 C | batteria  15.0.. 15.6 C | riscaldatori  7.0 W medi ( 169 Wh/g)
+      safe (ali al Sole)                 pila  12.2.. 15.3 C | resto  14.7.. 16.8 C | batteria  15.4.. 16.2 C | riscaldatori  0.6 W medi (  14 Wh/g)
+   pila 2 W/K, resto 3 W/K, ala F=0.00
+      caldo (gennaio, 22 min di spinta)  pila  16.4.. 27.6 C | resto  17.9.. 22.3 C | batteria  18.9.. 21.3 C | riscaldatori  0.0 W medi (   0 Wh/g)
+      routine d'estate (17 min)          pila  12.6.. 23.4 C | resto  14.5.. 18.2 C | batteria  15.3.. 17.2 C | riscaldatori  1.2 W medi (  28 Wh/g)
+      giorno senza spinta                pila  11.8.. 20.3 C | resto  14.3.. 16.0 C | batteria  15.0.. 15.5 C | riscaldatori  6.2 W medi ( 149 Wh/g)
+      safe (ali al Sole)                 pila  13.1.. 15.3 C | resto  14.7.. 16.3 C | batteria  15.2.. 15.9 C | riscaldatori  0.7 W medi (  17 Wh/g)
+   pila 2 W/K, resto 3 W/K, ala F=0.22
+      caldo (gennaio, 22 min di spinta)  pila  15.2.. 27.2 C | resto  16.9.. 21.8 C | batteria  18.1.. 20.6 C | riscaldatori  0.0 W medi (   0 Wh/g)
+      routine d'estate (17 min)          pila  12.1.. 23.7 C | resto  14.4.. 18.3 C | batteria  15.2.. 17.3 C | riscaldatori  1.9 W medi (  46 Wh/g)
+      giorno senza spinta                pila  11.3.. 20.6 C | resto  14.2.. 16.1 C | batteria  15.0.. 15.6 C | riscaldatori  6.9 W medi ( 167 Wh/g)
+      safe (ali al Sole)                 pila  12.9.. 16.1 C | resto  14.7.. 16.8 C | batteria  15.4.. 16.2 C | riscaldatori  0.5 W medi (  12 Wh/g)
+   pila 4 W/K, resto 2 W/K, ala F=0.00
+      caldo (gennaio, 22 min di spinta)  pila  14.7.. 25.5 C | resto  18.2.. 22.7 C | batteria  19.3.. 21.6 C | riscaldatori  0.0 W medi (   0 Wh/g)
+      routine d'estate (17 min)          pila  10.9.. 21.1 C | resto  14.6.. 18.2 C | batteria  15.3.. 17.3 C | riscaldatori  1.0 W medi (  24 Wh/g)
+      giorno senza spinta                pila  10.1.. 18.2 C | resto  14.3.. 16.0 C | batteria  15.0.. 15.5 C | riscaldatori  5.9 W medi ( 144 Wh/g)
+      safe (ali al Sole)                 pila  11.7.. 13.7 C | resto  14.7.. 16.4 C | batteria  15.3.. 15.9 C | riscaldatori  0.5 W medi (  12 Wh/g)
+   pila 4 W/K, resto 2 W/K, ala F=0.22
+      caldo (gennaio, 22 min di spinta)  pila  13.4.. 25.2 C | resto  17.3.. 22.2 C | batteria  18.5.. 21.0 C | riscaldatori  0.0 W medi (   0 Wh/g)
+      routine d'estate (17 min)          pila  10.1.. 21.4 C | resto  14.4.. 18.3 C | batteria  15.2.. 17.3 C | riscaldatori  1.7 W medi (  41 Wh/g)
+      giorno senza spinta                pila   9.4.. 18.7 C | resto  14.2.. 16.2 C | batteria  15.0.. 15.6 C | riscaldatori  6.6 W medi ( 160 Wh/g)
+      safe (ali al Sole)                 pila  11.3.. 14.6 C | resto  14.8.. 16.9 C | batteria  15.4.. 16.3 C | riscaldatori  0.3 W medi (   7 Wh/g)
+   pila 4 W/K, resto 1 W/K, ala F=0.00
+      caldo (gennaio, 22 min di spinta)  pila  13.4.. 25.2 C | resto  19.2.. 23.5 C | batteria  20.2.. 22.5 C | riscaldatori  0.0 W medi (   0 Wh/g)
+      routine d'estate (17 min)          pila   9.1.. 20.0 C | resto  14.7.. 18.3 C | batteria  15.5.. 17.4 C | riscaldatori  0.5 W medi (  12 Wh/g)
+      giorno senza spinta                pila   8.0.. 17.0 C | resto  14.3.. 16.0 C | batteria  15.0.. 15.5 C | riscaldatori  5.4 W medi ( 130 Wh/g)
+      safe (ali al Sole)                 pila  10.3.. 12.1 C | resto  14.9.. 16.6 C | batteria  15.5.. 16.2 C | riscaldatori  0.1 W medi (   2 Wh/g)
+   pila 4 W/K, resto 1 W/K, ala F=0.22
+      caldo (gennaio, 22 min di spinta)  pila  12.0.. 25.1 C | resto  18.4.. 23.1 C | batteria  19.6.. 22.0 C | riscaldatori  0.0 W medi (   0 Wh/g)
+      routine d'estate (17 min)          pila   8.1.. 20.4 C | resto  14.6.. 18.3 C | batteria  15.4.. 17.4 C | riscaldatori  1.1 W medi (  26 Wh/g)
+      giorno senza spinta                pila   7.1.. 17.6 C | resto  14.2.. 16.1 C | batteria  15.0.. 15.6 C | riscaldatori  5.9 W medi ( 144 Wh/g)
+      safe (ali al Sole)                 pila  10.0.. 13.6 C | resto  15.3.. 17.4 C | batteria  16.0.. 16.8 C | riscaldatori  0.0 W medi (   0 Wh/g)
+   pila 2 W/K, resto 1 W/K, ala F=0.00
+      caldo (gennaio, 22 min di spinta)  pila  14.8.. 27.2 C | resto  19.6.. 23.9 C | batteria  20.6.. 22.9 C | riscaldatori  0.0 W medi (   0 Wh/g)
+      routine d'estate (17 min)          pila  10.2.. 21.6 C | resto  14.7.. 18.3 C | batteria  15.5.. 17.4 C | riscaldatori  0.3 W medi (   8 Wh/g)
+      giorno senza spinta                pila   8.9.. 18.3 C | resto  14.3.. 16.0 C | batteria  15.0.. 15.5 C | riscaldatori  5.2 W medi ( 125 Wh/g)
+      safe (ali al Sole)                 pila  11.3.. 13.2 C | resto  15.1.. 16.8 C | batteria  15.6.. 16.3 C | riscaldatori  0.0 W medi (   0 Wh/g)
+   pila 2 W/K, resto 1 W/K, ala F=0.22
+      caldo (gennaio, 22 min di spinta)  pila  13.5.. 27.2 C | resto  18.9.. 23.5 C | batteria  20.0.. 22.4 C | riscaldatori  0.0 W medi (   0 Wh/g)
+      routine d'estate (17 min)          pila   9.3.. 22.0 C | resto  14.6.. 18.4 C | batteria  15.4.. 17.4 C | riscaldatori  0.9 W medi (  21 Wh/g)
+      giorno senza spinta                pila   8.1.. 18.8 C | resto  14.2.. 16.1 C | batteria  15.0.. 15.6 C | riscaldatori  5.7 W medi ( 138 Wh/g)
+      safe (ali al Sole)                 pila  11.2.. 14.7 C | resto  15.7.. 17.7 C | batteria  16.3.. 17.1 C | riscaldatori  0.0 W medi (   0 Wh/g)
+   b) sensibilita' sul calore del motore (pila 4 W/K, resto 2 W/K, ala F prudente), caso caldo:
+      motore 20.0 W: pila  14.9.. 26.9 C | resto  18.9.. 24.0 C | batteria  20.1.. 22.8 C | riscaldatori  0.0 W medi (   0 Wh/g)
+      motore 48.5 W: pila  23.4.. 36.7 C | resto  27.3.. 35.0 C | batteria  29.2.. 32.9 C | riscaldatori  0.0 W medi (   0 Wh/g)
+   c) scambio radiatore -> ala nel caso caldo: +0.5 W medi (negativo = il radiatore riceve)
+   d) quanto collegamento serve al resto (motore, ruote, batteria)? pila 4 W/K, ala F prudente
+      pila<->resto 0.5 W/K, resto->radiatore 0.3 W/K: caldo resto  21.9.. 25.9 C; motore 20 W resto  23.7.. 28.0 C; senza spinta pila  -1.0.. 12.2 C, riscaldatori  4.0 W medi (  96 Wh/g)
+      pila<->resto 0.5 W/K, resto->radiatore 0.5 W/K: caldo resto  20.8.. 24.9 C; motore 20 W resto  22.4.. 26.9 C; senza spinta pila   1.3.. 14.1 C, riscaldatori  4.6 W medi ( 111 Wh/g)
+      pila<->resto 0.5 W/K, resto->radiatore 1.0 W/K: caldo resto  19.0.. 23.4 C; motore 20 W resto  20.6.. 25.4 C; senza spinta pila   4.9.. 16.7 C, riscaldatori  5.6 W medi ( 134 Wh/g)
+      pila<->resto 1.0 W/K, resto->radiatore 0.3 W/K: caldo resto  20.2.. 24.6 C; motore 20 W resto  21.9.. 26.6 C; senza spinta pila   3.6.. 15.4 C, riscaldatori  4.9 W medi ( 118 Wh/g)
+      pila<->resto 1.0 W/K, resto->radiatore 0.5 W/K: caldo resto  19.6.. 24.0 C; motore 20 W resto  21.2.. 26.0 C; senza spinta pila   4.9.. 16.3 C, riscaldatori  5.3 W medi ( 128 Wh/g)
+      pila<->resto 1.0 W/K, resto->radiatore 1.0 W/K: caldo resto  18.4.. 23.1 C; motore 20 W resto  20.0.. 25.0 C; senza spinta pila   7.1.. 17.6 C, riscaldatori  5.9 W medi ( 144 Wh/g)
+      pila<->resto 2.0 W/K, resto->radiatore 0.3 W/K: caldo resto  18.9.. 23.7 C; motore 20 W resto  20.5.. 25.6 C; senza spinta pila   7.6.. 17.1 C, riscaldatori  5.7 W medi ( 137 Wh/g)
+      pila<->resto 2.0 W/K, resto->radiatore 0.5 W/K: caldo resto  18.6.. 23.3 C; motore 20 W resto  20.1.. 25.2 C; senza spinta pila   8.2.. 17.4 C, riscaldatori  5.9 W medi ( 143 Wh/g)
+      pila<->resto 2.0 W/K, resto->radiatore 1.0 W/K: caldo resto  17.9.. 22.7 C; motore 20 W resto  19.4.. 24.6 C; senza spinta pila   9.4.. 17.9 C, riscaldatori  6.3 W medi ( 153 Wh/g)
+
+3) Ali chiuse dopo il rilascio (rotazione casuale, radiatore e radiatori payload coperti, 11,5 W interni, senza riscaldatori)
+   ambiente freddo, partenza   10 C: 0.5 h 10.8 C; 1 h 11.7 C; 2 h 13.4 C; 3 h 14.9 C; 4.8 h 17.2 C  (a 4,8 h: radiatore 17 C, ala esterna 3 C, al radiatore 1.6 W)
+   ambiente freddo, partenza   20 C: 0.5 h 20.4 C; 1 h 20.8 C; 2 h 21.5 C; 3 h 22.1 C; 4.8 h 23.1 C  (a 4,8 h: radiatore 22 C, ala esterna 4 C, al radiatore 2.0 W)
+   ambiente freddo, partenza   30 C: 0.5 h 29.9 C; 1 h 29.8 C; 2 h 29.5 C; 3 h 29.3 C; 4.8 h 29.0 C  (a 4,8 h: radiatore 28 C, ala esterna 6 C, al radiatore 2.5 W)
+   ambiente caldo , partenza   10 C: 0.5 h 10.9 C; 1 h 11.9 C; 2 h 13.8 C; 3 h 15.6 C; 4.8 h 18.3 C  (a 4,8 h: radiatore 18 C, ala esterna 13 C, al radiatore 0.7 W)
+   ambiente caldo , partenza   20 C: 0.5 h 20.4 C; 1 h 20.9 C; 2 h 21.9 C; 3 h 22.8 C; 4.8 h 24.2 C  (a 4,8 h: radiatore 24 C, ala esterna 14 C, al radiatore 1.2 W)
+   ambiente caldo , partenza   30 C: 0.5 h 29.9 C; 1 h 29.9 C; 2 h 30.0 C; 3 h 30.0 C; 4.8 h 30.0 C  (a 4,8 h: radiatore 29 C, ala esterna 15 C, al radiatore 1.7 W)
