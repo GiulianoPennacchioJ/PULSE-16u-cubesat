@@ -1,0 +1,18 @@
+voce budget,componente,quantita,massa unitaria (kg),massa (kg),ingombro (mm),T in funzione min (C),T in funzione max (C),T spento min (C),T spento max (C),fonte
+M-01,Ruota di reazione (classe BCT RWp100),4,0.33,1.32,70 x 70 x 25,-20,60,-30,70,BCT Reaction Wheels 2025 (colonne della tabella incerte: TBC)
+M-02,Star tracker ST-16RT2 con paraluce grande,2,0.235,0.47,99 x 120 (paraluce grande); 62 x 56 x 38 senza,-40,50,-40,95,Rocket Lab ST-16RT2 (satnow)
+M-03,Giroscopio / IMU (inviluppo KVH 1750),1,0.7,0.7,"88,9 x 88,9 x 73,7",-40,75,-50,85,NovAtel IMU-KVH1750
+M-04,"Magnetorquer (barra, classe >= 2,5 A m2)",3,0.2,0.6,13 x 13 x 152,-20,60,TBD,TBD,Classe NewSpace NCTR (limiti); massa prudente di classe (budget)
+M-05,Magnetometro (classe NewSpace NMRM),1,0.085,0.085,99 x 43 x 17,TBD,TBD,TBD,TBD,NewSpace: solo prova di accettazione -25/+70 C
+M-06,Sensore solare grossolano (classe NewSpace),6,0.035,0.21,34 x 32 x 20,-25,50,TBD,TBD,"NewSpace NCSS-SA05 -25/+50, NFSS-411 -25/+70: si usa il piu' stretto"
+M-07,Ricevitore GNSS (classe piNAV-NG) + antenna,1,0.075,0.075,"71,1 x 45,7 x 11 (ricevitore)",-40,85,-55,100,Skyfox piNAV-NG (satnow)
+M-08,"REGULUS-50-I2 Large (motore + serbatoio, pieno)",1,6.0,6.0,"2 blocchi, sezione ~94 x 95, 2,2U in tutto",-25,70,-40,80,T4i; Bellomo et al. 2021 (ambiente attorno all'unita'; prova -40/+80)
+M-09,Radio S XLink-S,1,0.2,0.2,"90 x 65 x 25,3",-20,50,TBD,TBD,IQ spacecom XLink-S (satnow)
+M-09,Radio VHF/UHF di riserva (classe ISIS TRXVU),1,0.075,0.075,96 x 90 x 15,-10,45,TBD,TBD,ISIS TRXVU brochure
+M-10,Antenne: 2 patch S + antenna VHF/UHF dispiegabile,1,0.189,0.189,patch <= 60 / 80 x 80 x 9; AntS 98 x 98 x 7,TBD,TBD,TBD,TBD,ISIS (limiti TBD)
+M-17,Computer di bordo (classe ISIS iOBC),1,0.1,0.1,"96 x 90 x 12,4",-25,65,TBD,TBD,ISIS iOBC brochure
+M-18,"Ala solare 226 x 454 mm, substrato FR4/Al (S1)",6,0.55,3.3,226 x 454 x ~2,-40,80,TBD,TBD,"Classe AAC Photon / ISIS: 5,0-5,5 kg/m2 con celle; 9 celle Azur 3G30-Advanced (D-108)"
+M-19,"Batteria Li-ion 4S3P, 12 celle 18650 2,6 Ah",1,0.75,0.75,~93 x 86 x 62 (stima),0,45,-20,45,"Celle GomSpace (carica 0/+45, scarica -20/+60, stoccaggio 3 mesi); massa scalata da GomSpace BPX (500 g per 8 celle)"
+M-20,PCDU classe GomSpace P60 (base + 2 ACU + 2 PDU),1,0.282,0.282,"92 x 88,9 x 28,9",-35,85,TBD,TBD,GomSpace P60: <80 g + 54 g/ACU + 47 g/PDU; limiti del P60 Dock
+M-21,"Telaio 16U (classe EnduroSat, Al 6082, con viti)",1,2.5,2.5,"226,3 x 226,3 x 454",TBD,TBD,TBD,TBD,EnduroSat 16U Structure
+M-22,Meccanismi delle ali (2 cerniere + 1 sgancio per ala),6,0.06,0.36,-,TBD,TBD,TBD,TBD,"Stima di primo ordine, nessuna fonte con massa: TBC"

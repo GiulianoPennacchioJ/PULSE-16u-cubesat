@@ -1,0 +1,23 @@
+PULSE A5.7.2 - Componenti di piattaforma (Giuliano): massa e limiti di temperatura
+
+voce  componente                                            q     kg  in funzione C     spento C
+M-01  Ruota di reazione (classe BCT RWp100)                 4  1.320      -20 / +60    -30 / +70
+M-02  Star tracker ST-16RT2 con paraluce grande             2  0.470      -40 / +50    -40 / +95
+M-03  Giroscopio / IMU (inviluppo KVH 1750)                 1  0.700      -40 / +75    -50 / +85
+M-04  Magnetorquer (barra, classe >= 2,5 A m2)              3  0.600      -20 / +60          TBD
+M-05  Magnetometro (classe NewSpace NMRM)                   1  0.085            TBD          TBD
+M-06  Sensore solare grossolano (classe NewSpace)           6  0.210      -25 / +50          TBD
+M-07  Ricevitore GNSS (classe piNAV-NG) + antenna           1  0.075      -40 / +85   -55 / +100
+M-08  REGULUS-50-I2 Large (motore + serbatoio, pieno)       1  6.000      -25 / +70    -40 / +80
+M-09  Radio S XLink-S                                       1  0.200      -20 / +50          TBD
+M-09  Radio VHF/UHF di riserva (classe ISIS TRXVU)          1  0.075      -10 / +45          TBD
+M-10  Antenne: 2 patch S + antenna VHF/UHF dispiegabile     1  0.189            TBD          TBD
+M-17  Computer di bordo (classe ISIS iOBC)                  1  0.100      -25 / +65          TBD
+M-18  Ala solare 226 x 454 mm, substrato FR4/Al (S1)        6  3.300      -40 / +80          TBD
+M-19  Batteria Li-ion 4S3P, 12 celle 18650 2,6 Ah           1  0.750       +0 / +45    -20 / +45
+M-20  PCDU classe GomSpace P60 (base + 2 ACU + 2 PDU)       1  0.282      -35 / +85          TBD
+M-21  Telaio 16U (classe EnduroSat, Al 6082, con viti)      1  2.500            TBD          TBD
+M-22  Meccanismi delle ali (2 cerniere + 1 sgancio per ala  6  0.360            TBD          TBD
+
+Massa nominale dei componenti di piattaforma elencati: 17.22 kg (iodio compreso)
+Limiti piu' stretti in funzione: radio VHF/UHF -10/+45 C, carica della batteria 0/+45 C, star tracker +50 C
