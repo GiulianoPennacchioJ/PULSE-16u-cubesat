@@ -1,0 +1,22 @@
+Radiatore della piattaforma sulla -Y: 600 cm2; calore del motore 15.0 W; attacchi delle ali 0.1 W/K
+
+caldo (gennaio, 22 min di spinta per orbita): giorno 395, beta 30.2 gradi, rollio 50.0
+  interno 17.6..22.5 C (media 19.9); batteria 18.6..21.1 C; radiatore 14.4..19.2 C; ali -67..54 C
+  calore interno medio 23.8 W; riscaldatori: interno 0.0 W medi (0 Wh/giorno), batteria 0.00 W medi; picco 0.0 W
+  dove va il calore (W medi): radiatore 17.8, coperte MLI 1.6, ali 2.7, telescopio -0.0, radiatori payload 1.7
+  coperte MLI esterne: +X -69..56 C, -X -69..57 C, +Y -29..39 C, +Z -109..58 C, -Z -35..-2 C
+routine d'estate (17 min di spinta, ambiente freddo): giorno 160, beta 18.8 gradi, rollio 32.0
+  interno 14.5..18.5 C (media 16.2); batteria 15.2..17.3 C; radiatore 11.5..15.4 C; ali -70..50 C
+  calore interno medio 22.7 W; riscaldatori: interno 1.3 W medi (32 Wh/giorno), batteria 0.00 W medi; picco 10.5 W
+  dove va il calore (W medi): radiatore 17.5, coperte MLI 2.1, ali 3.6, telescopio -0.8, radiatori payload 1.6
+  coperte MLI esterne: +X -77..55 C, -X -76..57 C, +Y -50..13 C, +Z -124..52 C, -Z -35..-13 C
+freddo operativo (giorno senza spinta): giorno 160, beta 18.8 gradi, rollio 32.0
+  interno 14.2..16.2 C (media 14.9); batteria 15.0..15.6 C; radiatore 11.3..13.5 C; ali -70..50 C
+  calore interno medio 16.7 W; riscaldatori: interno 6.3 W medi (153 Wh/giorno), batteria 0.12 W medi; picco 15.9 W
+  dove va il calore (W medi): radiatore 17.2, coperte MLI 2.0, ali 3.5, telescopio -1.0, radiatori payload 1.5
+  coperte MLI esterne: +X -77..55 C, -X -76..57 C, +Y -50..13 C, +Z -125..52 C, -Z -35..-13 C
+freddo safe (ali verso il Sole): giorno 160, beta 18.8 gradi, rollio safe
+  interno 14.6..16.2 C (media 15.4); batteria 15.2..15.8 C; radiatore 12.1..13.6 C; ali -73..53 C
+  calore interno medio 18.7 W; riscaldatori: interno 0.9 W medi (22 Wh/giorno), batteria 0.00 W medi; picco 7.1 W
+  dove va il calore (W medi): radiatore 15.6, coperte MLI 2.5, ali 0.9, telescopio -0.9, radiatori payload 1.5
+  coperte MLI esterne: +X -119..-23 C, -X -116..-27 C, +Y -95..-41 C, +Z -48..64 C, -Z -110..-13 C

@@ -1,0 +1,14 @@
+Calore interno medio sull'orbita: caldo 25.6 W, freddo operativo 16.7 W, freddo safe 18.8 W, routine d'estate 22.7 W
+Ambiente assorbito sul radiatore (-Y, con rollio): caldo 66 W/m2, freddo 16 W/m2
+Area libera sulla faccia -Y dopo i radiatori del payload: 837 cm2
+
+A) Scatola isolata (MLI) + radiatore fisso (vernice bianca) + riscaldatori con termostato
+   interno 15-20 C: radiatore 890 cm2 (+20% di calore 1068 cm2); riscaldatori medi: freddo operativo 13.4 W, safe 11.3 W, giorno di routine d'estate 7.4 W (178 Wh/giorno)
+   variante interno 15-25 C: radiatore 808 cm2 (+20% di calore 970 cm2); riscaldatori medi: freddo operativo 10.8 W, safe 8.7 W, giorno di routine d'estate 4.9 W (117 Wh/giorno)
+
+B) Come A, ma con radiatore a persiane (louver): si chiude da solo quando fa freddo, senza energia
+   radiatore 1081 cm2; a persiane chiuse smaltisce 7.9 W contro 16.7 W prodotti -> riscaldatori ~0 W
+
+C) Pareti che irradiano direttamente (niente MLI, vernici scelte per la media)
+   con vernice bianca: caldo -14 C, freddo -41 C
+   con vernici scelte per avere la media a 17 C: caldo 33 C, freddo 1 C -> escursione ~32 K contro i 5 K di DR-64

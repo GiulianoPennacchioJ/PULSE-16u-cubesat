@@ -1,0 +1,19 @@
+1) Ali solari (6 x 226 x 454 mm), radiatore 600 cm2
+   retro verniciato (eps 0,85), celle che producono: caldo -67..54 C, freddo -70..50 C
+   retro verniciato, celle che NON producono (batteria piena): caldo -66..72 C, freddo -70..67 C
+   retro in alluminio lucido (eps 0,3), celle che producono: caldo -78..79 C, freddo -86..73 C
+   retro in alluminio lucido, celle che NON producono: caldo -77..100 C, freddo -85..94 C
+   potenza delle celle: ~-0.30 %/K (stima) -> a ~54 C invece di 70 C circa +5% di potenza rispetto a D-108
+
+2) Detumbling con ali chiuse, rotazione casuale, ambiente freddo, senza riscaldatori (batteria non si ricarica)
+   partenza da 20 C: dopo 4,8 h interno e batteria a ~8.6 C (radiatore 5 C)
+   partenza da 10 C: dopo 4,8 h interno e batteria a ~4.1 C (radiatore 1 C)
+
+3) Star tracker: testa montata sul telaio, paraluce esterno (stima a un nodo, caso caldo)
+   paraluce nero (alfa 0,9), attacco 0,3 W/K: con il Sole sul fianco del paraluce ~34 C (limite +50 C)
+   paraluce bianco fuori (alfa 0,35), attacco 0,3 W/K: con il Sole sul fianco del paraluce ~14 C (limite +50 C)
+   paraluce bianco fuori, attacco 1 W/K: con il Sole sul fianco del paraluce ~20 C (limite +50 C)
+
+4) Telescopio regolato a 20 C (D-100) con l'interno di D-122 (14,3..25,7 C)
+   interno 14.3 C: il telescopio perde 1.1 W attraverso gli attacchi (0,2 W/K); le sue perdite verso lo spazio sono ~2 W medi (D-100): i riscaldatori aggiungono 1.1 W e restano accesi, la regolazione a 20 C regge
+   interno 25.7 C: il telescopio riceve 1.1 W attraverso gli attacchi (0,2 W/K); le sue perdite verso lo spazio sono ~2 W medi (D-100): i riscaldatori tolgono 1.1 W e restano accesi, la regolazione a 20 C regge

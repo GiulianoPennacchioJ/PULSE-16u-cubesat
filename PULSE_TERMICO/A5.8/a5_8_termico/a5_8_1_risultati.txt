@@ -1,0 +1,19 @@
+1) Ambiente di progetto
+  Caldo   Sole 1414 W/m2, albedo 0.35, IR Terra 261 W/m2, eclisse 34.7 min, beta 32 gradi, alfa vernice 0.35
+  Freddo  Sole 1322 W/m2, albedo 0.18, IR Terra 218 W/m2, eclisse 36.0 min, beta 11 gradi, alfa vernice 0.2
+
+3) REGULUS: getto 1.48 W, ionizzazione 0.81 W -> calore 47.7 W su 50 W (rendimento di spinta 3.0%)
+   radiatore sull'ugello a ~276 C (96 x 96 mm, emissivita' 0,6-0,85): 29-40 W verso lo spazio
+   calore che entra nel satellite dall'attacco: 8-20 W (centrale 15 W), TBC (stima: 48 W meno quanto esce dall'ugello; da chiedere a T4i)
+
+2) Calore per modo (W, nominali, senza margini; dati di Giuliano A5.6.8 + payload)
+  Modo              Giuliano payload int. EPS+batt INTERNO mot.15 INTERNO mot.48,5 radiat. payload telescopio
+  Attesa                12.7          0.0      8.8           21.4             21.4             0.0        3.0
+  Ripresa diurna        12.7          5.0      8.8           26.4             26.4             7.0        4.0
+  Ripresa notturna      12.7          0.0      8.8           21.4             21.4             9.0        4.0
+  Spinta                15.7          0.0      8.8           39.4             73.0             0.0        3.0
+  Scarico dati          26.4          0.0      8.8           35.1             35.1             3.5        3.0
+  Safe                  15.7          0.0      8.8           24.4             24.4             0.0        2.0
+  Detumbling            10.7          0.0      8.8           19.4             19.4             0.0        2.0
+  EPS+batt = perdite medie in luce della simulazione A5.6.7 (MPPT 6,3 + cavi 1,4 + batteria ~1 W); al buio solo batteria ~1,1 W
+  picchi (Giuliano): ruote negli slew +16 W per ~60 s; ricevitore S +4 W per ~1,3 h/giorno attorno ai contatti
