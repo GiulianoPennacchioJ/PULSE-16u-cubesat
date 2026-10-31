@@ -1,0 +1,36 @@
+PULSE A5.7.5 - Ali: baricentro, linea di spinta e inerzie (layout L1b, stima di primo ordine, TBC)
+Pila chiusa: 2.0 mm per ala, passo 7.0 mm -> 3 ali 25 mm, 4 ali 32 mm dalla faccia (+ sgancio, TBC) contro 39.5 mm (D-036)
+
+W1 con 6 ali: linea di spinta (ugello) a Y +6.5 Z +33.3 mm (baricentro ad ali aperte, meta' vita)
+   ali aperte, iodio pieno: baricentro Y   +6.5 Z  +28.5 mm ->  4.8 mm dalla linea
+   ali aperte, iodio vuoto: baricentro Y   +6.5 Z  +38.6 mm ->  5.3 mm dalla linea
+   al lancio (ali chiuse, pieno): 21.24 kg, baricentro X -16.0 Y  +6.5 Z  -7.2 mm -> DR-14 ok
+   motore da Z -14 a +80 mm, serbatoio da -114 a -20 mm; pila delle schede sotto (contro la -Y); ingombri: nessun conflitto
+   inerzie ali aperte (pieno): Ixx 3.05  Iyy 0.45  Izz 2.78 kg m2; prodotto max 0.035
+   inerzie ali chiuse (pieno): Ixx 0.35  Iyy 0.34  Izz 0.18 kg m2; prodotto max 0.023
+
+W2 con 6 ali: linea di spinta (ugello) a Y +6.5 Z -56.9 mm (baricentro ad ali aperte, meta' vita)
+   ali aperte, iodio pieno: baricentro Y   +6.5 Z  -61.7 mm ->  4.8 mm dalla linea
+   ali aperte, iodio vuoto: baricentro Y   +6.5 Z  -51.6 mm ->  5.3 mm dalla linea
+   al lancio (ali chiuse, pieno): 21.24 kg, baricentro X -16.0 Y  +6.5 Z -26.0 mm -> DR-14 ok
+   motore da Z -104 a -10 mm, serbatoio da -204 a -110 mm; pila delle schede sopra (contro la -Y); ingombri: nessun conflitto
+   inerzie ali aperte (pieno): Ixx 3.05  Iyy 0.45  Izz 2.78 kg m2; prodotto max 0.043
+   inerzie ali chiuse (pieno): Ixx 0.40  Iyy 0.40  Izz 0.18 kg m2; prodotto max 0.055
+
+W3 con 6 ali: linea di spinta (ugello) a Y +93.6 Z +33.3 mm (baricentro ad ali aperte, meta' vita)
+   ali aperte, iodio pieno: baricentro Y  +93.6 Z  +28.5 mm ->  4.8 mm dalla linea
+   ali aperte, iodio vuoto: baricentro Y  +93.6 Z  +38.6 mm ->  5.3 mm dalla linea
+   al lancio (ali chiuse, pieno): 21.24 kg, baricentro X  -6.1 Y +41.0 Z  -7.2 mm -> DR-14 ok
+   motore da Z -14 a +80 mm, serbatoio da -114 a -20 mm; pila delle schede sotto (contro la -Y); ingombri: REGULUS: blocco motore (ugello su -X) <-> Magnetorquer Z; REGULUS: serbatoio dello iodio <-> Magnetorquer Z; REGULUS: blocco motore (ugello su -X) fuori dall'involucro; REGULUS: serbatoio dello iodio fuori dall'involucro
+   inerzie ali aperte (pieno): Ixx 1.60  Iyy 1.72  Izz 2.61 kg m2; prodotto max 0.302
+   inerzie ali chiuse (pieno): Ixx 0.35  Iyy 0.37  Izz 0.20 kg m2; prodotto max 0.041
+
+W1 con 8 ali: linea di spinta (ugello) a Y +6.1 Z +46.5 mm (baricentro ad ali aperte, meta' vita)
+   ali aperte, iodio pieno: baricentro Y   +6.1 Z  +42.0 mm ->  4.6 mm dalla linea
+   ali aperte, iodio vuoto: baricentro Y   +6.1 Z  +51.6 mm ->  5.0 mm dalla linea
+   al lancio (ali chiuse, pieno): 22.34 kg, baricentro X -15.2 Y  +6.1 Z  -3.3 mm -> DR-14 ok
+   motore da Z -0 a +94 mm, serbatoio da -100 a -6 mm; pila delle schede sotto (contro la -Y); ingombri: nessun conflitto
+   inerzie ali aperte (pieno): Ixx 6.36  Iyy 0.48  Izz 6.07 kg m2; prodotto max 0.033
+   inerzie ali chiuse (pieno): Ixx 0.39  Iyy 0.36  Izz 0.21 kg m2; prodotto max 0.017
+
+D-043 (inviluppo usato in A5.3-A5.4): rollio/beccheggio 0,64-1,14 kg m2, imbardata 0,26-0,55 kg m2
