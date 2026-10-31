@@ -1,0 +1,17 @@
+PULSE A5.7 - Riscaldatori di piattaforma (D-116) e spinta sostenibile (modello A5.6.7, regola D-112)
+Spinta necessaria con Sole medio: 4,2 h/giorno (D-108)
+
+ riscaldatori al bus      energia   spinta max      esito  SoC min  senza spinta   safe
+              0.0 W        0 Wh/g       6.0 h         ok      80%           80%    84%
+              1.0 W       24 Wh/g       5.8 h         ok      75%           79%    83%
+              2.0 W       48 Wh/g       5.3 h         ok      78%           78%    83%
+              3.0 W       72 Wh/g       4.9 h         ok      77%           77%    82%
+              4.0 W       96 Wh/g       4.4 h         ok      76%           76%    81%
+              4.4 W      106 Wh/g       4.3 h         ok      75%           76%    81%
+              5.0 W      120 Wh/g       4.0 h  NON basta      75%           75%    80%
+              6.0 W      144 Wh/g       3.5 h  NON basta      74%           74%    80%
+              7.2 W      173 Wh/g       3.0 h  NON basta      73%           73%    79% (5 W con margini)
+              9.0 W      216 Wh/g       2.0 h  NON basta      70%           71%    78%
+             11.0 W      264 Wh/g       0.0 h  NON basta     nan%           66%    76%
+
+senza spinta / safe: SoC minimo su 3 giorni (motore spento), per i casi freddi di D-115 (11 W e 9 W di Giuseppe)

@@ -1,0 +1,13 @@
+PULSE A5.7.3 - REGULUS: spazio sulla faccia -X e baricentro con il consumo dello iodio
+
+1) Profondita' disponibile per il blocco motore tra la faccia -X e il telescopio (lungo X)
+   telescopio centrato in X (oggi, D-078): colonna da X -70.0 a +70.0 mm -> 43.2 mm dentro, 82.7 mm con la sporgenza di 39.5 mm (pareti e telaio esclusi, TBC)
+   telescopio contro la faccia +X: colonna da X -26.8 a +113.2 mm -> 86.3 mm dentro, 125.8 mm con la sporgenza di 39.5 mm (pareti e telaio esclusi, TBC)
+
+2) Iodio a bordo: 11000 N s / (550 s x 9.80665 m/s^2) = 2.04 kg
+   Spostamento del baricentro a serbatoio vuoto (satellite 30 kg pieno):
+   serbatoio a   0 mm dalla linea di spinta:  0.0 mm da inizio a fine vita (+/-0.0 mm se a meta' vita il baricentro e' sulla linea)
+   serbatoio a  20 mm dalla linea di spinta:  1.5 mm da inizio a fine vita (+/-0.7 mm se a meta' vita il baricentro e' sulla linea)
+   serbatoio a  40 mm dalla linea di spinta:  2.9 mm da inizio a fine vita (+/-1.5 mm se a meta' vita il baricentro e' sulla linea)
+   serbatoio a  70 mm dalla linea di spinta:  5.1 mm da inizio a fine vita (+/-2.6 mm se a meta' vita il baricentro e' sulla linea)
+   serbatoio a 100 mm dalla linea di spinta:  7.3 mm da inizio a fine vita (+/-3.6 mm se a meta' vita il baricentro e' sulla linea)
