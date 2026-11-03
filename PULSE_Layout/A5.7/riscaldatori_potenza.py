@@ -33,7 +33,9 @@ p("PULSE A5.7 - Riscaldatori di piattaforma (D-116) e spinta sostenibile (modell
 p("Spinta necessaria con Sole medio: 4,2 h/giorno (D-108)")
 p()
 p(f"{'riscaldatori al bus':>20} {'energia':>12} {'spinta max':>12} {'esito':>10} {'SoC min':>8} {'senza spinta':>13} {'safe':>6}")
-for h in (0.0, 1.0, 2.0, 3.0, 4.0, 4.4, 5.0, 6.0, 5.0 * MARGINI, 9.0, 11.0):
+CASI_D128 = {1.1 * MARGINI: "D-128 routine 1,1 W", 2.0 * MARGINI: "D-128 inviluppo 2,0 W",
+             5.9 * MARGINI: "D-128 senza spinta 5,9 W", 7.0 * MARGINI: "D-128 inviluppo 7,0 W"}
+for h in sorted((0.0, 1.0, 2.0, 3.0, 4.0, 4.4, 5.0, 6.0, 5.0 * MARGINI, 9.0, 11.0) + tuple(CASI_D128)):
     BASE = BASE0 + h
     best, smin = 0.0, float("nan")  # nan = nessuna spinta possibile
     for o in np.arange(0.5, 6.01, 0.1):
@@ -44,6 +46,7 @@ for h in (0.0, 1.0, 2.0, 3.0, 4.0, 4.4, 5.0, 6.0, 5.0 * MARGINI, 9.0, 11.0):
     _, socs, *_ = simula(safe=True)
     BASE = BASE0
     nota = " (5 W con margini)" if abs(h - 5.0 * MARGINI) < 1e-9 else ""
+    nota = next((f" ({v}, con margini)" for k, v in CASI_D128.items() if abs(h - k) < 1e-9), nota)
     p(f"{h:>17.1f} W {24 * h:>8.0f} Wh/g {best:>9.1f} h {'ok' if best >= 4.2 - 1e-9 else 'NON basta':>10} "
       f"{smin:>7.0f}% {100 * soc0.min():>12.0f}% {100 * socs.min():>5.0f}%{nota}")
 p()
