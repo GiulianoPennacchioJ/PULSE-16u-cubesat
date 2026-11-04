@@ -1,0 +1,28 @@
+PULSE A5.8.8 - Radiatore di piattaforma in basso (D-129) e radiatori del payload sotto l'ala -Y aperta (D-126)
+
+1) Radiatore di piattaforma in basso (Z -227..+38 mm): fattore di vista verso l'ala 0.10 (prudente in A5.8.7: 0,22)
+   Punto di progetto (pila 4, pila<->resto 1, resto->parete 1 W/K, motore 15 W):
+      caldo (gennaio, 22 min di spinta)  pila  12.7.. 25.1 C | resto  18.8.. 23.3 C | batteria  19.9.. 22.2 C | riscaldatori  0.0 W medi (   0 Wh/g)
+      routine d'estate (17 min)          pila   8.6.. 20.2 C | resto  14.6.. 18.3 C | batteria  15.4.. 17.3 C | riscaldatori  0.8 W medi (  19 Wh/g)
+      giorno senza spinta                pila   7.6.. 17.2 C | resto  14.3.. 16.1 C | batteria  15.0.. 15.6 C | riscaldatori  5.6 W medi ( 136 Wh/g)
+      safe (ali al Sole)                 pila  10.1.. 12.8 C | resto  15.1.. 16.9 C | batteria  15.6.. 16.4 C | riscaldatori  0.0 W medi (   0 Wh/g)
+      caldo con motore 20 W              pila  14.3.. 26.9 C | resto  20.5.. 25.3 C | batteria  21.7.. 24.1 C | riscaldatori  0.0 W medi (   0 Wh/g)
+
+2) Telescopio (20 C, D-100) dietro il radiatore in basso: superficie affacciata 371 cm2
+   caldo (gennaio, 22 min di spinta)  radiatore  10.3.. 20.4 C -> il telescopio perde 0.03 W (MLI eps* 0,03) / 0.06 W (0,05) medi
+   routine d'estate (17 min)          radiatore   6.4.. 15.8 C -> il telescopio perde 0.06 W (MLI eps* 0,03) / 0.10 W (0,05) medi
+   giorno senza spinta                radiatore   5.5.. 13.6 C -> il telescopio perde 0.07 W (MLI eps* 0,03) / 0.12 W (0,05) medi
+   safe (ali al Sole)                 radiatore   8.1.. 10.8 C -> il telescopio perde 0.06 W (MLI eps* 0,03) / 0.11 W (0,05) medi
+   confronto: riscaldatori del telescopio ~2 W medi (D-100). Serve un distacco tra MLI e pannello (niente contatto)
+
+3) Radiatore del sensore notturno in alto (X -7..+93, Z +116..+216 mm): fattore di vista verso l'ala 0.32
+   caldo (gennaio, 22 min di spinta): ala al buio -54 C medi (in luce fino a 54 C)
+      a -10 C smaltisce 162 W/m2 senza ala, 133 W/m2 con l'ala -> 100 cm2 1.33 W; area per 1,1 W 83 cm2, per 1,65 W (x1,5) 124 cm2
+   routine d'estate (17 min): ala al buio -62 C medi (in luce fino a 49 C)
+      a -10 C smaltisce 174 W/m2 senza ala, 148 W/m2 con l'ala -> 100 cm2 1.48 W; area per 1,1 W 74 cm2, per 1,65 W (x1,5) 111 cm2
+
+4) Scheda payload (ora sul lato +Y): energia ~8.8 Wh/giorno (4 riprese da 10 min a 7 W + scarico 3,5 W) = 0.37 W medi (TBC: numero di riprese al giorno)
+   picco 7 W per 10 min nella massa della scheda (~405 J/K, p7): +10 K al massimo per ripresa
+   scheda +0.5 W medi nell'interno: caldo resto  19.6.. 24.1 C; con motore 20 W resto  21.2.. 26.0 C
+   scheda +1.0 W medi nell'interno: caldo resto  20.4.. 24.8 C; con motore 20 W resto  22.0.. 26.8 C
+   nei casi freddi la scheda puo' essere spenta: riscaldatori invariati (P-24 1,1 / 5,9 W resta prudente)
