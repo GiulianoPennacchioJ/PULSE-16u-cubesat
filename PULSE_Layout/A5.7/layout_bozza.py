@@ -40,7 +40,7 @@ with open(os.path.join(QUI, "..", "..", "PULSE_A5_Payload_calcoli", "PULSE_paylo
 # (voce, nome, gruppo, massa kg, centro (x, y, z) mm, dimensioni (dx, dy, dz) mm, esterno?)
 TEL = ("M-11", "Colonna del telescopio (ingombro, massa nei pezzi)", "Payload", 0.0,
        (H - 70, -H + 70, (-227 + 183) / 2), (140, 140, 410), False)
-SCHEDA = ("M-15", "Scheda payload (D-091, ruotata: 60 mm lungo Y)", "Payload", 0.0, (DX_TEL, 60, 103), (100, 60, 100), False)
+SCHEDA = ("M-15", "Scheda payload (D-091 ruotata, D-130: Y +35…+95, 8 mm dal telescopio per MLI e isolamento)", "Payload", 0.0, (DX_TEL, 65, 103), (100, 60, 100), False)
 
 LMOT = (123, 95, 94)           # blocco motore: profondita' lungo X (ugello), Y, Z  (TBC, ICD T4i)
 M_MOT, M_TANK, M_I2 = 1.98, 1.98, 2.04
@@ -54,8 +54,8 @@ def piattaforma(ym, zm, iodio):
         ("M-19", "Batteria 4S3P (sotto la pila delle schede)", "EPS", 0.75, (43, 70, -79), (93, 86, 62), False),
         ("M-20", "PCDU (P60), nella pila delle schede", "EPS", 0.282, (25, 97.5, 3), (92, 29, 89), False),
         ("M-03", "IMU (inviluppo KVH 1750)", "GNC", 0.70, (-H + 37 + 1, -66, 182), (74, 89, 89), False),
-        ("M-02", "Star tracker 1 (paraluce corto, verso +Z)", "GNC", 0.235, (-70, 70, 193), (56, 62, 68), False),
-        ("M-02", "Star tracker 2 (paraluce corto, verso +Z)", "GNC", 0.235, (75, 58, 193), (62, 56, 68), False),
+        ("M-02", "Star tracker 1 (paraluce corto, verso +Z)", "GNC", 0.185, (-70, 70, 193), (56, 62, 68), False),
+        ("M-02", "Star tracker 2 (paraluce corto, verso +Z)", "GNC", 0.185, (75, 58, 193), (62, 56, 68), False),
         ("M-01", "Gruppo 4 ruote in piramide (ingombro TBC)", "GNC", 1.32, (43, 70, -170), (130, 80, 110), False),
         ("M-04", "Magnetorquer X", "GNC", 0.20, (37.6, -105, 192), (152, 13, 13), False),
         ("M-04", "Magnetorquer Y", "GNC", 0.20, (-10, -43, 215), (13, 140, 13), False),
@@ -74,7 +74,12 @@ def piattaforma(ym, zm, iodio):
         ("M-22", "Meccanismi delle ali (verso +Z)", "Struttura", 0.36, (40, 40, 200), (1, 1, 1), True),
         ("M-18", "3 ali chiuse sulla faccia +Y", "EPS", 1.65, (0, H + 8, 0), (226, 12, 454), True),
         ("M-18", "3 ali chiuse sulla faccia +X", "EPS", 1.65, (H + 8, 0, 0), (12, 226, 454), True),
-        ("M-25", "Cablaggi (5%, al centro)", "Struttura", 1.01, (0, 0, 0), (1, 1, 1), False),
+        ("M-25", "Cablaggi (5%, al centro)", "Struttura", 1.03, (0, 0, 0), (1, 1, 1), False),
+        # M-24 termico di piattaforma (Giuseppe, 0,46 kg, D-122/D-128/D-129): ripartizione di A5.8.4 (TBC)
+        ("M-24", "Radiatore di piattaforma 600 cm² (-Y in basso, D-129)", "Struttura", 0.17, (0, -H - 1, (-227 + 38) / 2), (226, 2, 265), True),
+        ("M-24", "MLI sul corpo (distribuita)", "Struttura", 0.09, (0, 0, 0), (1, 1, 1), True),
+        ("M-24", "Staffe termiche motore -> parete -Y (DR-72)", "Struttura", 0.16, (-88, (-H + ym - 48.5) / 2, zm), (60, ym - 48.5 + H, 40), False),
+        ("M-24", "Riscaldatori, termostati, sensori", "Struttura", 0.04, (0, 0, 0), (1, 1, 1), False),
     ]
     if VAR == "L1b":
         # pila delle schede nella fetta -X, sopra il motore, di taglio contro la parete -Y (radiatore, DR-70);

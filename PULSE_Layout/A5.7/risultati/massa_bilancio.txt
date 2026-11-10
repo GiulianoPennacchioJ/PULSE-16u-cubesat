@@ -1,0 +1,29 @@
+PULSE A5.7.6 - Bilancio di massa (dal file dei budget; stima di Fase A)
+Voci: 25; cablaggi 1.030 kg (5% della somma nominale delle altre voci, iodio compreso)
+
+sottosistema      nominale  con margine  quota
+ADCS / GNC           3.36         3.56   15.5%
+Propulsione          6.00         6.30   27.8%
+TT&C                 0.46         0.51    2.1%
+Payload              2.36         2.84   10.9%
+Elaborazione         0.47         0.52    2.2%
+OBC                  0.10         0.11    0.5%
+EPS                  4.33         4.75   20.0%
+Struttura            2.86         3.18   13.2%
+Termico              0.64         0.77    3.0%
+Cablaggi             1.03         1.24    4.8%
+TOTALE              21.62        23.77
+
+Massa nominale bagnata 21.62 kg, di cui iodio 2.04 kg -> massa secca nominale 19.58 kg
+Con i margini delle voci 23.77 kg; margine di sistema 20% = 4.75 kg
+Massa al rilascio con margini: 28.52 kg -> riserva 3.48 kg sull'obiettivo di 32 kg, 7.48 kg sul massimo di 36 kg (D-036)
+Margine complessivo rispetto al nominale: 31.9%
+
+Sensibilita':
+  8 ali (D-127, R-56): nominale 22.90 kg, al rilascio 30.23 kg (+1.71 kg) -> entro l'obiettivo
+  cablaggi sul 5% della sola massa secca: 0.928 kg, al rilascio 28.37 kg (-0.15 kg): il file e' prudente
+  deployer da 24 kg (es. QuadPack, R-11): nominale 21.62 kg sotto, con i margini 28.52 kg sopra (+4.52 kg)
+
+Confronto con il modello di layout (A5.7.4-A5.7.5, layout L1b + ali W1): 21,24 kg nominali; differenze da allineare in A5.7.7:
+  star tracker 0,235 -> 0,185 kg per testa (D-123, -0,10 kg); termico di piattaforma M-24 0,46 kg non ancora nel modello;
+  cablaggi 1.03 kg (nel modello 1,01 kg)

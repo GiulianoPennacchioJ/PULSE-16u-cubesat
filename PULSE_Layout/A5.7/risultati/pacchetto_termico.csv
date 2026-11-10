@@ -1,0 +1,17 @@
+voce,componente,massa (kg),X (mm),Y (mm),Z (mm),dX (mm),dY (mm),dZ (mm),Ripresa diurna (W nom.),Ripresa notturna (W nom.),Spinta (W nom.),Scarico dati (W nom.),Riposo / safe (W nom.),T in funzione min (C),T in funzione max (C),T spento min (C),T spento max (C),attacco / note
+M-08,REGULUS: blocco motore (ugello su -X),1.98,-88.7,3.9,30.5,123,95,94,0.0,0.0,50.0,0.0,0.0,-25,70,-40,80,"fetta -X, sporge 37 mm; staffa >= 1 W/K alla parete -Y (DR-72); radiatore dell'ugello su -X"
+M-08,REGULUS: serbatoio dello iodio,3.0,-88.7,3.9,-69.5,123,95,94,0.0,0.0,0.0,0.0,0.0,-25,70,-40,80,fetta -X sotto il motore; riscaldato dall'unita' (linea ~95 C)
+M-19,Batteria 4S3P (sotto la pila delle schede),0.75,43,70,-79,93,86,62,0.0,0.0,0.0,0.0,0.0,0,45,-20,45,"fetta +Y sotto l'IMU (carica 0/+45, scarica -20/+60); riscaldatore 6 W di riserva"
+M-20,"PCDU (P60), nella pila delle schede",0.282,-41.5,-65.2,-176.0,29,92,89,0.6,0.6,0.6,0.6,0.6,-35,85,TBD,TBD,"pila delle schede, di taglio contro la parete -Y (DR-70, ~1 W/K per scheda)"
+M-03,IMU (inviluppo KVH 1750),0.7,25,70,3,89,74,89,5.0,5.0,5.0,5.0,5.0,-40,75,-50,85,fetta +Y a meta' altezza
+M-02,"Star tracker 1 (paraluce corto, verso +Z)",0.185,-70,70,193,56,62,68,0.5,0.5,0.5,0.5,0.5,-40,50,-40,95,"testa sotto la faccia +Z, paraluce che sporge"
+M-02,"Star tracker 2 (paraluce corto, verso +Z)",0.185,75,58,193,62,56,68,0.5,0.5,0.5,0.5,0.5,-40,50,-40,95,"testa sotto la faccia +Z, paraluce che sporge"
+M-01,Gruppo 4 ruote in piramide (ingombro TBC),1.32,43,70,-170,130,80,110,4.0,4.0,4.0,4.0,4.0,-20,60,-30,70,fondo della fetta +Y (picco +16 W per ~60 s negli slew)
+M-04,Magnetorquer X,0.2,37.6,-105,192,152,13,13,0.0,0.0,1.0,0.0,1.0,-20,60,TBD,TBD,fascia sopra il telescopio
+M-04,Magnetorquer Y,0.2,-10,-43,215,13,140,13,0.0,0.0,1.0,0.0,1.0,-20,60,TBD,TBD,fascia sopra il telescopio
+M-04,Magnetorquer Z,0.2,-100,100,0,13,13,152,0.0,0.0,1.0,0.0,1.0,-20,60,TBD,TBD,"angolo -X/+Y, verticale"
+M-05,Magnetometro (lontano dalla REGULUS),0.085,80,-50,212,43,99,17,0.75,0.75,0.75,0.75,0.75,TBD,TBD,TBD,TBD,fascia sopra il telescopio verso +X (prova -25/+70)
+M-07,Ricevitore GNSS,0.024,-70,85,100,71,46,11,0.125,0.125,0.125,0.125,0.125,-40,85,-55,100,"fetta -X, angolo +Y"
+M-17,Computer di bordo,0.1,-104.8,-66.2,-176.0,12.4,90,96,0.4,0.4,0.4,0.4,0.4,-25,65,TBD,TBD,pila delle schede contro la -Y (DR-70)
+M-09,Radio S XLink-S,0.2,-85.3,-66.2,-176.0,25.3,90,65,0.0,0.0,0.0,15.0,0.0,-20,50,TBD,TBD,pila delle schede contro la -Y (DR-70)
+M-09,Radio VHF/UHF,0.075,-64.5,-66.2,-176.0,15,90,96,0.48,0.48,0.48,0.48,0.48,-10,45,TBD,TBD,pila delle schede contro la -Y (DR-70)

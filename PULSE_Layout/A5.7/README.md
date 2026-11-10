@@ -21,11 +21,11 @@ Calcoli del passo A5.7 (layout: massa, volume, posizione dei componenti, baricen
 | A5.7.2 | Lista componenti di piattaforma: massa, dimensioni e limiti di temperatura dai datasheet | Chiuso (D-119, D-120 Approvate; D-121 Provvisoria) |
 | A5.7.4 | Disposizione interna e facce esterne (bozza subito a Giuseppe per il termico) | Chiuso (L1b, D-125; D-123, D-124, D-091 approvate) |
 | A5.7.5 | Stivaggio delle ali (6, posto per 8) | Chiuso (W1, D-126 Proposta; D-127 Approvata) |
-| A5.7.6 | Bilancio di massa | Da fare |
-| A5.7.7 | Baricentro (iodio pieno/vuoto, ali chiuse/aperte) | Da fare |
-| A5.7.8 | Inerzie e verifiche GNC (D-043, DR-22, DR-61) | Da fare |
-| A5.7.9 | Pacchetto dati per il termico (D-110) | Da fare |
-| A5.7.10 | Chiusura: registro, requisiti, rischi, budget, report | Da fare |
+| A5.7.6 | Bilancio di massa | Chiuso (28,52 kg al rilascio con margini; D-135 Proposta: nessuna zavorra) |
+| A5.7.7 | Baricentro (iodio pieno/vuoto, ali chiuse/aperte) | Chiuso (ugello Y +3,9 / Z +30,5 mm; D-137 Proposta, DR-74) |
+| A5.7.8 | Inerzie e verifiche GNC (D-043, DR-22, DR-61) | Chiuso (D-138 rigidità ali, DR-75, R-62; D-139 inerzie e ruote) |
+| A5.7.9 | Pacchetto dati per il termico (D-110) | Chiuso (`risultati/pacchetto_termico.csv` / `.md`) |
+| A5.7.10 | Chiusura: registro, requisiti, rischi, budget, report | Chiuso (R-39 chiuso; report `Documentation/PULSE_Report_FaseA_A5_7_Layout.pdf`; figura finale `risultati/layout_finale.png`) |
 
 ## File
 
@@ -34,8 +34,13 @@ Calcoli del passo A5.7 (layout: massa, volume, posizione dei componenti, baricen
 | `profilo_spinta.py` | A5.7 (dati per A5.8) | Minuti di spinta per orbita, accensioni e tratti continui per Sole medio, limite dei 6 pannelli e Sole alto, dal modello A5.6.7 (senza cambiarlo) |
 | `regulus_vincoli.py` | A5.7.3 | Spazio per il blocco motore tra la faccia −X e il telescopio (centrato o contro +X, con e senza sporgenza); massa dello iodio e spostamento del baricentro con il consumo |
 | `componenti_piattaforma.py` | A5.7.2 | Componenti di piattaforma di Giuliano: quantità, massa, ingombro, limiti di temperatura in funzione e da spenti, fonte (CSV per layout e termico) |
-| `layout_bozza.py` | A5.7.4 | Bozza di layout (`python layout_bozza.py L1` o `L1b`): componenti come scatole, verifica di ingombri e sovrapposizioni, linea di spinta sul baricentro a metà vita, baricentro con iodio pieno/vuoto, figura con 4 sezioni e una vista; CSV delle posizioni per il termico |
+| `layout_bozza.py` | A5.7.4 (masse allineate al budget in A5.7.7) | Bozza di layout (`python layout_bozza.py L1` o `L1b`): componenti come scatole, verifica di ingombri e sovrapposizioni, linea di spinta sul baricentro a metà vita, baricentro con iodio pieno/vuoto, figura con 4 sezioni e una vista; CSV delle posizioni per il termico |
 | `ali_stivaggio.py` | A5.7.5 | Configurazioni delle ali W1/W2/W3 (e W1 con 8 ali) sul layout L1b: linea di spinta ad ali aperte, baricentro pieno/vuoto e al lancio, ingombri, inerzie ad ali aperte e chiuse, figura; CSV delle posizioni W1 (ali aperte e chiuse) per il termico |
+| `massa_bilancio.py` | A5.7.6 | Bilancio di massa dal file dei budget: totali per sottosistema, massa secca e bagnata, margini, sensibilità (8 ali, cablaggi su massa secca, deployer da 24 kg), confronto con il modello di layout |
+| `baricentro.py` | A5.7.7 | Baricentro di Fase A con le masse del budget: posizione dell'ugello (baricentro ad ali aperte a metà vita), quattro casi (ali chiuse/aperte × iodio pieno/vuoto), DR-14 / DR-21 / DR-67, centro di pressione stimato, coppie in spinta, zavorra equivalente, sensibilità; anche con 8 ali |
+| `inerzie_gnc.py` | A5.7.8 | Inerzie (4 casi, ali S1 e S2), ruote negli slew e nella FMC con una ruota guasta, gradiente di gravità con il rollio fisso e magnetorquer, primo modo delle ali aperte contro la banda di controllo |
+| `pacchetto_termico.py` | A5.7.9 | Pacchetto per il termico: componenti di Giuliano con posizione finale, attacco, potenza per modo (dal budget) e limiti di temperatura |
+| `figura_finale.py` | A5.7.10 | Figura e CSV del layout finale (L1b + ali W1, ugello sul baricentro ad ali aperte) |
 | `riscaldatori_potenza.py` | A5.7 (verifica di D-116) | Spinta sostenibile e SoC minimo con i riscaldatori di piattaforma come carico costante, dal modello A5.6.7 con la regola D-112 |
 
-Uso: `python profilo_spinta.py` (e così gli altri). Risultati in `risultati/`. Richiede numpy e matplotlib (come A5.6, da cui importa).
+Uso: `python profilo_spinta.py` (e così gli altri). Risultati in `risultati/`. Richiede numpy, matplotlib e openpyxl (`massa_bilancio.py`, `pacchetto_termico.py` leggono il file dei budget).

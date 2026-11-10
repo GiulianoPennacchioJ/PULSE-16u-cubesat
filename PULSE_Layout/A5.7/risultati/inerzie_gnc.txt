@@ -1,0 +1,37 @@
+PULSE A5.7.8 - Inerzie e verifiche GNC (layout L1b, ali W1, masse del budget; stima di primo ordine)
+Orbita 302 km: n = 1.156e-03 rad/s, periodo 90.6 min; campo magnetico 26-52 uT
+
+1) Inerzie (kg m2) attorno al baricentro; X rollio (velocita'), Y beccheggio, Z imbardata (asse lungo)
+   S1 (0,55 kg/ala, D-119)      ali aperte pieno: Ixx 3.06 Iyy 0.45 Izz 2.78; prodotti max 0.036; principali 0.45/2.78/3.06
+   S1 (0,55 kg/ala, D-119)      ali aperte vuoto: Ixx 3.03 Iyy 0.41 Izz 2.77; prodotti max 0.020; principali 0.41/2.77/3.03
+   S1 (0,55 kg/ala, D-119)      ali chiuse pieno: Ixx 0.35 Iyy 0.34 Izz 0.18; prodotti max 0.023; principali 0.18/0.34/0.36
+   S1 (0,55 kg/ala, D-119)      ali chiuse vuoto: Ixx 0.34 Iyy 0.32 Izz 0.17; prodotti max 0.013; principali 0.17/0.32/0.34
+   S2 (0,30 kg/ala, confronto)  ali aperte pieno: Ixx 1.80 Iyy 0.39 Izz 1.57; prodotti max 0.040; principali 0.39/1.56/1.80
+   S2 (0,30 kg/ala, confronto)  ali aperte vuoto: Ixx 1.77 Iyy 0.35 Izz 1.56; prodotti max 0.024; principali 0.35/1.55/1.78
+   S2 (0,30 kg/ala, confronto)  ali chiuse pieno: Ixx 0.31 Iyy 0.32 Izz 0.15; prodotti max 0.032; principali 0.15/0.31/0.32
+   S2 (0,30 kg/ala, confronto)  ali chiuse vuoto: Ixx 0.29 Iyy 0.29 Izz 0.14; prodotti max 0.020; principali 0.13/0.29/0.30
+   D-043 (inviluppo usato finora): rollio/beccheggio 0,64-1,14, imbardata 0,26-0,55
+
+2) Ruote (piramide W3: 0,163 N m s per asse, 0,082 con una ruota guasta; coppia 7 mN m per ruota)
+   riserva disturbi per un'orbita (aerodinamica 8.0e-06 N m x 5434 s): 0.043 N m s (DR-22 usava 0,037)
+   slew di rollio 45 deg in 60 s (DR-19)           : Ixx 3.06 -> 0.080 N m s (+ riserva = 0.123); nominale ok, con ruota guasta NO; coppia 2.7 mN m
+   slew di beccheggio 45 deg in 60 s               : Iyy 0.45 -> 0.012 N m s (+ riserva = 0.055); nominale ok, con ruota guasta ok; coppia 0.4 mN m
+   FMC notturna in beccheggio (1,47 deg/s, D-044)  : Iyy 0.45 -> 0.012 N m s (+ riserva = 0.055); nominale ok, con ruota guasta ok
+   legge d'imbardata FMC (0,56 deg/s, DR-25)       : Izz 2.78 -> 0.027 N m s (+ riserva = 0.071); nominale ok, con ruota guasta ok
+   slew di rollio 45 deg con una ruota guasta: velocita' max 0.72 deg/s -> ~77 s (DR-19: 60 s)
+   slew di rollio 45 deg nominale: velocita' max 1.50 deg/s -> ~60 s (DR-19: 60 s)
+   con ali S2: Ixx 1.80, slew di rollio 0.047 + riserva = 0.090 N m s (NO con una ruota guasta: 45 deg in ~61 s)
+
+3) Gradiente di gravita' con il rollio fisso (DR-61): coppia = 3 n2 (Izz - Iyy) sin(phi) cos(phi)
+   rollio 31 deg: 4.14e-06 N m -> 0.022 N m s per orbita (costante nel riferimento del satellite)
+   rollio 40 deg: 4.61e-06 N m -> 0.025 N m s per orbita (costante nel riferimento del satellite)
+   rollio 45 deg: 4.68e-06 N m -> 0.025 N m s per orbita (costante nel riferimento del satellite)
+   rollio 52 deg: 4.54e-06 N m -> 0.025 N m s per orbita (costante nel riferimento del satellite)
+   magnetorquer 2,5 A m2: coppia utile media ~3.3e-05 N m (meta' di m x B a 26 uT): 7 volte la coppia di gradiente a 45 deg
+   in spinta (rollio fisso), iodio vuoto: spinta 2.9e-06 + aerodinamica 8.0e-06 + gradiente 4.7e-06 = 1.6e-05 N m (DR-21 nuovo: <= 2,3e-5 senza gradiente)
+   stabilita': asse di inerzia minima = Y (normale all orbita): assetto non stabile per gradiente, tenuto dalle ruote (come gia' previsto)
+
+4) Primo modo di un'ala a fisarmonica aperta (trave a sbalzo uniforme, cerniere rigide = limite superiore)
+   S1 FR4 1,6 mm (E ~20 GPa)                       : EI   1.54 N m2, f1 ~0.34 Hz = 2.1 rad/s -> 2.1 volte la banda di 1 rad/s
+   S2 sandwich 6 mm, pelli CFRP 0,25 mm (E ~70 GPa): EI  71.19 N m2, f1 ~3.09 Hz = 19.4 rad/s -> 19.4 volte la banda di 1 rad/s
+   regola pratica: primo modo >= ~10 volte la banda (>= ~1,6 Hz) per non accoppiarsi al controllo; le cerniere lo abbassano
