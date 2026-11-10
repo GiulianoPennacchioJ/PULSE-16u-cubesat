@@ -1,0 +1,23 @@
+PULSE A5.7.7 - Baricentro di Fase A (layout L1b, ali W1, masse del budget A5.7.6; stima di primo ordine)
+
+=== 6 ali ===
+Ugello (linea di spinta) a X -150 (sporge 37 mm da -X), Y +3.9, Z +30.5 mm
+Centro di pressione (stima): Y +0.0, Z +11.7 mm; area frontale 0.1082 m2
+caso                        massa       X       Y       Z   linea      CP  verifiche
+ali chiuse, iodio pieno       21.62   -16.4    +3.9    -9.3    39.8    21.3  DR-14 ok (lancio)
+ali chiuse, iodio vuoto       19.58    -8.9    +3.9    -3.0    33.6    15.2  DR-14 ok (solo riferimento)
+ali aperte, iodio pieno       21.62   -16.4    +3.9   +25.8     4.7    14.7  DR-21 linea ok, CP ok; DR-67 ok
+ali aperte, iodio vuoto       19.58    -8.9    +3.9   +35.7     5.2    24.4  DR-21 linea ok, CP NO (>20); DR-67 ok
+Coppie in spinta, iodio vuoto: spinta 2.9e-06 N m + aerodinamica 8.0e-06 N m (resistenza 3.3e-04 N) = 1.1e-05 N m; inviluppo D-047 2,3e-5 N m (1,1 mN x 10 mm + aerodinamica + magnetica)
+Zavorra in fondo (Z -220 mm) che porterebbe il baricentro entro 20 mm dal CP per tutta la vita: 0.28 kg nominali
+Sensibilita' (masse di piattaforma cresciute del margine di voce, payload invariato): baricentro a meta' vita si sposta di Y +0.1 Z +1.1 mm
+
+=== 8 ali ===
+Ugello (linea di spinta) a X -150 (sporge 37 mm da -X), Y +3.7, Z +43.8 mm
+Centro di pressione (stima): Y +0.0, Z +15.3 mm; area frontale 0.1101 m2
+caso                        massa       X       Y       Z   linea      CP  verifiche
+ali chiuse, iodio pieno       22.72   -15.6    +3.7    -5.2    49.0    20.9  DR-14 ok (lancio)
+ali chiuse, iodio vuoto       20.68    -8.4    +3.7    -0.2    44.0    15.9  DR-14 ok (solo riferimento)
+ali aperte, iodio pieno       22.72   -15.6    +3.7   +39.3     4.5    24.3  DR-21 linea ok, CP NO (>20); DR-67 ok
+ali aperte, iodio vuoto       20.68    -8.4    +3.7   +48.7     4.9    33.6  DR-21 linea ok, CP NO (>20); DR-67 ok
+Coppie in spinta, iodio vuoto: spinta 2.7e-06 N m + aerodinamica 1.1e-05 N m (resistenza 3.3e-04 N) = 1.4e-05 N m; inviluppo D-047 2,3e-5 N m (1,1 mN x 10 mm + aerodinamica + magnetica)
