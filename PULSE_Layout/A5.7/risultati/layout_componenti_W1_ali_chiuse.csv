@@ -1,6 +1,6 @@
 voce,componente,gruppo,massa (kg),X (mm),Y (mm),Z (mm),dX (mm),dY (mm),dZ (mm),esterno
 M-11,"Colonna del telescopio (ingombro, massa nei pezzi)",Payload,0.0,43.2,-43.2,-22.0,140,140,410,no
-M-15,"Scheda payload (D-091, ruotata: 60 mm lungo Y)",Payload,0.0,43.2,60,103,100,60,100,no
+M-15,"Scheda payload (D-091 ruotata, D-130: Y +35…+95, 8 mm dal telescopio per MLI e isolamento)",Payload,0.0,43.2,65,103,100,60,100,no
 M-08,REGULUS: blocco motore (ugello su -X),Propulsione,1.98,-88.7,6.5,33.3,123,95,94,no
 M-08,REGULUS: serbatoio dello iodio,Propulsione,3.0,-88.7,6.5,-66.7,123,95,94,no
 M-19,Batteria 4S3P (sotto la pila delle schede),EPS,0.75,43,70,-79,93,86,62,no

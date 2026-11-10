@@ -21,7 +21,7 @@ Calcoli del passo A5.7 (layout: massa, volume, posizione dei componenti, baricen
 | A5.7.2 | Lista componenti di piattaforma: massa, dimensioni e limiti di temperatura dai datasheet | Chiuso (D-119, D-120 Approvate; D-121 Provvisoria) |
 | A5.7.4 | Disposizione interna e facce esterne (bozza subito a Giuseppe per il termico) | Chiuso (L1b, D-125; D-123, D-124, D-091 approvate) |
 | A5.7.5 | Stivaggio delle ali (6, posto per 8) | Chiuso (W1, D-126 Proposta; D-127 Approvata) |
-| A5.7.6 | Bilancio di massa | Da fare |
+| A5.7.6 | Bilancio di massa | Chiuso (28,52 kg al rilascio con margini; D-135 Proposta: nessuna zavorra) |
 | A5.7.7 | Baricentro (iodio pieno/vuoto, ali chiuse/aperte) | Da fare |
 | A5.7.8 | Inerzie e verifiche GNC (D-043, DR-22, DR-61) | Da fare |
 | A5.7.9 | Pacchetto dati per il termico (D-110) | Da fare |
@@ -36,6 +36,7 @@ Calcoli del passo A5.7 (layout: massa, volume, posizione dei componenti, baricen
 | `componenti_piattaforma.py` | A5.7.2 | Componenti di piattaforma di Giuliano: quantità, massa, ingombro, limiti di temperatura in funzione e da spenti, fonte (CSV per layout e termico) |
 | `layout_bozza.py` | A5.7.4 | Bozza di layout (`python layout_bozza.py L1` o `L1b`): componenti come scatole, verifica di ingombri e sovrapposizioni, linea di spinta sul baricentro a metà vita, baricentro con iodio pieno/vuoto, figura con 4 sezioni e una vista; CSV delle posizioni per il termico |
 | `ali_stivaggio.py` | A5.7.5 | Configurazioni delle ali W1/W2/W3 (e W1 con 8 ali) sul layout L1b: linea di spinta ad ali aperte, baricentro pieno/vuoto e al lancio, ingombri, inerzie ad ali aperte e chiuse, figura; CSV delle posizioni W1 (ali aperte e chiuse) per il termico |
+| `massa_bilancio.py` | A5.7.6 | Bilancio di massa dal file dei budget: totali per sottosistema, massa secca e bagnata, margini, sensibilità (8 ali, cablaggi su massa secca, deployer da 24 kg), confronto con il modello di layout |
 | `riscaldatori_potenza.py` | A5.7 (verifica di D-116) | Spinta sostenibile e SoC minimo con i riscaldatori di piattaforma come carico costante, dal modello A5.6.7 con la regola D-112 |
 
 Uso: `python profilo_spinta.py` (e così gli altri). Risultati in `risultati/`. Richiede numpy e matplotlib (come A5.6, da cui importa).

@@ -40,7 +40,7 @@ with open(os.path.join(QUI, "..", "..", "PULSE_A5_Payload_calcoli", "PULSE_paylo
 # (voce, nome, gruppo, massa kg, centro (x, y, z) mm, dimensioni (dx, dy, dz) mm, esterno?)
 TEL = ("M-11", "Colonna del telescopio (ingombro, massa nei pezzi)", "Payload", 0.0,
        (H - 70, -H + 70, (-227 + 183) / 2), (140, 140, 410), False)
-SCHEDA = ("M-15", "Scheda payload (D-091, ruotata: 60 mm lungo Y)", "Payload", 0.0, (DX_TEL, 60, 103), (100, 60, 100), False)
+SCHEDA = ("M-15", "Scheda payload (D-091 ruotata, D-130: Y +35…+95, 8 mm dal telescopio per MLI e isolamento)", "Payload", 0.0, (DX_TEL, 65, 103), (100, 60, 100), False)
 
 LMOT = (123, 95, 94)           # blocco motore: profondita' lungo X (ugello), Y, Z  (TBC, ICD T4i)
 M_MOT, M_TANK, M_I2 = 1.98, 1.98, 2.04
