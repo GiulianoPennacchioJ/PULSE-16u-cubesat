@@ -1,0 +1,14 @@
+Batteria 4S3P (sotto la pila delle sched batteria limiti     0/  45 | previsto  15.0.. 23.0 (margine  22.0 K caldo,  15.0 K freddo) | motore 48,5 W:  32.9
+PCDU (P60), nella pila delle schede      pila     limiti   -35/  85 | previsto   7.1.. 28.2 (margine  56.8 K caldo,  42.1 K freddo) | motore 48,5 W:  37.3
+IMU (inviluppo KVH 1750)                 resto    limiti   -40/  75 | previsto  14.2.. 28.0 (margine  47.0 K caldo,  54.2 K freddo) | motore 48,5 W:  35.0
+Star tracker 1 (paraluce corto, verso +Z resto    limiti   -40/  50 | previsto  14.2.. 28.0 (margine  22.0 K caldo,  54.2 K freddo) | motore 48,5 W:  35.0
+Star tracker 2 (paraluce corto, verso +Z resto    limiti   -40/  50 | previsto  14.2.. 28.0 (margine  22.0 K caldo,  54.2 K freddo) | motore 48,5 W:  35.0
+Gruppo 4 ruote in piramide (ingombro TBC resto    limiti   -20/  60 | previsto  14.2.. 28.0 (margine  32.0 K caldo,  34.2 K freddo) | motore 48,5 W:  35.0
+Magnetorquer X                           resto    limiti   -20/  60 | previsto  14.2.. 28.0 (margine  32.0 K caldo,  34.2 K freddo) | motore 48,5 W:  35.0
+Magnetorquer Y                           resto    limiti   -20/  60 | previsto  14.2.. 28.0 (margine  32.0 K caldo,  34.2 K freddo) | motore 48,5 W:  35.0
+Magnetorquer Z                           resto    limiti   -20/  60 | previsto  14.2.. 28.0 (margine  32.0 K caldo,  34.2 K freddo) | motore 48,5 W:  35.0
+Magnetometro (lontano dalla REGULUS)     limiti TBD
+Ricevitore GNSS                          resto    limiti   -40/  85 | previsto  14.2.. 28.0 (margine  57.0 K caldo,  54.2 K freddo) | motore 48,5 W:  35.0
+Computer di bordo                        pila     limiti   -25/  65 | previsto   7.1.. 28.0 (margine  37.0 K caldo,  32.1 K freddo) | motore 48,5 W:  37.1
+Radio S XLink-S                          pila     limiti   -20/  50 | previsto   7.1.. 41.4 (margine   8.6 K caldo,  27.1 K freddo) | motore 48,5 W:  36.7
+Radio VHF/UHF                            pila     limiti   -10/  45 | previsto   7.1.. 28.0 (margine  17.0 K caldo,  17.1 K freddo) | motore 48,5 W:  37.2

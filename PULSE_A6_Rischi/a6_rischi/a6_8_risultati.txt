@@ -1,0 +1,45 @@
+Ritardo dell'ora locale rispetto all'LTDN sul ramo discendente:
+  lat 38 N: +21.4 min
+  lat 42 N: +24.7 min
+  lat 45 N: +27.4 min
+  lat 47 N: +29.4 min
+Bersaglio a 45 deg di traverso: 310 km dalla traccia, ora locale 15.7 min prima (lat 45) se a ovest
+
+Giorno dell'anno con il Sole piu' basso (limite nord, nadir, LTDN 10:30): 359
+
+Caso peggiore = limite nord d'Italia (47,1 N), giorno 359
+ LTDN  | Sole nadir | Sole 45 ovest | SNR scuro nadir/45W | SNR medio nadir/45W | ombra/altezza nadir/45W
+ 11:00 |  19.2 deg  |  18.7 deg     |  24.9 /  24.4       |  43.8 /  43.0       | 2.9 / 2.9
+ 10:45 |  18.8 deg  |  18.2 deg     |  24.5 /  23.8       |  43.1 /  41.9       | 2.9 / 3.0
+ 10:30 |  18.2 deg  |  17.4 deg     |  23.9 /  23.0       |  42.0 /  40.5       | 3.0 / 3.2
+ 10:15 |  17.5 deg  |  16.5 deg     |  23.1 /  22.0       |  40.6 /  38.7       | 3.2 / 3.4
+ 9:56  |  16.4 deg  |  15.2 deg     |  21.8 /  20.5       |  38.4 /  36.0       | 3.4 / 3.7
+ 9:45  |  15.6 deg  |  14.4 deg     |  20.9 /  19.4       |  36.8 /  34.1       | 3.6 / 3.9
+ 9:30  |  14.5 deg  |  13.1 deg     |  19.5 /  17.7       |  34.3 /  31.2       | 3.9 / 4.3
+ 9:15  |  13.2 deg  |  11.7 deg     |  17.9 /  15.8       |  31.5 /  27.8       | 4.3 / 4.8
+ 9:00  |  11.8 deg  |  10.1 deg     |  16.0 /  13.6       |  28.1 /  23.9       | 4.8 / 5.6
+
+Bersagli di prova, giorno 359 (nadir / 45 deg ovest), SNR suolo scuro:
+ LTDN 10:30
+   Vetta d'Italia (limite nord)   Sole  18.2 /  17.4 deg   SNR  23.9 /  23.0
+   Gemona                         Sole  19.0 /  18.2 deg   SNR  24.7 /  23.8
+   Aosta                          Sole  19.5 /  18.7 deg   SNR  25.2 /  24.4
+   Norcia                         Sole  22.2 /  21.3 deg   SNR  27.9 /  27.1
+   Napoli                         Sole  23.9 /  23.1 deg   SNR  29.5 /  28.7
+   Palermo                        Sole  26.4 /  25.5 deg   SNR  31.7 /  30.9
+ LTDN 9:56
+   Vetta d'Italia (limite nord)   Sole  16.4 /  15.2 deg   SNR  21.8 /  20.5
+   Gemona                         Sole  17.1 /  15.9 deg   SNR  22.6 /  21.3
+   Aosta                          Sole  17.5 /  16.4 deg   SNR  23.1 /  21.8
+   Norcia                         Sole  20.0 /  18.8 deg   SNR  25.8 /  24.5
+   Napoli                         Sole  21.7 /  20.4 deg   SNR  27.4 /  26.2
+   Palermo                        Sole  24.0 /  22.7 deg   SNR  29.6 /  28.4
+ LTDN 9:30
+   Vetta d'Italia (limite nord)   Sole  14.5 /  13.1 deg   SNR  19.5 /  17.7
+   Gemona                         Sole  15.1 /  13.7 deg   SNR  20.3 /  18.6
+   Aosta                          Sole  15.6 /  14.1 deg   SNR  20.8 /  19.1
+   Norcia                         Sole  17.9 /  16.4 deg   SNR  23.5 /  21.9
+   Napoli                         Sole  19.4 /  17.9 deg   SNR  25.1 /  23.6
+   Palermo                        Sole  21.5 /  20.0 deg   SNR  27.3 /  25.8
+
+Riferimento A3+RC a Sole 20 deg: scuro 25.8, medio 45.3
